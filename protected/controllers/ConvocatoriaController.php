@@ -12,6 +12,8 @@ class ConvocatoriaController extends Controller
 
 	public function actionRegistro()
 	{
+		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)
+		//o en su defecto los datos del formulario para validar
 		$objFormularioRegistro = new RegistroForm();
 		if(isset($_POST['RegistroForm'])){
 			$objFormularioRegistro->attributes = $_POST['RegistroForm'];
@@ -55,7 +57,7 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->save(false);
 			}
 		}
-
+		//OJO cuando se guarden los datos exitosamente se debe llevar a otra pantalla.
 		$this->pageTitle ="Registro Artístas";
 		$this->render('registro', array(
 				'formulario'=> $objFormularioRegistro,
