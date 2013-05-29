@@ -3,7 +3,7 @@
 <html lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -17,7 +17,7 @@
       <?php echo $content ?>
 
       <div class="footer">
-        <p>&copy; Telemedellín</p>
+        
       </div>
 
     </div> <!-- /container -->
