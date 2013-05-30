@@ -18,21 +18,20 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=1024">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="telemedellín">
     
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/base.css" />  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <!--[if LTE IE 8]>
+      <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" />
+      <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modernizr.custom.95570.js"></script>
+    <![endif]-->
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
   </head>
   <body>
-    <div class="container-narrow">
+    <div class="container">
       <?php echo $content ?>
-
-      <div class="footer">
-        
-      </div>
-
     </div> <!-- /container -->  
     <input type="hidden" value="<?php echo Yii::app()->request->baseUrl ?>" id="PUBLIC_PATH"/>
   </body>
