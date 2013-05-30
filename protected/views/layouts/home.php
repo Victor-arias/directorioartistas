@@ -18,8 +18,8 @@
     </div> <!-- /container -->
     <footer>
       <div class="logos-pie">
-        <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logo_bureau.png', 'Medellín convention & visitors bureau', array('width' => 146, 'height' => 99)) ?>
-        <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logo_alcaldia.png', 'Alcaldía de Medellín', array('width' => 146, 'height' => 99)) ?>
+        <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_bureau.png', 'Medellín convention & visitors bureau', array('width' => 146, 'height' => 99)) , CHtml::normalizeUrl('http://www.medellinconventionbureau.com') )  ?>
+        <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_alcaldia.png', 'Alcaldía de Medellín', array('width' => 146, 'height' => 99)) , CHtml::normalizeUrl('http://www.medellin.gov.co') ) ?>
       </div>
     </footer>
 
