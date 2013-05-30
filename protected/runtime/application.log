@@ -9993,3 +9993,12 @@ Stack trace:
 REQUEST_URI=/directorioartistas/convocatoria/registro
 HTTP_REFERER=http://localhost/directorioartistas/convocatoria/registro
 ---
+2013/05/30 09:53:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/pattenr_inf.jpg".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pattenr_...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/images/pattenr_inf.jpg
+HTTP_REFERER=http://localhost/directorioartistas/
+---
