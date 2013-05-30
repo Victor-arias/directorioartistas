@@ -1,0 +1,47 @@
+body {
+  background: 
+    url(../images/pattern_inf.jpg) repeat-x,  
+    url(../images/bg_flores.png) repeat;
+  font-size: 16px;
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+
+footer{
+  background: url(../images/pattern_29.jpg) repeat-x bottom;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+footer .logos-pie{
+  background: url(../images/pata_logos3.png) no-repeat left bottom;
+  height: 105px;
+  float: right;
+  padding-left: 130px;
+  padding-top: 15px;
+  text-align: left;
+  width: 44%;
+}
+
+h2{
+  color: #60605f;
+  font-size: 35px;
+}
+p{
+  color: #60605f;
+  width: 500px;
+}
+.container{
+  background: url(../images/flor_inf.png) no-repeat right 80%, url(../images/flor_sup.png) no-repeat;
+  padding-bottom: 150px;
+}
+.logo-medellin{
+  margin-bottom: -130px;
+  text-align: right;
+}
+.logo-feria{
+  margin-bottom: 30px;
+  text-align: center;
+}
