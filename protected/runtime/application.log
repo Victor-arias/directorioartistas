@@ -10103,3 +10103,12 @@ Stack trace:
 REQUEST_URI=/directorioartistas/css/border-image.png
 HTTP_REFERER=http://localhost/directorioartistas/
 ---
+2013/05/30 12:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
