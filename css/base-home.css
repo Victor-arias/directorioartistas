@@ -13,10 +13,10 @@ a{
   color: #E73F56;
 }
 footer{
-  background: url(../images/pattern_29.jpg) repeat-x bottom;
   bottom: 0;
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 footer .logos-pie{
   background: url(../images/pata_logos3.png) no-repeat left bottom;
@@ -25,7 +25,7 @@ footer .logos-pie{
   padding-left: 130px;
   padding-top: 15px;
   text-align: left;
-  width: 44%;
+  width: 40%;
 }
 
 h2{
@@ -37,20 +37,46 @@ p{
   width: 500px;
 }
 .container{
-  background: url(../images/flor_inf.png) no-repeat right 80%, url(../images/flor_sup.png) no-repeat;
+  
   padding-bottom: 150px;
 }
 .container .span8{
-  border-image: url(../images/dot.png) 25% repeat;
-  -moz-border-image: url(../images/dot.png) 25% repeat;
-  -webkit-border-image: url(../images/dot.png) 25% repeat;
-  padding: 0 17% 50px;
+  border: 6px dotted #ccc;
+  border-top: 0;
+  border-image: url(../images/dot.png) 6 repeat;
+  -moz-border-image: url(../images/dot.png) 6 repeat;
+  -webkit-border-image: url(../images/dot.png) 6repeat;
+  margin: 0 10%;
+  padding: 0 7% 50px;
+  position: relative;
+
 }
 .logo-medellin{
-  margin-bottom: -130px;
+  background: url(../images/flor_sup.png) no-repeat;
+  height: 209px;
+  margin-bottom: -180px;
+  position: relative;
   text-align: right;
+  z-index: 2;
 }
 .logo-feria{
   margin-bottom: 30px;
   text-align: center;
+}
+#fucking-flor{
+  background: url(../images/flor_inf.png) no-repeat;
+  bottom: -40px;
+  display: block;
+  height: 200px;
+  position: absolute;
+  right: -100px;
+  width: 200px;
+}
+#fp{
+  background: url(../images/pattern_29.jpg) repeat-x bottom;
+  bottom: 0;
+  height: 30px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }

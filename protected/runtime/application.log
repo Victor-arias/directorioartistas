@@ -10112,3 +10112,57 @@ Stack trace:
 REQUEST_URI=/directorioartistas/[object%20Object]
 HTTP_REFERER=http://localhost/directorioartistas/convocatoria
 ---
+2013/05/30 14:54:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:08:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:10:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/modernizr.custom.95570.js".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('js/modernizr.cu...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/js/modernizr.custom.95570.js
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 15:11:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/modernizr.custom.95570.js".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('js/modernizr.cu...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/js/modernizr.custom.95570.js
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 15:11:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/modernizr.custom.95570.js".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('js/modernizr.cu...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/js/modernizr.custom.95570.js
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 15:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
