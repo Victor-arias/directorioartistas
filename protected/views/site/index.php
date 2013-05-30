@@ -6,8 +6,8 @@ $this->pageTitle=Yii::app()->name;
 <div class="logo-medellin">
 	<?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) ?>
 </div>
-<div class="row-fluid">
-	<div class="span8 offset2">
+<div class="row">
+	<div class="span8">
 		<h1 class="logo-feria">
 			<?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2013', array('width' => 400, 'height' => 363)) ?>
 		</h1>
