@@ -1,3 +1,7 @@
+<?php
+Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jquery.fileupload/jquery.fileupload-ui.css');
+Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jquery.fileupload/jquery.fileupload-ui.css');
+?>
 <div class="masthead">
 	<h3 class="muted">Logo Convocatoria</h3>
 </div>
@@ -188,7 +192,6 @@
 					<div class="form-actions">
 						<?php echo CHtml::submitButton('Enviar mi propuesta', array("class"=>"btn btn-large btn-primary")) ?>
 					</div>																																																																									
-				</form>		
 				<?php $this->endWidget(); ?>	
 			</div>		
 		</div>

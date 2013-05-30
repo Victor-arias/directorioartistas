@@ -9993,3 +9993,48 @@ Stack trace:
 REQUEST_URI=/directorioartistas/convocatoria/registro
 HTTP_REFERER=http://localhost/directorioartistas/convocatoria/registro
 ---
+2013/05/30 17:46:51 [error] [php] Object of class CClientScript could not be converted to string (/opt/lampp/htdocs/directorioartistas/protected/views/convocatoria/registro.php:2)
+Stack trace:
+#0 /opt/lampp/framework/web/CController.php(869): ConvocatoriaController->renderFile()
+#1 /opt/lampp/framework/web/CController.php(782): ConvocatoriaController->renderPartial()
+#2 /opt/lampp/htdocs/directorioartistas/protected/controllers/ConvocatoriaController.php(64): ConvocatoriaController->render()
+#3 /opt/lampp/framework/web/actions/CInlineAction.php(49): ConvocatoriaController->actionRegistro()
+#4 /opt/lampp/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /opt/lampp/framework/web/CController.php(286): ConvocatoriaController->runAction()
+#6 /opt/lampp/framework/web/CController.php(265): ConvocatoriaController->runActionWithFilters()
+#7 /opt/lampp/framework/web/CWebApplication.php(282): ConvocatoriaController->run()
+#8 /opt/lampp/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /opt/lampp/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/directorioartistas/index.php(13): CWebApplication->run()
+REQUEST_URI=/directorioartistas/convocatoria/registro
+in /opt/lampp/htdocs/directorioartistas/protected/views/convocatoria/registro.php (2)
+in /opt/lampp/htdocs/directorioartistas/protected/controllers/ConvocatoriaController.php (64)
+in /opt/lampp/htdocs/directorioartistas/index.php (13)
+2013/05/30 17:47:08 [error] [php] Object of class CClientScript could not be converted to string (/opt/lampp/htdocs/directorioartistas/protected/views/convocatoria/registro.php:2)
+Stack trace:
+#0 /opt/lampp/framework/web/CController.php(869): ConvocatoriaController->renderFile()
+#1 /opt/lampp/framework/web/CController.php(782): ConvocatoriaController->renderPartial()
+#2 /opt/lampp/htdocs/directorioartistas/protected/controllers/ConvocatoriaController.php(64): ConvocatoriaController->render()
+#3 /opt/lampp/framework/web/actions/CInlineAction.php(49): ConvocatoriaController->actionRegistro()
+#4 /opt/lampp/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /opt/lampp/framework/web/CController.php(286): ConvocatoriaController->runAction()
+#6 /opt/lampp/framework/web/CController.php(265): ConvocatoriaController->runActionWithFilters()
+#7 /opt/lampp/framework/web/CWebApplication.php(282): ConvocatoriaController->run()
+#8 /opt/lampp/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /opt/lampp/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/directorioartistas/index.php(13): CWebApplication->run()
+REQUEST_URI=/directorioartistas/convocatoria/registro
+in /opt/lampp/htdocs/directorioartistas/protected/views/convocatoria/registro.php (2)
+in /opt/lampp/htdocs/directorioartistas/protected/controllers/ConvocatoriaController.php (64)
+in /opt/lampp/htdocs/directorioartistas/index.php (13)
+2013/05/30 18:24:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "[object Object]".' in /opt/lampp/framework/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/framework/web/CController.php(270): CController->missingAction('[object Object]')
+#1 /opt/lampp/framework/web/CWebApplication.php(282): CController->run('[object Object]')
+#2 /opt/lampp/framework/web/CWebApplication.php(141): CWebApplication->runController('convocatoria/[o...')
+#3 /opt/lampp/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/directorioartistas/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/directorioartistas/convocatoria/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria/registro
+---
