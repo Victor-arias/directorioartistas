@@ -10049,3 +10049,57 @@ REQUEST_URI=/directorioartistas/convocatoria/[object%20Object]
 HTTP_REFERER=http://localhost/directorioartistas/convocatoria/registro
 >>>>>>> ad877d43f687d2d201abc96a6dad448d5896d357
 ---
+2013/05/30 12:01:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/border-image.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('css/border-imag...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/css/border-image.png
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 12:02:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/border-image.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('css/border-imag...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/css/border-image.png
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 12:03:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/border-image.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('css/border-imag...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/css/border-image.png
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 12:04:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/border-image.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('css/border-imag...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/css/border-image.png
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 12:07:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/border-image.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('css/border-imag...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/css/border-image.png
+HTTP_REFERER=http://localhost/directorioartistas/
+---
+2013/05/30 12:07:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/border-image.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('css/border-imag...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/css/border-image.png
+HTTP_REFERER=http://localhost/directorioartistas/
+---

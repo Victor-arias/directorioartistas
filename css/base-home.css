@@ -2,13 +2,16 @@ body {
   background: 
     url(../images/pattern_inf.jpg) repeat-x,  
     url(../images/bg_flores.png) repeat;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   height: 100%;
 }
 html{
   height: 100%;
 }
-
+a{
+  color: #E73F56;
+}
 footer{
   background: url(../images/pattern_29.jpg) repeat-x bottom;
   bottom: 0;
@@ -36,6 +39,12 @@ p{
 .container{
   background: url(../images/flor_inf.png) no-repeat right 80%, url(../images/flor_sup.png) no-repeat;
   padding-bottom: 150px;
+}
+.container .span8{
+  border-image: url(../images/dot.png) 25% repeat;
+  -moz-border-image: url(../images/dot.png) 25% repeat;
+  -webkit-border-image: url(../images/dot.png) 25% repeat;
+  padding: 0 17% 50px;
 }
 .logo-medellin{
   margin-bottom: -130px;
