@@ -10175,3 +10175,876 @@ Stack trace:
 REQUEST_URI=/directorioartistas/[object%20Object]
 HTTP_REFERER=http://localhost/directorioartistas/convocatoria
 ---
+2013/05/30 15:31:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:38:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:39:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:39:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:39:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:39:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:40:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:40:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:40:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:40:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:40:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:41:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:45:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:45:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:45:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:45:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:46:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:48:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:49:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:49:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:50:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo_feria_medium.png".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('images/logo_fer...')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/images/logo_feria_medium.png
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:50:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:50:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:53:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:54:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:55:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:55:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:58:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:58:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 15:58:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:00:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:01:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:02:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:06:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:07:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:07:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:08:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:08:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:08:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:09:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:22:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:22:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:24:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:24:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:27:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:27:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:28:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:31:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:31:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:32:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:32:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:33:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:41:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:42:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:42:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:44:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:45:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:45:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 16:45:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:19:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:21:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:22:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:24:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:25:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:25:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:27:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:30:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:32:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:32:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:33:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:46:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 17:47:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 18:10:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 18:27:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 18:42:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 18:43:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 18:43:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
+2013/05/30 18:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "[object Object]".' in C:\xampp\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\framework\web\CWebApplication.php(141): CWebApplication->runController('[object Object]')
+#1 C:\xampp\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\directorioartistas\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/directorioartistas/[object%20Object]
+HTTP_REFERER=http://localhost/directorioartistas/convocatoria
+---
