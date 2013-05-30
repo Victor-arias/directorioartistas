@@ -10,6 +10,9 @@ class ConvocatoriaController extends Controller
 		$this->render('index');
 	}
 
+	public function actionFotoPerfil(){
+		
+	}
 	public function actionRegistro()
 	{
 		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)

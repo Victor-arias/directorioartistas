@@ -34,5 +34,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
       </div>
 
     </div> <!-- /container -->  
+    <input type="hidden" value="<?php echo Yii::app()->request->baseUrl ?>" id="PUBLIC_PATH"/>
   </body>
 </html>
