@@ -89,86 +89,6 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<div class="input-append">   
 							<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xlarge")) ?>           
 						</div>						
-					<div class="control-group">
-						<?php echo $form->label($formulario, "direccion", array("class"=>"control-label")) ?>
-						<div class="controls">
-							<div class="input-append">   
-								<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xxlarge")) ?>           
-								<span class="add-on"><i class="icon-lock"></i></span>
-							</div>						
-						</div>
-					</div>	
-					<legend>Información de la propuesta</legend>
-					<div class="control-group">
-						<?php echo $form->label($formulario, "area", array("class"=>"control-label")) ?>
-						<div class="controls">
-							<?php echo $form->radioButtonList($formulario, "area", array('1'=>'Música','2'=>'Danza',
-							                                                             '3'=>'Teatro', '4'=>'Otros'), array('class'=>'area')); ?>
-						</div>						
-					</div>
-					<div id="areaMusica" style="display:none">
-						<div class="control-group">
-							<label for="" class="control-label">Géneros:</label>
-							<div class="controls">
-								<select>
-									<option>Tropical</option>
-									<option>Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)</option>
-									<option>Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
-									<option>Clásica</option>
-									<option>Folclor</option>
-									<option>Jazz y músicas del mundo</option>
-									<option>Fusión</option>
-									<option>Experimental</option>
-									<option>Infantil</option>
-								</select>
-							</div>						
-						</div>
-						<label class="control-label" for="audio">Archivos de Audio</label>
-						<div class="controls">
-						    <div id="audio">
-						        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
-						        <noscript>Debes tener habilitado Javascript en tu navegador</noscript>
-						        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-						        <div class="row fileupload-buttonbar">
-						            <div class="span8">
-						                <!-- The fileinput-button span is used to style the file input field as button -->
-						                <span class="btn btn-success fileinput-button">
-						                    <i class="icon-plus icon-white"></i>
-						                    <span>Seleccionar archivos...</span>
-						                    <input id="archivoAudio" type="file" name="files[]" multiple>
-						                </span>              
-						                <span class="fileupload-loading"></span>
-						            </div>
-						            <!-- The global progress information -->
-						            <div class="span5 fileupload-progress fade">
-						                <!-- The global progress bar -->
-						                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-						                    <div class="bar" style="width:0%;"></div>
-						                </div>
-						                <!-- The extended global progress information -->
-						                <div class="progress-extended">&nbsp;</div>
-						            </div>
-						        </div>
-						        <!-- The table listing the files available for upload/download -->
-						        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-						    </div>
-						</div>							
-					</div>					
-					<div class="control-group">
-						<?php echo $form->label($formulario, "trayectoria", array("class"=>"control-label")) ?>
-						<div class="controls">
-							<?php echo $form->dropDownList($formulario, "trayectoria", array(
-							                                                                ""=>"Seleccione trayectoria",
-							                                                                "1"=>"De 1 a 5 Años",
-							                                                                "2"=>"De 5 a 10 Años",
-							                                                                "3"=>"De 10 Años en adelante")) ?>
-						</div>
-					</div>
-					<div class="control-group">
-						<?php echo $form->label($formulario, "numeroIntegrantes", array("class"=>"control-label")) ?>
-						<div class="controls">
-							<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"0")) ?>
-						</div>
 					</div>
 				</div>	
 				<legend>Información de la propuesta</legend>
@@ -180,6 +100,54 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						                                                             , array('separator'=>'' )); ?>
 					</div>						
 				</div>
+				<div id="areaMusica" style="display:none">
+					<div class="control-group">
+						<label for="" class="control-label">Géneros:</label>
+						<div class="controls">
+							<select>
+								<option>Tropical</option>
+								<option>Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)</option>
+								<option>Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
+								<option>Clásica</option>
+								<option>Folclor</option>
+								<option>Jazz y músicas del mundo</option>
+								<option>Fusión</option>
+								<option>Experimental</option>
+								<option>Infantil</option>
+							</select>
+						</div>						
+					</div>
+					<label class="control-label" for="audio">Archivos de Audio</label>
+					<div class="controls">
+					    <div id="audio">
+					        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
+					        <noscript>Debes tener habilitado Javascript en tu navegador</noscript>
+					        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+					        <div class="row fileupload-buttonbar">
+					            <div class="span8">
+					                <!-- The fileinput-button span is used to style the file input field as button -->
+					                <span class="btn btn-success fileinput-button">
+					                    <i class="icon-plus icon-white"></i>
+					                    <span>Seleccionar archivos...</span>
+					                    <input id="archivoAudio" type="file" name="files[]" multiple>
+					                </span>              
+					                <span class="fileupload-loading"></span>
+					            </div>
+					            <!-- The global progress information -->
+					            <div class="span5 fileupload-progress fade">
+					                <!-- The global progress bar -->
+					                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+					                    <div class="bar" style="width:0%;"></div>
+					                </div>
+					                <!-- The extended global progress information -->
+					                <div class="progress-extended">&nbsp;</div>
+					            </div>
+					        </div>
+					        <!-- The table listing the files available for upload/download -->
+					        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
+					    </div>
+					</div>							
+				</div>					
 				<div class="control-group">
 					<?php echo $form->label($formulario, "trayectoria", array("class"=>"control-label")) ?>
 					<div class="controls">
@@ -193,47 +161,16 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group">
 					<?php echo $form->label($formulario, "numeroIntegrantes", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini")) ?>
-					<div class="control-group">
-						<label class="control-label" for="fotoPerfil">Foto del perfil</label>
-						<div class="controls">
-						    <div id="fotoPerfil">
-						        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
-						        <noscript>Debes tener habilitado Javascript en tu navegador</noscript>
-						        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-						        <div class="row fileupload-buttonbar">
-						            <div class="span8">
-						                <!-- The fileinput-button span is used to style the file input field as button -->
-						                <span class="btn btn-success fileinput-button">
-						                    <i class="icon-plus icon-white"></i>
-						                    <span>Seleccionar archivos...</span>
-						                    <input id="archivoFotoPerfil" type="file" name="files[]" multiple>
-						                </span>              
-						                <span class="fileupload-loading"></span>
-						            </div>
-						            <!-- The global progress information -->
-						            <div class="span5 fileupload-progress fade">
-						                <!-- The global progress bar -->
-						                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-						                    <div class="bar" style="width:0%;"></div>
-						                </div>
-						                <!-- The extended global progress information -->
-						                <div class="progress-extended">&nbsp;</div>
-						            </div>
-						        </div>
-						        <!-- The table listing the files available for upload/download -->
-						        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-						    </div>
-						</div>
+						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"0")) ?>
 					</div>
 				</div>
 				<div class="control-group">
 					<?php echo $form->label($formulario, "resena", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xxlarge","rows"=>"20")) ?>
+						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"20")) ?>
 						<p class="help">Máximo 950 Caracteres</p>
 					</div>
-				</div>
+				</div>	
 				<div class="control-group">
 					<label class="control-label" for="fotoPerfil">Foto del perfil</label>
 					<div class="controls">
@@ -247,7 +184,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					                <span class="btn btn-success fileinput-button">
 					                    <i class="icon-plus icon-white"></i>
 					                    <span>Seleccionar archivos...</span>
-					                    <input type="file" name="files[]" multiple>
+					                    <input id="archivoFotoPerfil" type="file" name="files[]" multiple>
 					                </span>              
 					                <span class="fileupload-loading"></span>
 					            </div>
@@ -351,9 +288,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="form-actions">
 					<?php echo CHtml::submitButton('Enviar mi propuesta', array("class"=>"btn btn-large btn-primary")) ?>
 				</div>																																																																									
-			<?php $this->endWidget(); ?>	
-		</div>		
-	</div>
+		<?php $this->endWidget(); ?>	
+	</div>		
 </div>
 
 <script id="template-upload" type="text/x-tmpl">
