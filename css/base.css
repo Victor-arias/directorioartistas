@@ -89,7 +89,49 @@ header .fechas strong.next{
 header .fechas strong.prev{
   background: #c84055;
 }
+h2{
+  color: #777;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
 
+i.icon-privado{
+  background: url(../images/i_privado.png) no-repeat;
+  display: inline-block;
+  height: 34px;
+  text-indent: -9999px;
+  vertical-align: bottom;
+  width: 33px;
+}
+.controls input[type="text"],
+.controls input[type="email"],
+.controls input[type="password"],
+.controls input[type="number"],
+.controls select,
+.controls textarea{
+  background: #f7f7f7;
+  border: 2px solid #bdbdbd;
+  border-radius: 5px;
+}
+.control-group label.control-label{
+  color: #777777;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+legend{
+  border: none;
+  color: #548dcb;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+p{
+  vertical-align: bottom;
+}
 .bs-docs-example{
   border-image: url(../images/dot-grid.png) 6 repeat;
   -moz-border-image: url(../images/dot-grid.png) 6 repeat;
