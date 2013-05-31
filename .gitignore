@@ -1,2 +1,4 @@
-*.log
-files/*.*
+files/
+assets/
+protected/runtime/
+themes/classic/views/
