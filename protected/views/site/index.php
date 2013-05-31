@@ -11,9 +11,12 @@ $this->pageTitle=Yii::app()->name;
 		<h1 class="logo-feria">
 			<?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2013', array('width' => 400, 'height' => 363)) ?>
 		</h1>
-		<h2>Estamos preparando la Feria</h2>
-		<p>Si eres un artista, haces parte de una entidad cultural o agrupación local y te gustaría inscribir tu propuesta en el proceso de selección para la programación cultural y artística de la Feria de las Flores 2013, ingresa a 
-			<?php echo CHtml::link( 'este enlace', array('/convocatoria') ); ?>
+		<p class="btns">
+			<?php echo CHtml::link( 'Versión en español', array('/'), array('class'=> 'vespanol btn', 'target' => '_blank') ); ?> 
+			<?php echo CHtml::link( 'English version', array('/'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
+		</p>
+		<p>Si eres un artista, haces parte de una entidad cultural o agrupación local y te gustaría inscribir tu propuesta en el proceso de selección para la programación cultural y artística de la Feria de las Flores 2013, 
+			<?php echo CHtml::link( 'ingresa a este enlace', array('/convocatoria') ); ?>
 		</p>
 		<span id="fucking-flor"></span>
 	</div>
