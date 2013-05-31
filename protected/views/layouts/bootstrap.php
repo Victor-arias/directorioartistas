@@ -17,7 +17,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=1024">
-    <meta name="description" content="">
+    <meta name="description" content="Es el momento para presentar tu propuesta artística y hacer parte de la programación cultural de la Feria de las Flores 2013. Este es el formulario para inscribirte como solista, con una agrupación o un colectivo.">
     <meta name="author" content="telemedellín">
     
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
