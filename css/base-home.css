@@ -41,11 +41,12 @@ p{
   padding-bottom: 150px;
 }
 .container .span8{
-  border: 6px dotted #ccc;
+  /*border: 6px dotted #ccc;*/
   border-top: 0;
-  border-image: url(../images/dot.png) 6 repeat;
-  -moz-border-image: url(../images/dot.png) 6 repeat;
-  -webkit-border-image: url(../images/dot.png) 6repeat;
+  border-image: url(../images/dot-grid.png) 6 repeat;
+  -moz-border-image: url(../images/dot-grid.png) 6 repeat;
+  -webkit-border-image: url(../images/dot-grid.png) 6 repeat;
+  border-width: 6px;
   margin: 0 10%;
   padding: 0 7% 50px;
   position: relative;
@@ -54,13 +55,13 @@ p{
 .logo-medellin{
   background: url(../images/flor_sup.png) no-repeat;
   height: 209px;
-  margin-bottom: -180px;
+  margin-bottom: -220px;
   position: relative;
   text-align: right;
   z-index: 2;
 }
 .logo-feria{
-  margin-bottom: 30px;
+  margin: 40px 0;
   text-align: center;
 }
 #fucking-flor{

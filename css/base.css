@@ -13,9 +13,16 @@ html{
 a{
   color: #E73F56;
 }
+footer{
+  background: url(../images/pattern_inf.jpg) repeat-x bottom;
+  bottom: 0;
+  height: 20px;
+  width: 100%;
+  z-index: 2;
+}
 header{
   background: url(../images/flor_sup.png) no-repeat, url(../images/bg_header.png) no-repeat 420px 19px;
-  height: 300px;
+  height: 330px;
   margin: auto;
   /*margin-bottom: -180px;*/
   position: relative;
@@ -64,7 +71,7 @@ header .fechas strong{
   -moz-border-radius-bottomleft: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  bottom: 9px;
+  bottom: 39px;
   color: #fff;
   display: block;
   font-size: 15px;
@@ -82,6 +89,42 @@ header .fechas strong.next{
 header .fechas strong.prev{
   background: #c84055;
 }
+
+.bs-docs-example{
+  border-image: url(../images/dot-grid.png) 6 repeat;
+  -moz-border-image: url(../images/dot-grid.png) 6 repeat;
+  -webkit-border-image: url(../images/dot-grid.png) 6 repeat;
+  border-width: 4px;
+  margin: 20px auto;
+  padding: 15px;
+  text-align: center;
+}
+.bs-docs-example label.checkbox{
+  margin-bottom: 20px;
+}
+.bs-docs-example .btn{
+  background: #548dcb;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.bs-docs-example .btn:hover{
+  background: #c84055;
+}
+.bs-docs-example #aceptar{
+  float: none;
+  vertical-align: top;
+}
+
+.container{
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  padding: 20px 25px; 
+  position: relative;
+  width: 760px;
+}
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
@@ -91,6 +134,15 @@ header .fechas strong.prev{
   margin: 30px 0;
 }
 
+#fucking-flor{
+  background: url(../images/flor_inf.png) no-repeat;
+  bottom: -40px;
+  display: block;
+  height: 200px;
+  position: absolute;
+  right: -100px;
+  width: 200px;
+}
 
 /* Main marketing message and sign up button */
 .jumbotron {

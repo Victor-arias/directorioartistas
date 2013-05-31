@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row-fluid">
 	<div class="span12">
 		<p>
 			<stong>La Alcaldía de Medellín, a través de la Secretaría de Cultura Ciudadana, invita a los artistas, entidades y agrupaciones locales a inscribir sus propuestas en el proceso de selección para la programación de la Feria de las Flores 2013.</strong>
@@ -80,14 +80,13 @@
 		</p>
 	</div>
 </div>
-<div class="row">
+<div class="row-fluid">
 	<div class="span6 offset3">
-		<form class="bs-docs-example">
-      <label class="checkbox">	      	
-        <input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones
-      </label>
-  </form>			
-  <?php echo CHtml::link("Deseo Participar en la Convocatoria", array("convocatoria/registro"), 
-                         array("class"=>"btn btn-large btn-success", "id"=>"btnParticipar")) ?>
+		<form class="bs-docs-example" action="convocatoria/registro">
+	      	      	
+	        <label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
+	        <p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>
+  		</form>
 	</div>
+	<span id="fucking-flor"></span>
 </div>
