@@ -23,8 +23,8 @@ class ConvocatoriaController extends Controller
 								),
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/FotoPerfil/',
 				'max_number_of_files' => 1,
-				'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/',
-	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/',	
+				'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/',
+	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/',	
 				);
 		$messages = array(
         			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
@@ -48,6 +48,10 @@ class ConvocatoriaController extends Controller
 	}
 
 	public function actionFotos(){		
+		if(isset(Yii::app()->session['dir'])){
+			$dir = Yii::app()->session['dir'];
+		}
+
 		$data = array(
 				'image_versions' => array(
 								'thumbnail' => array(
@@ -56,8 +60,8 @@ class ConvocatoriaController extends Controller
 								),
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/fotos/',
 				'max_number_of_files' => 5,
-	            'upload_dir' => Yii::getPathOfAlias('webroot').'/files/hola/',
-	            'upload_url' => Yii::app()->request->baseUrl.'/files/hola/',				
+	            'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/',
+	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/'				
 				);
 		$messages = array(
         			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
@@ -82,7 +86,10 @@ class ConvocatoriaController extends Controller
 
 	public function actionRegistro()
 	{
-		Yii::app()->session['dir'] = md5(time());
+		if(!isset(Yii::app()->session['dir'])){
+			Yii::app()->session['dir'] = md5(time());
+		}
+		
 		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)
 		//o en su defecto los datos del formulario para validar
 		$objFormularioRegistro = new RegistroForm();
@@ -131,8 +138,7 @@ class ConvocatoriaController extends Controller
 		//OJO cuando se guarden los datos exitosamente se debe llevar a otra pantalla.
 		$this->pageTitle ="Registro Artístas";
 		$this->render('registro', array(
-				'formulario' => $objFormularioRegistro,
-				'sesion' => Yii::app()->session['dir']
+				'formulario' => $objFormularioRegistro
 			));
 	}
 
