@@ -10,8 +10,16 @@ class ConvocatoriaController extends Controller
 		$this->render('index');
 	}
 
-	public function actionFotoPerfil(){
-		
+	public function actionFotoPerfil(){		
+		$data = array(
+				'image_versions'=>array(
+								'thumbnail'=>array(
+											'max_width' => 200,'max_height' => 200
+											)
+								),
+				'script_url'=>Yii::app()->request->baseUrl.'/convocatoria/FotoPerfil/'
+				);
+		$upload_handler = new UploadHandler($data);		
 	}
 	public function actionRegistro()
 	{

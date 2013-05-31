@@ -4,7 +4,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 <div class="logo-medellin">
-	<?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) ?>
+	<?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) , CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') ) ?>
 </div>
 <div class="row">
 	<div class="span8">
@@ -13,6 +13,8 @@ $this->pageTitle=Yii::app()->name;
 		</h1>
 		<h2>Estamos preparando la Feria</h2>
 		<p>Si eres un artista, haces parte de una entidad cultural o agrupación local y te gustaría inscribir tu propuesta en el proceso de selección para la programación cultural y artística de la Feria de las Flores 2013, ingresa a 
-			<?php echo CHtml::link( 'este enlace', array('/convocatoria') ); ?></p>
+			<?php echo CHtml::link( 'este enlace', array('/convocatoria') ); ?>
+		</p>
+		<span id="fucking-flor"></span>
 	</div>
 </div>
