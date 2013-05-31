@@ -10,7 +10,11 @@ class ConvocatoriaController extends Controller
 		$this->render('index');
 	}
 
-	public function actionFotoPerfil(){		
+	public function actionFotoPerfil(){	
+		if(isset(Yii::app()->session['dir'])){
+			$dir = Yii::app()->session['dir'];
+		}
+		
 		$data = array(
 				'image_versions' => array(
 								'thumbnail' => array(
@@ -18,7 +22,9 @@ class ConvocatoriaController extends Controller
 											)
 								),
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/FotoPerfil/',
-				'max_number_of_files' => 1
+				'max_number_of_files' => 1,
+				'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/',
+	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/',	
 				);
 		$messages = array(
         			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
@@ -76,6 +82,7 @@ class ConvocatoriaController extends Controller
 
 	public function actionRegistro()
 	{
+		Yii::app()->session['dir'] = md5(time());
 		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)
 		//o en su defecto los datos del formulario para validar
 		$objFormularioRegistro = new RegistroForm();
@@ -124,7 +131,8 @@ class ConvocatoriaController extends Controller
 		//OJO cuando se guarden los datos exitosamente se debe llevar a otra pantalla.
 		$this->pageTitle ="Registro Artístas";
 		$this->render('registro', array(
-				'formulario'=> $objFormularioRegistro,
+				'formulario' => $objFormularioRegistro,
+				'sesion' => Yii::app()->session['dir']
 			));
 	}
 

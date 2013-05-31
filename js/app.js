@@ -1,5 +1,6 @@
 $(function() {
 	var PUBLIC_PATH = $("#PUBLIC_PATH").val();
+    var directorio = $("#dir").val();
 
 	$("#btnParticipar").click(function(e){		
 		if(!$("#aceptar").is(':checked')){
@@ -10,10 +11,10 @@ $(function() {
 
 
     // Initialize the jQuery File Upload widget:
-    $('#fotoPerfil').fileupload({
+    $('#fotoPerfil').fileupload({        
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: PUBLIC_PATH + '/convocatoria/fotoPerfil',
+        url: PUBLIC_PATH + '/convocatoria/fotoPerfil/',
         maxNumberOfFiles: 1,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
@@ -23,7 +24,7 @@ $(function() {
             acceptFileTypes: 'No se acepta este tipo de archivo',
             maxFileSize: 'El archivo es demsiado pesado',
             minFileSize: 'El archivo no tiene peso sofuciente'
-        }          
+        }
     });
 
     // Enable iframe cross-domain access via redirect option:
@@ -38,6 +39,7 @@ $(function() {
 
     // Load existing files:
     $('#fotoPerfil').addClass('fileupload-processing');
+    
     $.ajax({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
@@ -48,7 +50,7 @@ $(function() {
         $(this).removeClass('fileupload-processing');
     }).done(function (result) {
         $(this).fileupload('option', 'done')
-            .call(this, null, {result: result});
+            .call(this, null, {result: result}); 
     }); 
 
     $('#fotos').fileupload({

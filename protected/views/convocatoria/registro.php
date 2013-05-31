@@ -3,7 +3,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jquery.fileupload/jquery.fileupload-ui.css');
 ?>
 <div class="masthead">
-	<h3 class="muted">Logo Convocatoria</h3>
+	<h3 class="muted">Logo Convocatoria <?php echo $sesion ?></h3>
 </div>
 <div class="row-fluid">
 	<div class="row">
