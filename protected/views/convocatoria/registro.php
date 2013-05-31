@@ -130,7 +130,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="control-group">
 						<label class="control-label" for="fotoPerfil">Foto del perfil</label>
 						<div class="controls">
-						    <div id="fileupload">
+						    <div id="fotoPerfil">
 						        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
 						        <noscript>Debes tener habilitado Javascript en tu navegador</noscript>
 						        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -162,7 +162,33 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="control-group">
 						<label class="control-label" for="fotosAdicionales">Fotos Adicionales</label>
 						<div class="controls">
-							<input type="file" id="fotosAdicionales" />
+						    <div id="fotos">
+						        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
+						        <noscript>Debes tener habilitado Javascript en tu navegador</noscript>
+						        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+						        <div class="row fileupload-buttonbar">
+						            <div class="span8">
+						                <!-- The fileinput-button span is used to style the file input field as button -->
+						                <span class="btn btn-success fileinput-button">
+						                    <i class="icon-plus icon-white"></i>
+						                    <span>Seleccionar archivos...</span>
+						                    <input type="file" name="files[]" multiple>
+						                </span>              
+						                <span class="fileupload-loading"></span>
+						            </div>
+						            <!-- The global progress information -->
+						            <div class="span5 fileupload-progress fade">
+						                <!-- The global progress bar -->
+						                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+						                    <div class="bar" style="width:0%;"></div>
+						                </div>
+						                <!-- The extended global progress information -->
+						                <div class="progress-extended">&nbsp;</div>
+						            </div>
+						        </div>
+						        <!-- The table listing the files available for upload/download -->
+						        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
+						    </div>
 						</div>
 					</div>
 					<div class="control-group">
