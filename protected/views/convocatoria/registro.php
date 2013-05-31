@@ -97,7 +97,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<?php echo $form->radioButtonList($formulario, "area", array('1'=>'Música','2'=>'Danza',
 						                                                             '3'=>'Teatro', '4'=>'Otros')
-						                                                             , array('separator'=>'' )); ?>
+						                                                             , array('separator'=>'', 'class' => 'area' )); ?>
 					</div>						
 				</div>
 				<div id="areaMusica" style="display:none">
