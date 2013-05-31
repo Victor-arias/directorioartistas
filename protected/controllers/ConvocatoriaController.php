@@ -25,6 +25,7 @@ class ConvocatoriaController extends Controller
 				'max_number_of_files' => 1,
 				'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/',
 	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/',	
+	            'accept_file_types' => '/(\.|\/)(gif|jpe?g|png)$/i',
 				);
 		$messages = array(
         			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
@@ -61,7 +62,8 @@ class ConvocatoriaController extends Controller
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/fotos/',
 				'max_number_of_files' => 5,
 	            'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/',
-	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/'				
+	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/',
+	            'accept_file_types' => '/(\.|\/)(gif|jpe?g|png)$/i',				
 				);
 		$messages = array(
         			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
@@ -83,6 +85,44 @@ class ConvocatoriaController extends Controller
     			);		
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}
+
+	public function actionAudio(){		
+		if(isset(Yii::app()->session['dir'])){
+			$dir = Yii::app()->session['dir'];
+		}
+
+		$data = array(
+				'image_versions' => array(
+								'thumbnail' => array(
+											'max_width' => 200,'max_height' => 200
+											)
+								),
+				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/audio/',
+				'max_number_of_files' => 5,
+	            'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/',
+	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/audios/',
+	            'accept_file_types' => '/(\.|\/)(mp3)$/i',			
+				);
+		$messages = array(
+        			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
+        			2 => 'El archivo subido excede la directiva MAX_FILE_SIZE que se especificó en el formulario HTML',
+        			3 => 'El archivo subido fue sólo parcialmente cargado. Por favor cargarlo nuevamente.',
+        			4 => 'Ningún archivo fue subido',
+        			6 => 'La carpeta temporal no se encuentra',
+        			7 => 'Falló la escritura en el servidor',
+        			8 => 'Una extensión de PHP interrumpió la carga de archivos',
+        			'post_max_size' => 'El archivo subido excede la directiva post_max_size en php.ini',
+        			'max_file_size' => 'El archivo es demasiado pesado',
+        			'min_file_size' => 'El archivo no tiene el peso suficiente',
+        			'accept_file_types' => 'Tipo de archivo no permitido',
+        			'max_number_of_files' => 'Número máximo de archivos se superó. Solo se permite una foto de perfil',
+        			'max_width' => 'La imagen excede el ancho máximo',
+        			'min_width' => 'La imagen no tiene el ancho suficiente',
+        			'max_height' => 'La imagen excede el alto máximo',
+        			'min_height' => 'La imagen no tiene el alto suficiente'
+    			);		
+		$upload_handler = new UploadHandler($data, true, $messages);		
+	}	
 
 	public function actionRegistro()
 	{
