@@ -98,7 +98,7 @@ class ConvocatoriaController extends Controller
 											)
 								),
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/audio/',
-				'max_number_of_files' => 5,
+				'max_number_of_files' => 2,
 	            'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/',
 	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/audios/',
 	            'accept_file_types' => '/(\.|\/)(mp3)$/i',			

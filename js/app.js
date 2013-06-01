@@ -14,12 +14,15 @@ $(function() {
         switch (area) {
             case "1":
                 $("#areaMusica").show();
+                $("#areaOtros").hide();
             break;
             case "2":
                 $("#areaMusica").hide();
+                $("#areaOtros").hide();
             break;
             case "3":
                 $("#areaMusica").hide();
+                $("#areaOtros").hide();
             break;
             default:
                 $("#areaMusica").hide();
@@ -118,7 +121,7 @@ $(function() {
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
         url: PUBLIC_PATH + '/convocatoria/audio',
-        maxNumberOfFiles: 5,
+        maxNumberOfFiles: 2,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
         imageCrop: true,
