@@ -121,7 +121,7 @@ i.icon-privado{
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px;
+  padding: 7px 10px;
   text-shadow: none;
   text-transform: uppercase;
 }
@@ -134,7 +134,15 @@ i.icon-privado{
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px;
+  padding: 7px 10px;
+  text-shadow: none;
+}
+.controls .files .delete{
+  background: #c84055;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 7px 10px;
   text-shadow: none;
 }
 .control-group label.control-label{
@@ -188,6 +196,13 @@ p{
   position: relative;
   width: 760px;
 }
+
+#fotos,
+#fotoPerfil,
+#audio{
+  margin-left: -185px;
+}
+
 /* Custom container */
 .container-narrow {
   margin: 0 auto;

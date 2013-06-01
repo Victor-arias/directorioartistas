@@ -259,12 +259,6 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="fotosAdicionales">Archivos de Audio</label>
-					<div class="controls">
-						<input type="file" id="fotosAdicionales" />
-					</div>
-				</div>
-				<div class="control-group">
 					<?php echo $form->label($formulario, "twitter", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
