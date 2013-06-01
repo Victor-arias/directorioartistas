@@ -127,7 +127,7 @@ $(function() {
         imageCrop: true,
         acceptFileTypes: /(\.|\/)(mp3)$/i,
         messages: {
-            maxNumberOfFiles: 'Solo se permiten 2 archivos de audiol',
+            maxNumberOfFiles: 'Solo se permiten 2 archivos de audio',
             acceptFileTypes: 'No se acepta este tipo de archivo',
             maxFileSize: 'El archivo es demsiado pesado',
             minFileSize: 'El archivo no tiene peso sofuciente'

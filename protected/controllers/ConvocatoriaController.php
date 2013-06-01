@@ -172,7 +172,9 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->rider              = "rider";
 				$objPropuesta->convocatorias_id   = 1;
 				$objPropuesta->perfiles_id        = $idPerfil;
-				$objPropuesta->save(false);
+				if($objPropuesta->save(false)){
+					$this->redirect('convocatoria/exito');
+				}
 			}
 		}
 		//OJO cuando se guarden los datos exitosamente se debe llevar a otra pantalla.
@@ -180,6 +182,11 @@ class ConvocatoriaController extends Controller
 		$this->render('registro', array(
 				'formulario' => $objFormularioRegistro
 			));
+	}
+
+	public function actionExito(){
+		$this->pageTitle ="Registro Exitoso";
+		$this->render('exito');		
 	}
 
 	// Uncomment the following methods and override them if needed
