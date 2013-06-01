@@ -121,6 +121,7 @@ i.icon-privado{
   color: #fff;
   font-size: 16px;
   font-weight: bold;
+  margin-left: 20px;
   padding: 7px 10px;
   text-shadow: none;
   text-transform: uppercase;
@@ -201,6 +202,11 @@ p{
 #fotoPerfil,
 #audio{
   margin-left: -185px;
+}
+#RegistroForm_area input,
+#RegistroForm_area label{
+  float: left;
+  display: inline-block;
 }
 
 /* Custom container */
