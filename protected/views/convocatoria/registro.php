@@ -183,7 +183,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'resena')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "resena", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"20")) ?>
+						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"10")) ?>
 						<p class="help">Máximo 950 Caracteres</p>
 					</div>
 				</div>	
@@ -296,7 +296,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>					
 				<div class="form-actions">
-					<?php echo CHtml::submitButton('Enviar mi propuesta', array("class"=>"btn btn-large btn-primary")) ?>
+					<?php echo CHtml::submitButton('Enviar mi propuesta', array("class"=>"btn btn-large")) ?>
 				</div>																																																																									
 		<?php $this->endWidget(); ?>	
 	</div>		
