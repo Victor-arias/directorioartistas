@@ -12,9 +12,9 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 			array(
 				"htmlOptions"=>array("class"=>"form-horizontal")					
 				)); ?>
-				<?php echo $form->errorSummary(array($formulario), '', '', array('class' => 'alert alert-error')); ?>
+				<?php //echo $form->errorSummary(array($formulario), '', '', array('class' => 'alert alert-error')); ?>
 				<legend>Registro para identificarse en el portal</legend>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'username')) echo ' error' ?>" >
 					<?php echo $form->label($formulario, "username", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -23,7 +23,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'password')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "password", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -33,20 +33,20 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>
 				<legend>Propuesta</legend>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'nombrePropuesta')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "nombrePropuesta", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->textField($formulario, "nombrePropuesta") ?>
 					</div>
 				</div>	
 				<legend>Datos del Representante y Datos de Contacto</legend>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'representante')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "representante", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->textField($formulario, "representante") ?>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group  <?php if($form->error($formulario, 'cedula')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "cedula", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -55,7 +55,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>
 				</div>	
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'telefono')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "telefono", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -64,7 +64,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'celular')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "celular", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -73,7 +73,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'email')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "email", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -82,7 +82,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'direccion')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "direccion", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
@@ -92,7 +92,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>	
 				<legend>Información de la propuesta</legend>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'area')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "area", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->radioButtonList($formulario, "area", array('1'=>'Música','2'=>'Danza',
@@ -164,7 +164,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>					
 				</div>										
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'trayectoria')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "trayectoria", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->dropDownList($formulario, "trayectoria", array(
@@ -174,13 +174,13 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						                                                                "3"=>"De 10 Años en adelante")) ?>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'numeroIntegrantes')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "numeroIntegrantes", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"0")) ?>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'resena')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "resena", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"20")) ?>
@@ -251,7 +251,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					    </div>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'video')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "video", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
@@ -260,7 +260,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'twitter')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "twitter", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
@@ -269,7 +269,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'fb')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "fb", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
@@ -278,7 +278,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>
 					</div>
 				</div>	
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'web')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "web", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
@@ -287,7 +287,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'valor')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "valor", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
