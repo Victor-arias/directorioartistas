@@ -57,8 +57,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=directorioartistas',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'userdirectorio',
+			'password' => 'CNBDGFAA880519$',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
