@@ -1,8 +1,291 @@
 body {
-  padding-top: 20px;
-  padding-bottom: 40px;
+  background: 
+    url(../images/pattern_inf.jpg) repeat-x,  
+    url(../images/bg_flores.png) repeat;
+    color: #777;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+a{
+  color: #E73F56;
+}
+footer{
+  background: url(../images/pattern_inf.jpg) repeat-x bottom;
+  bottom: 0;
+  height: 20px;
+  width: 100%;
+  z-index: 2;
+}
+header{
+  background: url(../images/flor_sup.png) no-repeat, url(../images/bg_header.png) no-repeat 420px 19px;
+  height: 330px;
+  margin: auto;
+  /*margin-bottom: -180px;*/
+  position: relative;
+  width: 1050px;
+  z-index: 2;
+}
+header h1{
+  float: left;
+  margin: 10px 0 10px 240px;
+  width: 220px;
+}
+header .logos{
+  background: url(../images/header_logos.png) no-repeat left 20px;
+  float: right;
+  text-align: right;
+  width: 585px;
+}
+header .galleta{
+  margin-left: -80px;
+}
+header .fechas{
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: #ccc 1px 1px 10px;
+  clear: both;
+  color: #929292;
+  font-size: 13px;
+  margin: auto;
+  overflow: hidden;
+  width: 810px;
+}
+header .fechas div{
+  background: url(../images/dot-col.png) no-repeat right center;
+  float: left;
+  padding: 10px 0;
+  text-align: center;
+  width: 33%;
+}
+header .fechas div:last-child{
+  background: 0;
+}
+header .fechas strong{
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  bottom: 39px;
+  color: #fff;
+  display: block;
+  font-size: 15px;
+  margin: 0 3%;
+  padding: 7px 0; 
+  position: absolute;
+  width: 20%;
+}
+header .fechas strong.current{
+  background: #9ec065;
+}
+header .fechas strong.next{
+  background: #e9bf2d;
+}
+header .fechas strong.prev{
+  background: #c84055;
+}
+h2{
+  color: #777;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
 }
 
+i.icon-privado{
+  background: url(../images/i_privado.png) no-repeat;
+  display: inline-block;
+  height: 34px;
+  vertical-align: bottom;
+  width: 33px;
+}
+.controls input[type="text"],
+.controls input[type="email"],
+.controls input[type="password"],
+.controls input[type="number"],
+.controls select,
+.controls textarea{
+  background: #f7f7f7;
+  border: 2px solid #bdbdbd;
+  border-radius: 5px;
+}
+.controls .btn-success{
+  background: #9ec065;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 20px;
+  padding: 7px 10px;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+.controls .files a{
+  color: #9ec065;
+}
+.controls .files .start{
+  background: #9ec065;
+  text-transform: none;
+}
+.controls .files .cancel{
+  background: #e9bf2d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 7px 10px;
+  text-shadow: none;
+}
+.controls .files .delete{
+  background: #c84055;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 7px 10px;
+  text-shadow: none;
+}
+.controls .twitter,
+.controls .facebook{
+  background: url(../images/twitter.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 30px;
+  margin-right: 15px;
+  vertical-align: top;
+  width: 30px;
+}
+.controls .facebook{
+  background: url(../images/facebook.png) no-repeat;
+  background-size: contain;
+}
+.control-group{
+  border-radius: 5px;
+}
+.control-group .errorMessage{
+  font-size: 11px;
+  display: inline-block;
+  margin-left: 20px;
+}
+.control-group label.control-label{
+  color: #777777;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+.control-group label.control-label.error{
+  color: #fff;
+  padding-left: 10px;
+}
+.control-group.error{
+  background: #c84055;
+  color: #fff;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.form-actions{
+  background: none;
+  border: none;
+}
+.input-prepend .add-on{
+  padding: 5px;
+}
+legend{
+  border: none;
+  color: #548dcb;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+p{
+  vertical-align: bottom;
+}
+.bs-docs-example{
+  border-image: url(../images/dot-grid.png) 6 repeat;
+  -moz-border-image: url(../images/dot-grid.png) 6 repeat;
+  -webkit-border-image: url(../images/dot-grid.png) 6 repeat;
+  border-width: 4px;
+  margin: 20px auto;
+  padding: 15px;
+  text-align: center;
+}
+.bs-docs-example label.checkbox{
+  margin-bottom: 20px;
+}
+.bs-docs-example .btn,
+.form-actions .btn{
+  background: #548dcb;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.bs-docs-example .btn:hover,
+.form-actions .btn:hover{
+  background: #c84055;
+}
+.bs-docs-example #aceptar{
+  float: none;
+  vertical-align: top;
+}
+
+.container{
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  padding: 20px 25px; 
+  position: relative;
+  width: 760px;
+}
+
+
+#fotos,
+#fotoPerfil,
+#audio{
+  margin-left: -185px;
+}
+#RegistroForm_area input,
+#RegistroForm_area label{
+  float: left;
+  display: inline-block;
+}
+#RegistroForm_area label{
+  background: url(../images/areas.png) no-repeat;
+  background-position: top left;
+  height: 5px;
+  margin: 0 25px 0 -38px;
+  padding-top: 50px;
+  text-indent: -9999px;
+  width: 50px;
+}
+#RegistroForm_area label[for="RegistroForm_area_1"]{
+  background-position: -58px top ;
+}
+
+#RegistroForm_area label:nth-child(4){
+  background-position: -58px top ;
+}
+#RegistroForm_area label[for="RegistroForm_area_2"]{
+  background-position: -116px top ;
+}
+
+#RegistroForm_area label:nth-child(6){
+  background-position: -116px top ;
+}
+#RegistroForm_area label[for="RegistroForm_area_3"]{
+  background-position: -174px top ;
+}
+
+#RegistroForm_area label:nth-child(8){
+  background-position: -174px top ;
+}
+#RegistroForm_area input{
+  margin-top: 50px;
+  width: 25px;
+}
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
@@ -10,6 +293,16 @@ body {
 }
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+#fucking-flor{
+  background: url(../images/flor_inf.png) no-repeat;
+  bottom: -40px;
+  display: block;
+  height: 200px;
+  position: absolute;
+  right: -100px;
+  width: 200px;
 }
 
 /* Main marketing message and sign up button */

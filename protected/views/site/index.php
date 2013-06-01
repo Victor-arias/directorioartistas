@@ -3,18 +3,18 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
-
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<div class="logo-medellin">
+	<?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) , CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') ) ?>
+</div>
+<div class="row">
+	<div class="span8">
+		<h1 class="logo-feria">
+			<?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2013', array('width' => 400, 'height' => 363)) ?>
+		</h1>
+		<p class="btns">
+			<?php echo CHtml::link( 'Versión en español', array('/'), array('class'=> 'vespanol btn', 'target' => '_blank') ); ?> 
+			<?php echo CHtml::link( 'English version', array('/'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
+		</p>
+		<span id="fucking-flor"></span>
+	</div>
+</div>
