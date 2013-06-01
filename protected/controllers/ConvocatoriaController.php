@@ -201,6 +201,21 @@ class ConvocatoriaController extends Controller
 				}				
 				$directorio->close();
 
+				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/'); 
+				while ($archivo = $directorio->read()){
+					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
+						$url = Yii::app()->request->baseUrl.'/files/' . $dir . '/audios/'.$archivo; 
+						$objAudio = new Audios();
+						$titulo = explode('.',$archivo);
+						$objAudio->nombre = $titulo[0];
+						$objAudio->url = $url;
+						$objAudio->estado = 1;
+						$objAudio->perfiles_id = $idPerfil;		
+						$objAudio->save(false);									
+					}
+				}				
+				$directorio->close();				
+
 				$objPropuesta = new Propuestas();
 				$objPropuesta->nombre             = $objFormularioRegistro->nombrePropuesta;
 				$objPropuesta->representante      = $objFormularioRegistro->representante;
