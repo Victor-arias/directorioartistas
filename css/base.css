@@ -166,6 +166,9 @@ i.icon-privado{
   background: none;
   border: none;
 }
+.input-prepend .add-on{
+  padding: 5px;
+}
 legend{
   border: none;
   color: #548dcb;
@@ -225,7 +228,28 @@ p{
   float: left;
   display: inline-block;
 }
-
+#RegistroForm_area label{
+  background: url(../images/areas.png) no-repeat;
+  background-position: top left;
+  height: 5px;
+  margin: 0 25px 0 -38px;
+  padding-top: 50px;
+  text-indent: -9999px;
+  width: 50px;
+}
+#RegistroForm_area label:nth-child(4){
+  background-position: -58px top ;
+}
+#RegistroForm_area label:nth-child(6){
+  background-position: -116px top ;
+}
+#RegistroForm_area label:nth-child(8){
+  background-position: -174px top ;
+}
+#RegistroForm_area input{
+  margin-top: 50px;
+  width: 25px;
+}
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
