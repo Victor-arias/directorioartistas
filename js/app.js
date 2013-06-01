@@ -2,7 +2,7 @@ $(function() {
 	var PUBLIC_PATH = $("#PUBLIC_PATH").val();
     var directorio = $("#dir").val();
 
-	$("#btnParticipar").click(function(e){		
+	$("#terminos").click(function(e){		
 		if(!$("#aceptar").is(':checked')){
 			e.preventDefault();
 			alert("Debes leer y aceptar las condiciones.");

@@ -126,6 +126,10 @@ class ConvocatoriaController extends Controller
 
 	public function actionRegistro()
 	{
+		if(!isset($_POST['aceptar'])){
+			$this->redirect('index');
+		}
+
 		if(!isset(Yii::app()->session['dir'])){
 			Yii::app()->session['dir'] = md5(time());
 		}
