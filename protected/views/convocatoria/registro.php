@@ -14,7 +14,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				)); ?>
 				<?php echo $form->errorSummary(array($formulario), '', '', array('class' => 'alert alert-error')); ?>
 				<legend>Registro para identificarse en el portal</legend>
-				<div class="control-group">
+				<div class="control-group <?php if($form->error($formulario, 'username')) echo ' error' ?>" >
 					<?php echo $form->label($formulario, "username", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<i class="icon-privado">Privado</i>
