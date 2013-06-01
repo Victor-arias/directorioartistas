@@ -102,7 +102,6 @@ i.icon-privado{
   background: url(../images/i_privado.png) no-repeat;
   display: inline-block;
   height: 34px;
-  text-indent: -9999px;
   vertical-align: bottom;
   width: 33px;
 }
@@ -126,6 +125,9 @@ i.icon-privado{
   text-shadow: none;
   text-transform: uppercase;
 }
+.controls .files a{
+  color: #9ec065;
+}
 .controls .files .start{
   background: #9ec065;
   text-transform: none;
@@ -145,6 +147,28 @@ i.icon-privado{
   font-weight: bold;
   padding: 7px 10px;
   text-shadow: none;
+}
+.controls .twitter,
+.controls .facebook{
+  background: url(../images/twitter.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 30px;
+  margin-right: 15px;
+  vertical-align: top;
+  width: 30px;
+}
+.controls .facebook{
+  background: url(../images/facebook.png) no-repeat;
+  background-size: contain;
+}
+.control-group{
+  border-radius: 5px;
+}
+.control-group .errorMessage{
+  font-size: 11px;
+  display: inline-block;
+  margin-left: 20px;
 }
 .control-group label.control-label{
   color: #777777;
@@ -237,12 +261,24 @@ p{
   text-indent: -9999px;
   width: 50px;
 }
+#RegistroForm_area label[for="RegistroForm_area_1"]{
+  background-position: -58px top ;
+}
+
 #RegistroForm_area label:nth-child(4){
   background-position: -58px top ;
 }
+#RegistroForm_area label[for="RegistroForm_area_2"]{
+  background-position: -116px top ;
+}
+
 #RegistroForm_area label:nth-child(6){
   background-position: -116px top ;
 }
+#RegistroForm_area label[for="RegistroForm_area_3"]{
+  background-position: -174px top ;
+}
+
 #RegistroForm_area label:nth-child(8){
   background-position: -174px top ;
 }

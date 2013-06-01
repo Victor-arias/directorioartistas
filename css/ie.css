@@ -31,3 +31,31 @@ input.checkbox, input.radio {position:relative;top:.25em;}
 form.inline div, form.inline p {vertical-align:middle;}
 form.inline input.checkbox, form.inline input.radio, form.inline input.button, form.inline button {margin:0.5em 0;}
 button, input.button {position:relative;top:0.25em;}
+
+header .fechas strong.current{
+  left: 110px;
+}
+header .fechas strong.next{
+  left :380px;
+}
+header .fechas strong.prev{
+  left: 650px;
+}
+.bs-docs-example{
+	border: 2px dotted #ccc;
+}
+.control-group .errorMessage{
+  *display: inline;
+}
+#RegistroForm_area input,
+#RegistroForm_area label{
+  *float: none;
+  *display: inline;
+}
+#RegistroForm_area label{
+	*background: none;
+	*margin: 0;
+	*text-indent: 0;
+	*vertical-align: top;
+}
+
