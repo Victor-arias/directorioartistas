@@ -162,6 +162,10 @@ i.icon-privado{
   margin: 10px 0;
   padding: 10px 0;
 }
+.form-actions{
+  background: none;
+  border: none;
+}
 legend{
   border: none;
   color: #548dcb;
@@ -184,14 +188,16 @@ p{
 .bs-docs-example label.checkbox{
   margin-bottom: 20px;
 }
-.bs-docs-example .btn{
+.bs-docs-example .btn,
+.form-actions .btn{
   background: #548dcb;
   color: #ffffff;  
   font-size: 16px;
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
-.bs-docs-example .btn:hover{
+.bs-docs-example .btn:hover,
+.form-actions .btn:hover{
   background: #c84055;
 }
 .bs-docs-example #aceptar{
