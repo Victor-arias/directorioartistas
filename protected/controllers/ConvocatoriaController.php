@@ -126,7 +126,7 @@ class ConvocatoriaController extends Controller
 
 	public function actionRegistro()
 	{
-		if(!isset($_POST['aceptar'])){
+		if(!count($_POST)){
 			$this->redirect('index');
 		}
 
