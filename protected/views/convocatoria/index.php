@@ -155,7 +155,7 @@
 	        <input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones
 	      </label>
       </form>			
-      <?php echo CHtml::link("Deseo Participar en la Convocatoria", array("convocatoria/registro"), 
+      <?php echo CHtml::link("Deseo Participar en la Convocatoria", array("/convocatoria/registro"), 
                              array("class"=>"btn btn-large btn-success", "id"=>"btnParticipar")) ?>
 		</div>
 	</div>
