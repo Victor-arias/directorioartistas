@@ -13,20 +13,20 @@ $(function() {
         var area = $(this).val();
         switch (area) {
             case "1":
-                $("#areaMusica").show();
-                $("#areaOtros").hide();
+                $("#areaMusica").fadeIn("slow");
+                $("#areaOtros").fadeOut("slow");
             break;
             case "2":
-                $("#areaMusica").hide();
-                $("#areaOtros").hide();
+                $("#areaMusica").fadeOut("slow");
+                $("#areaOtros").fadeOut("slow");
             break;
             case "3":
-                $("#areaMusica").hide();
-                $("#areaOtros").hide();
+                $("#areaMusica").fadeOut("slow");
+                $("#areaOtros").fadeOut("slow");
             break;
             default:
-                $("#areaMusica").hide();
-                $("#areaOtros").show();
+                $("#areaMusica").fadeOut("slow");
+                $("#areaOtros").fadeIn("slow");
             break;
         }
     });
@@ -157,6 +157,16 @@ $(function() {
     }).done(function (result) {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
-    });         
+    });  
+
+
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+                break;
+            }
+        }
+    }       
  	
 });
