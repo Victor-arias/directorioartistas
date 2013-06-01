@@ -34,8 +34,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`usuarios` (
     REFERENCES `directorioartistas`.`roles` (`id` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-COMMENT = 'Usuarios registrados en la aplicación';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -46,8 +45,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`areas` (
   `nombre` VARCHAR(100) NOT NULL ,
   `estado` TINYINT NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) )
-ENGINE = InnoDB
-COMMENT = 'Áreas disponibles para la inscripción de perfiles artísitico /* comment truncated */ /*s (música, video, etc...)*/';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -74,8 +72,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`perfiles` (
     REFERENCES `directorioartistas`.`areas` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-COMMENT = 'Almacena los perfiles de los artistas';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -97,8 +94,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`fotos` (
     REFERENCES `directorioartistas`.`perfiles` (`id` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-COMMENT = 'Fotos asociadas al perfil';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -110,8 +106,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`redes` (
   `logo` VARCHAR(255) NOT NULL ,
   `estado` TINYINT NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) )
-ENGINE = InnoDB
-COMMENT = 'Redes sociales a vincular en un perfil';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -151,8 +146,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`convocatorias` (
   `fin_evaluacion` DATETIME NOT NULL ,
   `resultados` DATETIME NOT NULL ,
   PRIMARY KEY (`id`) )
-ENGINE = InnoDB
-COMMENT = 'Almacena las convocatorias para los artístas';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -191,8 +185,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`propuestas` (
     REFERENCES `directorioartistas`.`perfiles` (`id` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-COMMENT = 'Almacena las propuestas presentadas por los artístas a las c /* comment truncated */ /*onvocatorias*/';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -211,8 +204,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`audios` (
     REFERENCES `directorioartistas`.`perfiles` (`id` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-COMMENT = 'Audios asociados al perfil';
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -231,8 +223,7 @@ CREATE  TABLE IF NOT EXISTS `directorioartistas`.`videos` (
     REFERENCES `directorioartistas`.`perfiles` (`id` )
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-COMMENT = 'Fotos asociadas al perfil';
+ENGINE = InnoDB;
 
 USE `directorioartistas` ;
 
