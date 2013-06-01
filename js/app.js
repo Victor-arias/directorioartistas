@@ -7,6 +7,7 @@ $(function() {
         var numAudio = $("#audio .template-download:not('.ui-state-error')").length;
         var numPerfil = $("#fotoPerfil .template-download:not('.ui-state-error')").length;
         var numFotos = $("#fotos .template-download:not('.ui-state-error')").length;
+        var numRider = $("#rider .template-download:not('.ui-state-error')").length;
         var error = 0;
         var mensajeError = "";
         if($("#RegistroForm_area_0").is(':checked')){
@@ -22,9 +23,14 @@ $(function() {
         }
         
         if(numFotos < 1){
-            mensajeError += "Debes cargar una foto adicional";
+            mensajeError += "Debes cargar una foto adicional\n";
             error++;
-        }        
+        }
+
+        if(numRider < 1){
+            mensajeError += "Debes cargar un archivo Rider";
+            error++;
+        }
 
         if(error > 0){
             e.preventDefault();
@@ -183,6 +189,49 @@ $(function() {
         url: $('#audio').fileupload('option', 'url'),
         dataType: 'json',
         context: $('#audio')[0]
+    }).always(function (result) {
+        $(this).removeClass('fileupload-processing');
+    }).done(function (result) {
+        $(this).fileupload('option', 'done')
+            .call(this, null, {result: result});
+    });    
+
+
+    $('#rider').fileupload({
+        // Uncomment the following to send cross-domain cookies:
+        //xhrFields: {withCredentials: true},
+        url: PUBLIC_PATH + '/convocatoria/rider',
+        maxNumberOfFiles: 1,
+        previewMaxWidth: 200,
+        previewMaxHeight: 200,
+        imageCrop: true,   
+        acceptFileTypes: /(\.|\/)(pdf)$/i,  
+        messages: {
+            maxNumberOfFiles: 'Solo se permite un archivo Rider',
+            acceptFileTypes: 'No se acepta este tipo de archivo. Solo PDF',
+            maxFileSize: 'El archivo es demsiado pesado',
+            minFileSize: 'El archivo no tiene peso sofuciente'
+        }          
+    });
+
+    // Enable iframe cross-domain access via redirect option:
+    $('#rider').fileupload(
+        'option',
+        'redirect',
+        window.location.href.replace(
+            /\/[^\/]*$/,
+            '/cors/result.html?%s'
+        )
+    );
+
+    // Load existing files:
+    $('#rider').addClass('fileupload-processing');
+    $.ajax({
+        // Uncomment the following to send cross-domain cookies:
+        //xhrFields: {withCredentials: true},
+        url: $('#fotos').fileupload('option', 'url'),
+        dataType: 'json',
+        context: $('#rider')[0]
     }).always(function (result) {
         $(this).removeClass('fileupload-processing');
     }).done(function (result) {

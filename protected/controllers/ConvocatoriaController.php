@@ -124,6 +124,35 @@ class ConvocatoriaController extends Controller
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}	
 
+	public function actionRider(){		
+		if(isset(Yii::app()->session['dir'])){
+			$dir = Yii::app()->session['dir'];
+		}
+
+		$data = array(
+				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/rider/',
+				'max_number_of_files' => 1,
+	            'upload_dir' => Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/',
+	            'upload_url' => Yii::app()->request->baseUrl.'/files/' . $dir . '/rider/',
+	            'accept_file_types' => '/(\.|\/)(pdf)$/i',			
+				);
+		$messages = array(
+        			1 => 'El archivo subido excede la directiva upload_max_filesize en php.ini',
+        			2 => 'El archivo subido excede la directiva MAX_FILE_SIZE que se especificó en el formulario HTML',
+        			3 => 'El archivo subido fue sólo parcialmente cargado. Por favor cargarlo nuevamente.',
+        			4 => 'Ningún archivo fue subido',
+        			6 => 'La carpeta temporal no se encuentra',
+        			7 => 'Falló la escritura en el servidor',
+        			8 => 'Una extensión de PHP interrumpió la carga de archivos',
+        			'post_max_size' => 'El archivo subido excede la directiva post_max_size en php.ini',
+        			'max_file_size' => 'El archivo es demasiado pesado',
+        			'min_file_size' => 'El archivo no tiene el peso suficiente',
+        			'accept_file_types' => 'Tipo de archivo no permitido. Solo PDF',
+        			'max_number_of_files' => 'Número máximo de archivos se superó. Solo se permiten 1 archivo Rider',
+    			);		
+		$upload_handler = new UploadHandler($data, true, $messages);		
+	}	
+
 	public function actionRegistro()
 	{
 		if(!count($_POST)){
@@ -164,9 +193,11 @@ class ConvocatoriaController extends Controller
 
 				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'); 
 				while ($archivo = $directorio->read()){
-					$fotoPerfil = Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/'.$archivo; 
-					$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'.$archivo);
-					break;	
+					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){					
+						$fotoPerfil = Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/'.$archivo; 
+						$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'.$archivo);
+						break;	
+					}
 				}
 				
 				$directorio->close(); 
@@ -229,8 +260,19 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->resena             = $objFormularioRegistro->resena;
 				$objPropuesta->video              = $objFormularioRegistro->video;
 				$objPropuesta->estado             = 1;
-				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;
-				$objPropuesta->rider              = "rider";
+				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;	
+
+				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 
+				while ($archivo = $directorio->read()){
+					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
+						$archivoRider = Yii::app()->request->baseUrl.'/files/' . $dir . '/rider/'.$archivo; 
+						break;	
+					}
+				}
+				
+				$directorio->close(); 						
+
+				$objPropuesta->rider              = $archivoRider;
 				$objPropuesta->convocatorias_id   = 1;
 				$objPropuesta->perfiles_id        = $idPerfil;
 				if($objPropuesta->save(false)){
