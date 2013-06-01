@@ -188,6 +188,13 @@ p{
   position: relative;
   width: 760px;
 }
+
+#fotos,
+#fotoPerfil,
+#audio{
+  margin-left: -185px;
+}
+
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
