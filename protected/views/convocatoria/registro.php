@@ -193,7 +193,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'numeroIntegrantes')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "numeroIntegrantes", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"0")) ?>
+						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"1")) ?>
 						<?php echo $form->error($formulario, 'numeroIntegrantes') ?>
 					</div>
 				</div>
