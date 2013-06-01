@@ -105,15 +105,15 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<label for="" class="control-label">Géneros:</label>
 						<div class="controls">
 							<select>
-								<option>Tropical</option>
-								<option>Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)</option>
-								<option>Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
-								<option>Clásica</option>
-								<option>Folclor</option>
-								<option>Jazz y músicas del mundo</option>
-								<option>Fusión</option>
-								<option>Experimental</option>
-								<option>Infantil</option>
+								<option value="Tropical">Tropical</option>
+								<option value="Popular Tradicional">Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)</option>
+								<option value="Polular Urbana">Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
+								<option value="Popular Clásica">Clásica</option>
+								<option value="Folclor">Folclor</option>
+								<option value="Jazz y músicas del mundo">Jazz y músicas del mundo</option>
+								<option value="Fusión">Fusión</option>
+								<option value="Experimental">Experimental</option>
+								<option value="Infantil">Infantil</option>
 							</select>
 						</div>						
 					</div>
