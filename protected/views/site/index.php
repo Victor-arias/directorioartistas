@@ -15,6 +15,12 @@ $this->pageTitle=Yii::app()->name;
 			<?php echo CHtml::link( 'Versión en español', array('/'), array('class'=> 'vespanol btn', 'target' => '_blank') ); ?> 
 			<?php echo CHtml::link( 'English version', array('/'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
 		</p>
+<<<<<<< HEAD
+=======
+		<p>Si eres un artista, haces parte de una entidad cultural o agrupación local y te gustaría inscribir tu propuesta en el proceso de selección para la programación cultural y artística de la Feria de las Flores 2013, 
+			<?php echo CHtml::link( 'ingresa a este enlace', array('/convocatoria') ); ?>
+		</p>
+>>>>>>> 5cc8a19b6b71297cb6d1d9307be201b17ec8f356
 		<span id="fucking-flor"></span>
 	</div>
 </div>
