@@ -12,8 +12,8 @@ $this->pageTitle=Yii::app()->name;
 			<?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2013', array('width' => 400, 'height' => 363)) ?>
 		</h1>
 		<p class="btns">
-			<?php echo CHtml::link( 'Versión en español', array('/'), array('class'=> 'vespanol btn', 'target' => '_blank') ); ?> 
-			<?php echo CHtml::link( 'English version', array('/'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
+			<?php echo CHtml::link( 'Versión en español', CHtml::normalizeUrl('http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://cf0e664227426ce234d19280b809644c'), array('class'=> 'vespanol btn', 'target' => '_blank') ); ?> 
+			<?php echo CHtml::link( 'English version', CHtml::normalizeUrl('http://www.medellin.gov.co/irj/portal/medellinIngles?NavigationTarget=navurl://cfb1f305bb3c5e4b4f76d9a53b52254b'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
 		</p>
 		<span id="fucking-flor"></span>
 	</div>
