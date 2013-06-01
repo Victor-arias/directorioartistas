@@ -71,7 +71,6 @@
 		</ul>
 		
 		<h4>Aspectos Importantes</h4>
-
 		<p>
 			Esta es la primera vez que en la ciudad se realiza una selección artística de este tipo, donde los interesados podrán acceder a una inscripción en internet sin necesidad de imprimir soportes en papel o quemar discos. Esto, además de hacer un pequeño aporte al cuidado del planeta, debe significar ahorro de tiempo y dinero para los participantes, con la comodidad de no tener que desplazarse ni hacer filas para cumplir con la entrega.
 		</p>
