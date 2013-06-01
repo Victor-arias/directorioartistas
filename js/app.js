@@ -2,6 +2,37 @@ $(function() {
 	var PUBLIC_PATH = $("#PUBLIC_PATH").val();
     var directorio = $("#dir").val();
 
+    $("#yw0").submit(function(e){
+        
+        var numAudio = $("#audio .template-download:not('.ui-state-error')").length;
+        var numPerfil = $("#fotoPerfil .template-download:not('.ui-state-error')").length;
+        var numFotos = $("#fotos .template-download:not('.ui-state-error')").length;
+        var error = 0;
+        var mensajeError = "";
+        if($("#RegistroForm_area_0").is(':checked')){
+            if(numAudio < 2){
+                mensajeError += "Debes cargar 2 archivos de audio (.mp3)\n";
+                error++;
+            }
+        }
+
+        if(numPerfil < 1){
+            mensajeError += "Debes cargar una foto de perfil\n";
+            error++;
+        }
+        
+        if(numFotos < 1){
+            mensajeError += "Debes cargar una foto adicional";
+            error++;
+        }        
+
+        if(error > 0){
+            e.preventDefault();
+            alert(mensajeError);
+        }
+
+    });
+
 	$("#terminos").click(function(e){		
 		if(!$("#aceptar").is(':checked')){
 			e.preventDefault();
