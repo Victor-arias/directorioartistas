@@ -125,6 +125,18 @@ i.icon-privado{
   text-shadow: none;
   text-transform: uppercase;
 }
+.controls .files .start{
+  background: #9ec065;
+  text-transform: none;
+}
+.controls .files .cancel{
+  background: #e9bf2d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  text-shadow: none;
+}
 .control-group label.control-label{
   color: #777777;
   font-size: 16px;
