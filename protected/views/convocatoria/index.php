@@ -71,7 +71,6 @@
 		</ul>
 		
 		<h4>Aspectos Importantes</h4>
-
 		<p>
 			Esta es la primera vez que en la ciudad se realiza una selección artística de este tipo, donde los interesados podrán acceder a una inscripción en internet sin necesidad de imprimir soportes en papel o quemar discos. Esto, además de hacer un pequeño aporte al cuidado del planeta, debe significar ahorro de tiempo y dinero para los participantes, con la comodidad de no tener que desplazarse ni hacer filas para cumplir con la entrega.
 		</p>
@@ -79,6 +78,7 @@
 			La organización de la Feria de las Flores 2013 quiere invitar a los artistas a realizar este trámite con tiempo suficiente y a no dejarlo para último momento. El llamado es también a que todo el sector cultural se apropie de la plataforma y participe activamente con su inscripción.
 		</p>
 		</div>
+
 	</div>
 <div class="row-fluid">
 	<div class="span6 offset3">
