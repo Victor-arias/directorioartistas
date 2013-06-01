@@ -115,7 +115,7 @@ class ConvocatoriaController extends Controller
         			'max_file_size' => 'El archivo es demasiado pesado',
         			'min_file_size' => 'El archivo no tiene el peso suficiente',
         			'accept_file_types' => 'Tipo de archivo no permitido',
-        			'max_number_of_files' => 'Número máximo de archivos se superó. Solo se permite una foto de perfil',
+        			'max_number_of_files' => 'Número máximo de archivos se superó. Solo se permiten 2 archivos de audio',
         			'max_width' => 'La imagen excede el ancho máximo',
         			'min_width' => 'La imagen no tiene el ancho suficiente',
         			'max_height' => 'La imagen excede el alto máximo',

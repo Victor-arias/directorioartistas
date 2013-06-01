@@ -127,7 +127,7 @@ $(function() {
         imageCrop: true,
         acceptFileTypes: /(\.|\/)(mp3)$/i,
         messages: {
-            maxNumberOfFiles: 'Solo se permite una foto de perfil',
+            maxNumberOfFiles: 'Solo se permiten 2 archivos de audiol',
             acceptFileTypes: 'No se acepta este tipo de archivo',
             maxFileSize: 'El archivo es demsiado pesado',
             minFileSize: 'El archivo no tiene peso sofuciente'
@@ -157,16 +157,6 @@ $(function() {
     }).done(function (result) {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
-    });  
-
-
-    function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds){
-                break;
-            }
-        }
-    }       
+    });       
  	
 });
