@@ -152,6 +152,16 @@ i.icon-privado{
   font-weight: bold;
   text-align: left;
 }
+.control-group label.control-label.error{
+  color: #fff;
+  padding-left: 10px;
+}
+.control-group.error{
+  background: #c84055;
+  color: #fff;
+  margin: 10px 0;
+  padding: 10px 0;
+}
 legend{
   border: none;
   color: #548dcb;
