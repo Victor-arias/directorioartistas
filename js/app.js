@@ -16,13 +16,14 @@ $(function() {
                 $("#areaMusica").show();
             break;
             case "2":
-                alert("Danza");
+                $("#areaMusica").hide();
             break;
             case "3":
-                alert("Teatro");
+                $("#areaMusica").hide();
             break;
             default:
-                alert("Otro");
+                $("#areaMusica").hide();
+                $("#areaOtros").show();
             break;
         }
     });

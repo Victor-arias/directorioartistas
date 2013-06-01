@@ -147,7 +147,21 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
 					    </div>
 					</div>							
-				</div>					
+				</div>
+				<div id="areaOtros" style="display:none">
+					<div class="control-group">
+						<label for="" class="control-label">Seleccione:</label>
+						<div class="controls">
+							<select>
+								<option>Magia</option>
+								<option>Clown</option>
+								<option>Malabarismo</option>
+								<option>Mimos</option>
+								<option>Cuentería</option>
+							</select>
+						</div>						
+					</div>					
+				</div>										
 				<div class="control-group">
 					<?php echo $form->label($formulario, "trayectoria", array("class"=>"control-label")) ?>
 					<div class="controls">
