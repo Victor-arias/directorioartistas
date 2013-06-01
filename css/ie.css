@@ -44,6 +44,9 @@ header .fechas strong.prev{
 .bs-docs-example{
 	border: 2px dotted #ccc;
 }
+.control-group .errorMessage{
+  *display: inline;
+}
 #RegistroForm_area input,
 #RegistroForm_area label{
   *float: none;
@@ -55,3 +58,4 @@ header .fechas strong.prev{
 	*text-indent: 0;
 	*vertical-align: top;
 }
+
