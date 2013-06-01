@@ -13,6 +13,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				"htmlOptions"=>array("class"=>"form-horizontal")					
 				)); ?>
 				<?php //echo $form->errorSummary(array($formulario), '', '', array('class' => 'alert alert-error')); ?>
+			<fieldset>
 				<legend>Registro para identificarse en el portal</legend>
 				<div class="control-group <?php if($form->error($formulario, 'username')) echo ' error' ?>" >
 					<?php echo $form->label($formulario, "username", array("class"=>"control-label")) ?>
@@ -20,7 +21,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<i class="icon-privado">Privado</i>
 						<div class="input-append">    
 							<?php echo $form->textField($formulario, "username") ?>
-						</div>						
+						</div>
+						<?php echo $form->error($formulario, 'username') ?>						
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'password')) echo ' error' ?>">
@@ -32,6 +34,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>
 					</div>
 				</div>
+			</fieldset>
+			<fieldset>
 				<legend>Propuesta</legend>
 				<div class="control-group <?php if($form->error($formulario, 'nombrePropuesta')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "nombrePropuesta", array("class"=>"control-label")) ?>
@@ -90,7 +94,9 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 							<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xlarge")) ?>           
 						</div>						
 					</div>
-				</div>	
+				</div>
+			</fieldset>
+			<fieldset>	
 				<legend>Información de la propuesta</legend>
 				<div class="control-group <?php if($form->error($formulario, 'area')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "area", array("class"=>"control-label")) ?>
@@ -264,7 +270,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "twitter", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
-							<span class="add-on">t</span>
+							<span class="twitter">twitter</span>
 							<?php echo $form->textField($formulario, "twitter", array("class"=>"input-xlarge")) ?>
 						</div>
 					</div>
@@ -273,7 +279,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "fb", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
-							<span class="add-on">f</span>
+							<span class="facebook">facebook</span>
 							<?php echo $form->textField($formulario, "fb", array("class"=>"input-xlarge")) ?>
 						</div>
 					</div>
@@ -294,7 +300,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large')) ?>
 						</div>
 					</div>
-				</div>					
+				</div>
+			</fieldset>					
 				<div class="form-actions">
 					<?php echo CHtml::submitButton('Enviar mi propuesta', array("class"=>"btn btn-large")) ?>
 				</div>																																																																									
