@@ -55,7 +55,7 @@ class RegistroForm extends CFormModel
 		return array(
 			'username'=>'Nombre de Usuario',
 			'password'=>'Contraseña',
-			'nombrePropuesta'=>'Nombre',
+			'nombrePropuesta'=>'Nombre propuesta',
 			'representante'=>'Representante',
 			'cedula'=>'Cédula',
 			'telefono'=>'Teléfono Fijo',

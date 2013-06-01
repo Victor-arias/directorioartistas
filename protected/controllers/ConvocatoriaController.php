@@ -139,9 +139,12 @@ class ConvocatoriaController extends Controller
 		$objFormularioRegistro = new RegistroForm();
 		if(isset($_POST['RegistroForm'])){
 			$objFormularioRegistro->attributes = $_POST['RegistroForm'];
-			//var_dump($objFormularioRegistro);
-			//die();			
+			if(isset(Yii::app()->session['dir'])){
+				$dir = Yii::app()->session['dir'];
+			}			
+			
 			if($objFormularioRegistro->validate()){
+
 				$objUsuario = new Usuarios();
 				$objUsuario->username = $objFormularioRegistro->username;
 				$objUsuario->password = Bcrypt::hash($objFormularioRegistro->password);
@@ -158,6 +161,45 @@ class ConvocatoriaController extends Controller
 				$objPerfiles->areas_id    = $objFormularioRegistro->area;
 				$objPerfiles->save(false);
 				$idPerfil = $objPerfiles->getPrimaryKey();
+
+				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'); 
+				while ($archivo = $directorio->read()){
+					$fotoPerfil = Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/'.$archivo; 
+					$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'.$archivo);
+					break;	
+				}
+				
+				$directorio->close(); 
+
+				$objFotos = new Fotos();
+				$titulo = explode('.',$archivo);
+				$objFotos->titulo = $titulo[0];
+				$objFotos->src = $fotoPerfil;				
+				$objFotos->ancho = $imgData[0];
+				$objFotos->alto = $imgData[1];
+				$objFotos->es_perfil = 1;
+				$objFotos->estado = 1;
+				$objFotos->perfiles_id = $idPerfil;		
+				$objFotos->save(false);
+
+				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'); 
+				while ($archivo = $directorio->read()){
+					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
+						$foto = Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/'.$archivo; 
+						$objFotos = new Fotos();
+						$titulo = explode('.',$archivo);
+						$objFotos->titulo = $titulo[0];
+						$objFotos->src = $foto;
+						$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'.$archivo);
+						$objFotos->ancho = $imgData[0];
+						$objFotos->alto = $imgData[1];
+						$objFotos->es_perfil = 0;
+						$objFotos->estado = 1;
+						$objFotos->perfiles_id = $idPerfil;		
+						$objFotos->save(false);									
+					}
+				}				
+				$directorio->close();
 
 				$objPropuesta = new Propuestas();
 				$objPropuesta->nombre             = $objFormularioRegistro->nombrePropuesta;
