@@ -125,6 +125,9 @@ i.icon-privado{
   text-shadow: none;
   text-transform: uppercase;
 }
+.controls .files a{
+  color: #9ec065;
+}
 .controls .files .start{
   background: #9ec065;
   text-transform: none;
@@ -158,6 +161,14 @@ i.icon-privado{
 .controls .facebook{
   background: url(../images/facebook.png) no-repeat;
   background-size: contain;
+}
+.control-group{
+  border-radius: 5px;
+}
+.control-group .errorMessage{
+  font-size: 11px;
+  display: inline-block;
+  margin-left: 20px;
 }
 .control-group label.control-label{
   color: #777777;

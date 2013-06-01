@@ -32,6 +32,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<div class="input-append">      
 							<?php echo $form->passwordField($formulario, "password") ?>
 						</div>
+						<?php echo $form->error($formulario, 'password') ?>
 					</div>
 				</div>
 			</fieldset>
@@ -41,6 +42,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "nombrePropuesta", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->textField($formulario, "nombrePropuesta") ?>
+						<?php echo $form->error($formulario, 'nombrePropuesta') ?>
 					</div>
 				</div>	
 				<legend>Datos del Representante y Datos de Contacto</legend>
@@ -48,6 +50,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "representante", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->textField($formulario, "representante") ?>
+						<?php echo $form->error($formulario, 'representante') ?>
 					</div>
 				</div>
 				<div class="control-group  <?php if($form->error($formulario, 'cedula')) echo ' error' ?>">
@@ -56,7 +59,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<i class="icon-privado"></i>
 						<div class="input-append">   
 							<?php echo $form->textField($formulario, "cedula") ?>           
-						</div>						
+						</div>
+						<?php echo $form->error($formulario, 'cedula') ?>						
 					</div>
 				</div>	
 				<div class="control-group <?php if($form->error($formulario, 'telefono')) echo ' error' ?>">
@@ -65,7 +69,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<i class="icon-privado"></i>
 						<div class="input-append">              
 							<?php echo $form->textField($formulario, "telefono") ?>
-						</div>						
+						</div>
+						<?php echo $form->error($formulario, 'telefono') ?>						
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'celular')) echo ' error' ?>">
@@ -74,7 +79,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<i class="icon-privado"></i>
 						<div class="input-append">              
 							<?php echo $form->textField($formulario, "celular") ?>
-						</div>						
+						</div>
+						<?php echo $form->error($formulario, 'celular') ?>						
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'email')) echo ' error' ?>">
@@ -83,7 +89,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<i class="icon-privado"></i>
 						<div class="input-append">              
 							<?php echo $form->emailField($formulario, "email") ?>
-						</div>						
+						</div>
+						<?php echo $form->error($formulario, 'email') ?>						
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'direccion')) echo ' error' ?>">
@@ -92,7 +99,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<i class="icon-privado"></i>
 						<div class="input-append">   
 							<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xlarge")) ?>           
-						</div>						
+						</div>
+						<?php echo $form->error($formulario, 'direccion') ?>						
 					</div>
 				</div>
 			</fieldset>
@@ -104,7 +112,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<?php echo $form->radioButtonList($formulario, "area", array('1'=>'Música','2'=>'Danza',
 						                                                             '3'=>'Teatro', '4'=>'Otros')
 						                                                             , array('separator'=>'', 'class' => 'area' )); ?>
-					</div>						
+					</div>
+					<?php echo $form->error($formulario, 'area') ?>						
 				</div>
 				<div id="areaMusica" style="display:none">
 					<div class="control-group">
@@ -178,18 +187,21 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						                                                                "1"=>"De 1 a 5 Años",
 						                                                                "2"=>"De 5 a 10 Años",
 						                                                                "3"=>"De 10 Años en adelante")) ?>
+					<?php echo $form->error($formulario, 'trayectoria') ?>
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'numeroIntegrantes')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "numeroIntegrantes", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"0")) ?>
+						<?php echo $form->error($formulario, 'numeroIntegrantes') ?>
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'resena')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "resena", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"10")) ?>
+						<?php echo $form->error($formulario, 'resena') ?>
 						<p class="help">Máximo 950 Caracteres</p>
 					</div>
 				</div>	
@@ -264,6 +276,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 							<span class="add-on">http://</span>
 							<?php echo $form->textField($formulario, "video", array("class"=>"input-xlarge")) ?>    
 						</div>
+						<?php echo $form->error($formulario, 'video') ?>
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'twitter')) echo ' error' ?>">
@@ -273,6 +286,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 							<span class="twitter"></span>
 							<?php echo $form->textField($formulario, "twitter", array("class"=>"input-xlarge")) ?>
 						</div>
+						<?php echo $form->error($formulario, 'twitter') ?>
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'fb')) echo ' error' ?>">
@@ -282,6 +296,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 							<span class="facebook"></span>
 							<?php echo $form->textField($formulario, "fb", array("class"=>"input-xlarge")) ?>
 						</div>
+						<?php echo $form->error($formulario, 'fb') ?>
 					</div>
 				</div>	
 				<div class="control-group <?php if($form->error($formulario, 'web')) echo ' error' ?>">
@@ -299,6 +314,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<div class="input-prepend">              
 							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large')) ?>
 						</div>
+						<?php echo $form->error($formulario, 'valor') ?>
 					</div>
 				</div>
 			</fieldset>					
