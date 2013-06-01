@@ -6,7 +6,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 	<div class="span12">
 		<h2>Inscripción de Artistas para Programación de la Feria de las Flores</h2>
 		<p>
-			Los campos con el ícono <i class="icon-privado">Privado</i> no son visibles al público, sólo serán tenidos en cuenta internamente para el proceso de selección, evaluación y contacto
+			Los campos con el ícono <i class="icon-privado"></i> no son visibles al público, sólo serán tenidos en cuenta internamente para el proceso de selección, evaluación y contacto
 		</p>			
 		<?php $form = $this->beginWidget('CActiveForm',
 			array(
@@ -18,7 +18,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'username')) echo ' error' ?>" >
 					<?php echo $form->label($formulario, "username", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">    
 							<?php echo $form->textField($formulario, "username") ?>
 						</div>
@@ -28,7 +28,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'password')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "password", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">      
 							<?php echo $form->passwordField($formulario, "password") ?>
 						</div>
@@ -53,7 +53,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group  <?php if($form->error($formulario, 'cedula')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "cedula", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">   
 							<?php echo $form->textField($formulario, "cedula") ?>           
 						</div>						
@@ -62,7 +62,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'telefono')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "telefono", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">              
 							<?php echo $form->textField($formulario, "telefono") ?>
 						</div>						
@@ -71,7 +71,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'celular')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "celular", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">              
 							<?php echo $form->textField($formulario, "celular") ?>
 						</div>						
@@ -80,7 +80,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'email')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "email", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">              
 							<?php echo $form->emailField($formulario, "email") ?>
 						</div>						
@@ -89,7 +89,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'direccion')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "direccion", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<i class="icon-privado">Privado</i>
+						<i class="icon-privado"></i>
 						<div class="input-append">   
 							<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xlarge")) ?>           
 						</div>						
@@ -270,7 +270,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "twitter", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
-							<span class="twitter">twitter</span>
+							<span class="twitter"></span>
 							<?php echo $form->textField($formulario, "twitter", array("class"=>"input-xlarge")) ?>
 						</div>
 					</div>
@@ -279,7 +279,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "fb", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
-							<span class="facebook">facebook</span>
+							<span class="facebook"></span>
 							<?php echo $form->textField($formulario, "fb", array("class"=>"input-xlarge")) ?>
 						</div>
 					</div>

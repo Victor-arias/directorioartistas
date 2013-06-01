@@ -102,7 +102,6 @@ i.icon-privado{
   background: url(../images/i_privado.png) no-repeat;
   display: inline-block;
   height: 34px;
-  text-indent: -9999px;
   vertical-align: bottom;
   width: 33px;
 }
@@ -153,7 +152,6 @@ i.icon-privado{
   display: inline-block;
   height: 30px;
   margin-right: 15px;
-  text-indent: -9999px;
   vertical-align: top;
   width: 30px;
 }
