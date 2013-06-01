@@ -82,7 +82,7 @@
 </div>
 <div class="row-fluid">
 	<div class="span6 offset3">
-		<form class="bs-docs-example" action="convocatoria/registro" method="post">
+		<form class="bs-docs-example" action="registro" method="post">
 	      	      	
 	        <label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
 	        <p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>

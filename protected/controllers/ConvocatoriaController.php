@@ -173,7 +173,7 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->convocatorias_id   = 1;
 				$objPropuesta->perfiles_id        = $idPerfil;
 				if($objPropuesta->save(false)){
-					$this->redirect('convocatoria/exito');
+					$this->redirect('exito');
 				}
 			}
 		}
