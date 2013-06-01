@@ -127,8 +127,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					            <div class="span8">
 					                <!-- The fileinput-button span is used to style the file input field as button -->
 					                <span class="btn btn-success fileinput-button">
+					                    <span>Añadir archivos</span>
 					                    <i class="icon-plus icon-white"></i>
-					                    <span>Seleccionar archivos...</span>
 					                    <input id="archivoAudio" type="file" name="files[]" multiple>
 					                </span>              
 					                <span class="fileupload-loading"></span>
@@ -182,8 +182,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					            <div class="span8">
 					                <!-- The fileinput-button span is used to style the file input field as button -->
 					                <span class="btn btn-success fileinput-button">
+					                    <span>Añadir archivos</span>
 					                    <i class="icon-plus icon-white"></i>
-					                    <span>Seleccionar archivos...</span>
 					                    <input id="archivoFotoPerfil" type="file" name="files[]" multiple>
 					                </span>              
 					                <span class="fileupload-loading"></span>
@@ -214,8 +214,8 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					            <div class="span8">
 					                <!-- The fileinput-button span is used to style the file input field as button -->
 					                <span class="btn btn-success fileinput-button">
+					                    <span>Añadir archivos</span>
 					                    <i class="icon-plus icon-white"></i>
-					                    <span>Seleccionar archivos...</span>
 					                    <input type="file" name="files[]" multiple>
 					                </span>              
 					                <span class="fileupload-loading"></span>
@@ -312,7 +312,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
         </td>
         <td>
             {% if (!o.files.error && !i && !o.options.autoUpload) { %}
-                <button class="btn btn-primary start">
+                <button class="btn btn-success start">
                     <i class="icon-upload icon-white"></i>
                     <span>Cargar</span>
                 </button>
