@@ -311,6 +311,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'valor')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "valor", array("class"=>"control-label")) ?>
 					<div class="controls">
+						<i class="icon-privado"></i>
 						<div class="input-prepend">              
 							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large')) ?>
 						</div>
