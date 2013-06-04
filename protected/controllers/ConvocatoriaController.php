@@ -176,7 +176,7 @@ class ConvocatoriaController extends Controller
 
 				$objUsuario = new Usuarios();
 				$objUsuario->username = $objFormularioRegistro->username;
-				$objUsuario->password = $objFormularioRegistro->password;//Bcrypt::hash($objFormularioRegistro->password);
+				$objUsuario->password = Bcrypt::hash($objFormularioRegistro->password);
 				$objUsuario->estado   = 1;
 				$objUsuario->roles_id = 1;
 				$objUsuario->save(false);
