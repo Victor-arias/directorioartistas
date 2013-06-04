@@ -104,7 +104,7 @@ class Propuestas extends CActiveRecord
 			'video' => 'Video',
 			'estado' => 'Estado',
 			'valor_presentacion' => 'Valor Presentacion',
-			'rider' => 'Rider técnico',
+			'rider' => 'Rider técnico: PDF',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'convocatorias_id' => 'Convocatorias',

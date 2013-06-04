@@ -68,6 +68,7 @@ class RegistroForm extends CFormModel
 			'resena'=>'Reseña',
 			'video'=>'Video',
 			'twitter'=>"Twitter",
+			'rider' => 'Rider técnico: PDF',
 			'fb'=>'FaceBook',
 			'web'=>'Sitio Web',
 			'valor'=>'Valor Presentación'

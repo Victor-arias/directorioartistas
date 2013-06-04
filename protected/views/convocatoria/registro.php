@@ -133,7 +133,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						</div>						
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="audio">Archivos de Audio</label>
+						<label class="control-label" for="audio">Archivos de Audio: MP3</label>
 						<div class="controls">
 						    <div id="audio">
 						        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
@@ -206,7 +206,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>	
 				<div class="control-group">
-					<label class="control-label" for="fotoPerfil">Foto del perfil</label>
+					<label class="control-label" for="fotoPerfil">Foto del perfil: JPG o PNG</label>
 					<div class="controls">
 					    <div id="fotoPerfil">
 					        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
@@ -238,7 +238,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="fotosAdicionales">Fotos Adicionales</label>
+					<label class="control-label" for="fotosAdicionales">Fotos Adicionales: JPG o PNG</label>
 					<div class="controls">
 					    <div id="fotos">
 					        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
