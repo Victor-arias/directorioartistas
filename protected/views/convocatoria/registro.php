@@ -319,7 +319,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="rider">Rider técnico</label>
+					<label class="control-label" for="rider">Rider técnico: PDF</label>
 					<div class="controls">
 					    <div id="rider">
 					        <!-- Mensaje cuando el Javascript se encuentra deshabilitado -->
