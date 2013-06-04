@@ -75,7 +75,7 @@
 	</div>
 <div class="row-fluid">
 	<div class="span6 offset3">
-		<?php echo CHtml::beginForm(array("convocatoria/registro", "POST", array("class"=>"bs-docs-example"))) ?>
+		<?php echo CHtml::beginForm(array("convocatoria/registro"), "POST", array("class"=>"bs-docs-example")) ?>
 	        <label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
 	        <p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>
   		<?php echo CHtml::endForm(); ?>
