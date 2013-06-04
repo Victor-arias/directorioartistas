@@ -50,7 +50,7 @@
 		</p>
 		<ul>
 			<li>
-				<strong>Parque Cultural Nocturno:</strong> Se realizará en el Parque de los Pies Descalzos durante cinco noches. Allí se programarán <strong>diez artistas locales</strong> (dos por cada día).
+				<strong>Parque Cultural Nocturno:</strong> Se realizará en el Parque de los Pies Descalzos durante cinco noches. Allí se programarán <strong>ocho artistas locales</strong> (dos por cada día).
 			</li>
 			<li>
 				<strong>Festival de la Trova:</strong> Se realizarán dos semifinales en la Plaza Gardel, del aeropuerto Olaya Herrera, y la gran final en el Parque de los Deseos. Para estas tres jornadas se programarán en total <strong>seis artístas locales</strong>, dos por cada día.
@@ -59,16 +59,16 @@
 				<strong>Zona que Suena:</strong> Se realizará en Carabobo Norte, entre Parque Explora y el Jardín Botánico. Contará con la participación de ocho agrupaciones musicales, dos elencos de danza, diez propuestas artísticas entre clown, malabarismo, magia, circo y cuenteros; para un total de <strong>20 artistas locales programados</strong>.
 			</li>
 			<li>
-				<strong>Escenarios artísticos culturales:</strong> Son cuatro escenarios ubicados en los corregimientos de San Cristóbal, Altavista, San Sebastíán de Palmitas y San Antonio de Prado. En cada uno se programarán: una comparsa, una obra de teatro, un elenco de danza y cuatro agrupaciones musicales de diferentes géneros. En total, serán <strong>25 artistas locales programados</strong> en éstos escenarios.
+				<strong>Escenarios artísticos culturales:</strong> Son cuatro escenarios ubicados en los corregimientos de San Cristóbal, Altavista, San Sebastíán de Palmitas, Santa Elena y San Antonio de Prado. En cada uno se programarán: una comparsa, una obra de teatro, un elenco de danza y tres agrupaciones musicales de diferentes géneros. En total, serán <strong>30 artistas locales programados</strong> en éstos escenarios.
 			</li>
 		</ul>
 		
 		<h4>Aspectos Importantes</h4>
 		<p>
-			Esta es la primera vez que en la ciudad se realiza una selección artística de este tipo, donde los interesados podrán acceder a una inscripción en internet sin necesidad de imprimir soportes en papel o quemar discos. Esto, además de hacer un pequeño aporte al cuidado del planeta, debe significar ahorro de tiempo y dinero para los participantes, con la comodidad de no tener que desplazarse ni hacer filas para cumplir con la entrega.
+			Los interesados podrán acceder a una inscripción en internet sin necesidad de imprimir soportes en papel o quemar discos. Esto, además de hacer un pequeño aporte al cuidado del planeta, debe significar ahorro de tiempo y dinero para los participantes, con la comodidad de no tener que desplazarse ni hacer filas para cumplir con la entrega.
 		</p>
 		<p>
-			La organización de la Feria de las Flores 2013 quiere invitar a los artistas a realizar este trámite con tiempo suficiente y a no dejarlo para último momento. El llamado es también a que todo el sector cultural se apropie de la plataforma y participe activamente con su inscripción.
+			La organización de la Feria de las Flores 2013 quiere invitar a los artistas a realizar este trámite con tiempo suficiente y a no dejarlo para último momento. El llamado es también a que todo el sector cultural se apropie de la plataforma y participe activamente con su inscripción.   
 		</p>
 	
 		</div>
