@@ -214,7 +214,24 @@ p{
   padding: 15px;
   text-align: center;
 }
+
+.bs {
+  /* border-image: url(../images/dot-grid.png) 6 repeat;
+   -moz-border-image: url(../images/dot-grid.png) 6 repeat;
+  -webkit-border-image: url(../images/dot-grid.png) 6 repeat;
+  border-width: 4px; 
+  -moz-border-width: 4px;
+  -webkit-border-width: 4px;  */
+  margin: 20px auto;
+  padding: 15px;
+  text-align: center;
+}
+
 .bs-docs-example label.checkbox{
+  margin-bottom: 20px;
+}
+
+.bs label.checkbox{
   margin-bottom: 20px;
 }
 .bs-docs-example .btn,
@@ -225,10 +242,26 @@ p{
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+
+.bs .btn,
+.form-actions .btn{
+  background: #548dcb;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
 .bs-docs-example .btn:hover,
 .form-actions .btn:hover{
   background: #c84055;
 }
+
+.bs .btn:hover,
+.form-actions .btn:hover{
+  background: #c84055;
+}
+
 .bs-docs-example #aceptar{
   float: none;
   vertical-align: top;
@@ -328,3 +361,39 @@ p{
 .marketing p + h4 {
   margin-top: 28px;
 }
+
+/* agregado por Selene */
+
+.btn-directorio {
+  padding: 11px 19px;
+  font-size: 17.5px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+		  background-color:#548dcb !important;
+		  width:312px !important;
+		  
+		 
+}
+
+
+/* .btn-directorio:hover {
+		  background-color:#386fac !important;
+	 
+} */
+
+.btn-directorio:disabled {
+		  background-color:#386fac !important;
+	 
+} 
+
+.img_directorio {
+		  background-image:url(../images/directorio.png) !important;
+		  width:32px;
+		  height:32px;
+		  position:absolute;
+		  left:265px;
+		  bottom:60px;
+		  
+}
+
