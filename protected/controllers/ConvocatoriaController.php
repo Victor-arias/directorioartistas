@@ -302,7 +302,7 @@ class ConvocatoriaController extends Controller
 	}
 
 	public function actionExito(){
-		Yii::app()->destroySession('dir');
+		CHttpSession::destroySession('dir');
 		$this->pageTitle ="Registro Exitoso";
 		$this->render('exito');		
 	}
