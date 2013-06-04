@@ -15,11 +15,9 @@ $this->pageTitle=Yii::app()->name;
 			<?php echo CHtml::link( 'Versión en español', CHtml::normalizeUrl('http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://cf0e664227426ce234d19280b809644c'), array('class'=> 'vespanol btn', 'target' => '_blank') ); ?> 
 			<?php echo CHtml::link( 'English version', CHtml::normalizeUrl('http://www.medellin.gov.co/irj/portal/medellinIngles?NavigationTarget=navurl://cfb1f305bb3c5e4b4f76d9a53b52254b'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
 		</p>
-
 		<p>Si eres un artista, haces parte de una entidad cultural o agrupación local y te gustaría inscribir tu propuesta en el proceso de selección para la programación cultural y artística de la Feria de las Flores 2013, 
 			<?php echo CHtml::link( 'ingresa a este enlace', array('/convocatoria') ); ?>
 		</p>
-
 		<span id="fucking-flor"></span>
 	</div>
 </div>

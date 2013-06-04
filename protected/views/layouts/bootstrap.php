@@ -35,7 +35,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
 'height' => 197)), CHtml::normalizeUrl('/') ) ?></h1>
       <div class="logos">
         <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_bureau_medium.png', 'Medellín convention & visitors bureau', array('width' => 100, 'height' => 69)) , CHtml::normalizeUrl('http://www.medellinconventionbureau.com'), array('target' => '_blank') )  ?>
-        <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_alcaldia_medium.png', 'Alcaldía de Medellín', array('width' => 100, 'height' => 69)) , CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') ) ?>
+        <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_alcaldia_medium.png', 'Alcaldía de Medellín', array('width' => 100, 'height' => 69)) , 
+CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') ) ?>
         <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) , CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank', 'class' => 'galleta') ) ?>
       </div>
       <div class="fechas">
