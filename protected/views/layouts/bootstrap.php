@@ -41,7 +41,7 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
       </div>
       <div class="fechas">
         <div>
-          1 de Junio al 30 de Junio de 2013
+          4 de Junio al 30 de Junio de 2013
           <strong class="current">Convocatoria</strong>
         </div>
         <div>
