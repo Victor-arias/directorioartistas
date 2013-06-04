@@ -191,6 +191,18 @@ class ConvocatoriaController extends Controller
 				$objPerfiles->save(false);
 				$idPerfil = $objPerfiles->getPrimaryKey();
 
+				$objRedesHasPerfil = new RedesHasPerfiles();
+				$objRedesHasPerfil->redes_id = 1;
+				$objRedesHasPerfil->perfiles_id = $idPerfil;
+				$objRedesHasPerfil->url = $objFormularioRegistro->twitter;
+				$objRedesHasPerfil->save(false);
+
+				$objRedesHasPerfil = new RedesHasPerfiles();
+				$objRedesHasPerfil->redes_id = 2;
+				$objRedesHasPerfil->perfiles_id = $idPerfil;
+				$objRedesHasPerfil->url = $objFormularioRegistro->fb;				
+				$objRedesHasPerfil->save(false);
+
 				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'); 
 				while ($archivo = $directorio->read()){
 					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){					
@@ -231,21 +243,22 @@ class ConvocatoriaController extends Controller
 					}
 				}				
 				$directorio->close();
-
-				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/'); 
-				while ($archivo = $directorio->read()){
-					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
-						$url = Yii::app()->request->baseUrl.'/files/' . $dir . '/audios/'.$archivo; 
-						$objAudio = new Audios();
-						$titulo = explode('.',$archivo);
-						$objAudio->nombre = $titulo[0];
-						$objAudio->url = $url;
-						$objAudio->estado = 1;
-						$objAudio->perfiles_id = $idPerfil;		
-						$objAudio->save(false);									
-					}
+				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/')){
+					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/'); 
+					while ($archivo = $directorio->read()){
+						if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
+							$url = Yii::app()->request->baseUrl.'/files/' . $dir . '/audios/'.$archivo; 
+							$objAudio = new Audios();
+							$titulo = explode('.',$archivo);
+							$objAudio->nombre = $titulo[0];
+							$objAudio->url = $url;
+							$objAudio->estado = 1;
+							$objAudio->perfiles_id = $idPerfil;		
+							$objAudio->save(false);									
+						}
+					}				
+					$directorio->close();
 				}				
-				$directorio->close();				
 
 				$objPropuesta = new Propuestas();
 				$objPropuesta->nombre             = $objFormularioRegistro->nombrePropuesta;
@@ -260,7 +273,8 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->resena             = $objFormularioRegistro->resena;
 				$objPropuesta->video              = $objFormularioRegistro->video;
 				$objPropuesta->estado             = 1;
-				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;	
+				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;
+				$objPropuesta->subgenero          = $_POST["subgenero"];
 
 				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 
 				while ($archivo = $directorio->read()){
@@ -288,6 +302,7 @@ class ConvocatoriaController extends Controller
 	}
 
 	public function actionExito(){
+		Yii::app()->session->destroy();
 		$this->pageTitle ="Registro Exitoso";
 		$this->render('exito');		
 	}

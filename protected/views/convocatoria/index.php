@@ -25,6 +25,9 @@
 				Las inscripciones se abrirán el <strong>1 de junio y se cerrarán el 30 de junio de 2013 a las 6:00 p.m.</strong> hora legal colombiana <a href="http://horalegal.sic.gov.co" taget="_blank" title="Ver la hora legal Colombiana">(UTC -5)</a>. Solo se recibirán propuestas por este medio.
 			</li>
 			<li>
+				En caso de dudas o inquietudes también puede escribir al correo <a href="mailto:belmar.santanilla@telemedellin.tv" target="_blank">belmar.santanilla@telemedellin.tv</a>
+			</li>
+			<li>
 				Las propuestas inscritas serán evaluadas por un jurado, conformado por cinco personas de comprobada trayectoria e idoneidad en las artes y la organización de espectáculos, quienes seleccionarán las que mejor cumplan con los criterios de <strong>calidad interpretativa, creatividad, trayectoria y viabilidad técnica y económica</strong>.
 			</li>
 			<li>
@@ -76,16 +79,10 @@
 <div class="row-fluid">
 
 	<div class="span6 offset3">
-		<form class="bs-docs-example" action="/convocatoria/registro" method="post">	
-	        <label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> 
-            	He leído y acepto las anteriores condiciones</label>
-	        <p>
-            <input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" />
-            
- 			
-
-                </p>
-  		</form>
+		<?php echo CHtml::beginForm(array("convocatoria/registro"), "POST", array("class"=>"bs-docs-example")) ?>
+	        <label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
+	        <p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>
+  		<?php echo CHtml::endForm(); ?>
 	</div>
     
     <div class="bs">

@@ -118,12 +118,12 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div id="areaMusica" style="display:none">
 					<div class="control-group">
 						<label for="" class="control-label">Géneros:</label>
-						<div class="controls">
-							<select class="input-xxlarge">
+						<div class="controls">							
+							<select id="otrosMusica" name="subgenero" class="input-xxlarge">								
 								<option value="Tropical">Tropical</option>
 								<option value="Popular Tradicional">Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)</option>
-								<option value="Polular Urbana">Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
-								<option value="Popular Clásica">Clásica</option>
+								<option value="Urbana">Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
+								<option value="Clásica">Clásica</option>
 								<option value="Folclor">Folclor</option>
 								<option value="Jazz y músicas del mundo">Jazz y músicas del mundo</option>
 								<option value="Fusión">Fusión</option>
@@ -169,7 +169,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="control-group">
 						<label for="" class="control-label">Seleccione:</label>
 						<div class="controls">
-							<select>
+							<select name="subgenero" id="otrosOtro">								
 								<option>Magia</option>
 								<option>Clown</option>
 								<option>Malabarismo</option>
