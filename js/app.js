@@ -51,18 +51,26 @@ $(function() {
         switch (area) {
             case "1":
                 $("#areaMusica").fadeIn("slow");
+                $("#otrosMusica").removeAttr("disabled");
+                $("#otrosOtro").attr("disabled","disabled");
                 $("#areaOtros").fadeOut("slow");
             break;
             case "2":
                 $("#areaMusica").fadeOut("slow");
+                $("#otrosOtro").attr("disabled","disabled");
+                $("#otrosMusica").attr("disabled","disabled");                
                 $("#areaOtros").fadeOut("slow");
             break;
             case "3":
                 $("#areaMusica").fadeOut("slow");
+                $("#otrosOtro").attr("disabled","disabled");
+                $("#otrosMusica").attr("disabled","disabled")
                 $("#areaOtros").fadeOut("slow");
             break;
             default:
                 $("#areaMusica").fadeOut("slow");
+                $("#otrosOtro").removeAttr("disabled");
+                $("#otrosMusica").attr("disabled","disabled"); 
                 $("#areaOtros").fadeIn("slow");
             break;
         }

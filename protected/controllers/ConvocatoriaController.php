@@ -176,7 +176,7 @@ class ConvocatoriaController extends Controller
 
 				$objUsuario = new Usuarios();
 				$objUsuario->username = $objFormularioRegistro->username;
-				$objUsuario->password = Bcrypt::hash($objFormularioRegistro->password);
+				$objUsuario->password = $objFormularioRegistro->password;//Bcrypt::hash($objFormularioRegistro->password);
 				$objUsuario->estado   = 1;
 				$objUsuario->roles_id = 1;
 				$objUsuario->save(false);
@@ -260,7 +260,8 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->resena             = $objFormularioRegistro->resena;
 				$objPropuesta->video              = $objFormularioRegistro->video;
 				$objPropuesta->estado             = 1;
-				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;	
+				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;
+				$objPropuesta->subgenero          = $_POST["subgenero"];
 
 				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 
 				while ($archivo = $directorio->read()){
