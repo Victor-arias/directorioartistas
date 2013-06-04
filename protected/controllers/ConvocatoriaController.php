@@ -191,6 +191,18 @@ class ConvocatoriaController extends Controller
 				$objPerfiles->save(false);
 				$idPerfil = $objPerfiles->getPrimaryKey();
 
+				$objRedesHasPerfil = new RedesHasPerfiles();
+				$objRedesHasPerfil->redes_id = 1;
+				$objRedesHasPerfil->perfiles_id = $idPerfil;
+				$objRedesHasPerfil->url = $objFormularioRegistro->twitter;
+				$objRedesHasPerfil->save(false);
+
+				$objRedesHasPerfil = new RedesHasPerfiles();
+				$objRedesHasPerfil->redes_id = 2;
+				$objRedesHasPerfil->perfiles_id = $idPerfil;
+				$objRedesHasPerfil->url = $objFormularioRegistro->fb;				
+				$objRedesHasPerfil->save(false);
+
 				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'); 
 				while ($archivo = $directorio->read()){
 					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){					
