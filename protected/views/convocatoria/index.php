@@ -87,7 +87,7 @@
     
     <div class="bs">
     <div class="img_directorio"></div>
-            <input type="submit" name="terminos" id="directorio" value="Ver el directorio de artistas" class="btn btn-directorio"  disabled/>
+            <input type="submit" name="terminos" id="directorio" value="Ver el directorio de artistas" class="btn disabled"  disabled="disabled"/>
             </div>
     
 
