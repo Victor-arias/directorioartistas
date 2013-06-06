@@ -172,14 +172,17 @@ class ConvocatoriaController extends Controller
 				$dir = Yii::app()->session['dir'];
 			}			
 			
-			if($objFormularioRegistro->validate()){
+			if($objFormularioRegistro->validate()){				
 
 				$objUsuario = new Usuarios();
+				$transaction = $objUsuario->dbConnection->beginTransaction();
 				$objUsuario->username = $objFormularioRegistro->username;
-				$objUsuario->password = Bcrypt::hash($objFormularioRegistro->password);
+				$objUsuario->password = $objFormularioRegistro->password;//Bcrypt::hash($objFormularioRegistro->password);
 				$objUsuario->estado   = 1;
 				$objUsuario->roles_id = 1;
-				$objUsuario->save(false);
+				if( ! $objUsuario->save(false)){
+					$transaction->rollback();					
+				}
 				$idUsuario = $objUsuario->getPrimaryKey();
 
 				$objPerfiles = new Perfiles();
@@ -188,61 +191,75 @@ class ConvocatoriaController extends Controller
 				$objPerfiles->web         = $objFormularioRegistro->web;
 				$objPerfiles->usuarios_id = $idUsuario;
 				$objPerfiles->areas_id    = $objFormularioRegistro->area;
-				$objPerfiles->save(false);
+				if( ! $objPerfiles->save(false)){
+					$transaction->rollback();	
+				}
 				$idPerfil = $objPerfiles->getPrimaryKey();
 
 				$objRedesHasPerfil = new RedesHasPerfiles();
 				$objRedesHasPerfil->redes_id = 1;
 				$objRedesHasPerfil->perfiles_id = $idPerfil;
 				$objRedesHasPerfil->url = $objFormularioRegistro->twitter;
-				$objRedesHasPerfil->save(false);
+				if( ! $objRedesHasPerfil->save(false)){
+					$transaction->rollback();	
+				}
 
 				$objRedesHasPerfil = new RedesHasPerfiles();
 				$objRedesHasPerfil->redes_id = 2;
 				$objRedesHasPerfil->perfiles_id = $idPerfil;
 				$objRedesHasPerfil->url = $objFormularioRegistro->fb;				
-				$objRedesHasPerfil->save(false);
-
-				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'); 
-				while ($archivo = $directorio->read()){
-					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){					
-						$fotoPerfil = Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/'.$archivo; 
-						$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'.$archivo);
-						break;	
-					}
+				if( ! $objRedesHasPerfil->save(false)){
+					$transaction->rollback();	
 				}
-				
-				$directorio->close(); 
 
-				$objFotos = new Fotos();
-				$titulo = explode('.',$archivo);
-				$objFotos->titulo = $titulo[0];
-				$objFotos->src = $fotoPerfil;				
-				$objFotos->ancho = $imgData[0];
-				$objFotos->alto = $imgData[1];
-				$objFotos->es_perfil = 1;
-				$objFotos->estado = 1;
-				$objFotos->perfiles_id = $idPerfil;		
-				$objFotos->save(false);
+				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/')){
+					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'); 
+					while ($archivo = $directorio->read()){
+						if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){					
+							$fotoPerfil = Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/'.$archivo; 
+							$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/foto_perfil/'.$archivo);
+							$objFotos = new Fotos();
+							$titulo = explode('.',$archivo);
+							$objFotos->titulo = $titulo[0];
+							$objFotos->src = $fotoPerfil;				
+							$objFotos->ancho = $imgData[0];
+							$objFotos->alto = $imgData[1];
+							$objFotos->es_perfil = 1;
+							$objFotos->estado = 1;
+							$objFotos->perfiles_id = $idPerfil;		
+							if( ! $objFotos->save(false)){
+								$transaction->rollback();	
+							}
+							break;							
+						}
+					}									
 
-				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'); 
-				while ($archivo = $directorio->read()){
-					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
-						$foto = Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/'.$archivo; 
-						$objFotos = new Fotos();
-						$titulo = explode('.',$archivo);
-						$objFotos->titulo = $titulo[0];
-						$objFotos->src = $foto;
-						$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'.$archivo);
-						$objFotos->ancho = $imgData[0];
-						$objFotos->alto = $imgData[1];
-						$objFotos->es_perfil = 0;
-						$objFotos->estado = 1;
-						$objFotos->perfiles_id = $idPerfil;		
-						$objFotos->save(false);									
-					}
-				}				
-				$directorio->close();
+					$directorio->close(); 					
+				}
+
+				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/')){
+					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'); 
+					while ($archivo = $directorio->read()){
+						if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
+							$foto = Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/'.$archivo; 
+							$objFotos = new Fotos();
+							$titulo = explode('.',$archivo);
+							$objFotos->titulo = $titulo[0];
+							$objFotos->src = $foto;
+							$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'.$archivo);
+							$objFotos->ancho = $imgData[0];
+							$objFotos->alto = $imgData[1];
+							$objFotos->es_perfil = 0;
+							$objFotos->estado = 1;
+							$objFotos->perfiles_id = $idPerfil;		
+							if( ! $objFotos->save(false)){
+								$transaction->rollback();	
+							}
+						}
+					}				
+					$directorio->close();					
+				}
+
 				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/')){
 					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/audios/'); 
 					while ($archivo = $directorio->read()){
@@ -254,7 +271,9 @@ class ConvocatoriaController extends Controller
 							$objAudio->url = $url;
 							$objAudio->estado = 1;
 							$objAudio->perfiles_id = $idPerfil;		
-							$objAudio->save(false);									
+							if( ! $objAudio->save(false)){
+								$transaction->rollback();	
+							}
 						}
 					}				
 					$directorio->close();
@@ -274,23 +293,28 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->video              = $objFormularioRegistro->video;
 				$objPropuesta->estado             = 1;
 				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;
-				$objPropuesta->subgenero          = $_POST["subgenero"];
+				$objPropuesta->subgenero          = (isset($_POST["subgenero"])) ? $_POST["subgenero"] : NULL;
 
-				$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 
-				while ($archivo = $directorio->read()){
-					if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
-						$archivoRider = Yii::app()->request->baseUrl.'/files/' . $dir . '/rider/'.$archivo; 
-						break;	
-					}
+				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/')){
+					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 
+					while ($archivo = $directorio->read()){
+						if($archivo !== "." && $archivo !== ".." && $archivo !== "thumbnail"){
+							$archivoRider = Yii::app()->request->baseUrl.'/files/' . $dir . '/rider/'.$archivo; 
+							break;	
+						}
+					}					
+					$directorio->close(); 						
 				}
-				
-				$directorio->close(); 						
 
 				$objPropuesta->rider              = $archivoRider;
 				$objPropuesta->convocatorias_id   = 1;
 				$objPropuesta->perfiles_id        = $idPerfil;
 				if($objPropuesta->save(false)){
+					$transaction->commit();
 					$this->redirect('exito');
+				}
+				else{
+					$transaction->rollback();	
 				}
 			}
 		}

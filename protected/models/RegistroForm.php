@@ -42,7 +42,8 @@ class RegistroForm extends CFormModel
 			array('email', 'unique', 'className'=>'Propuestas', 'message'=>"El {attribute} \"{value}\" Ya se encuentra registrado"),
 			array('web', 'safe'),			
 			array('web', 'url', 'defaultScheme'=>'http', 'message'=>'El {attribute} no es una URL válida'),
-		);
+			array('username','match', 'allowEmpty'=>false,'pattern'=>'/^[a-zA-Z0-9_\\_\ü]+$/', 'message'=>"El  {attribute} no es válido. No puede contener Espacios ni caracteres especiales.")
+		); 
 	}
 
 	/**

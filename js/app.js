@@ -50,24 +50,36 @@ $(function() {
         var area = $(this).val();
         switch (area) {
             case "1":
+                $("#otrosMusica").attr("disabled","disabled");
+                $("#otrosOtro").attr("disabled","disabled");
+
                 $("#areaMusica").fadeIn("slow");
                 $("#otrosMusica").removeAttr("disabled");
                 $("#otrosOtro").attr("disabled","disabled");
                 $("#areaOtros").fadeOut("slow");
             break;
             case "2":
+                $("#otrosMusica").attr("disabled","disabled");
+                $("#otrosOtro").attr("disabled","disabled");
+
                 $("#areaMusica").fadeOut("slow");
                 $("#otrosOtro").attr("disabled","disabled");
                 $("#otrosMusica").attr("disabled","disabled");                
                 $("#areaOtros").fadeOut("slow");
             break;
             case "3":
+                $("#otrosMusica").attr("disabled","disabled");
+                $("#otrosOtro").attr("disabled","disabled");
+
                 $("#areaMusica").fadeOut("slow");
                 $("#otrosOtro").attr("disabled","disabled");
                 $("#otrosMusica").attr("disabled","disabled")
                 $("#areaOtros").fadeOut("slow");
             break;
             default:
+                $("#otrosMusica").attr("disabled","disabled");
+                $("#otrosOtro").attr("disabled","disabled");
+
                 $("#areaMusica").fadeOut("slow");
                 $("#otrosOtro").removeAttr("disabled");
                 $("#otrosMusica").attr("disabled","disabled"); 
@@ -130,7 +142,7 @@ $(function() {
         imageCrop: true,   
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,  
         messages: {
-            maxNumberOfFiles: 'Solo se permite una foto de perfil',
+            maxNumberOfFiles: 'Solo se permiten 5 fotos adicionales',
             acceptFileTypes: 'No se acepta este tipo de archivo',
             maxFileSize: 'El archivo es demsiado pesado',
             minFileSize: 'El archivo no tiene peso sofuciente'
