@@ -170,6 +170,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<label for="" class="control-label">Seleccione:</label>
 						<div class="controls">
 							<select name="subgenero" id="otrosOtro">								
+								<option>Humor</option>
 								<option>Magia</option>
 								<option>Clown</option>
 								<option>Malabarismo</option>
