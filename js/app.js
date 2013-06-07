@@ -2,6 +2,55 @@ $(function() {
 	var PUBLIC_PATH = $("#PUBLIC_PATH").val();
     var directorio = $("#dir").val();
 
+    $('#RegistroForm_username').popover({
+        trigger: 'focus'
+    });
+    $('#RegistroForm_password').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_nombrePropuesta').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_representante').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_cedula').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_telefono').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_celular').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_email').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_direccion').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_numeroIntegrantes').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_resena').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_video').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_twitter').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_fb').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_web').popover({
+        trigger: 'focus'
+    });    
+    $('#RegistroForm_valor').popover({
+        trigger: 'focus'
+    });    
+
     $("#yw0").submit(function(e){
         
         var numAudio = $("#audio .template-download:not('.ui-state-error')").length;

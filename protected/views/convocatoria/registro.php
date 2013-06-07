@@ -20,7 +20,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">    
-							<?php echo $form->textField($formulario, "username") ?>
+							<?php echo $form->textField($formulario, "username", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('username'), "data-content"=>$formulario->getTooltip('username'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'username') ?>						
 					</div>
@@ -30,7 +30,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">      
-							<?php echo $form->passwordField($formulario, "password") ?>
+							<?php echo $form->passwordField($formulario, "password", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('password'), "data-content"=>$formulario->getTooltip('password'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'password') ?>
 					</div>
@@ -41,7 +41,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'nombrePropuesta')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "nombrePropuesta", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->textField($formulario, "nombrePropuesta") ?>
+						<?php echo $form->textField($formulario, "nombrePropuesta", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('nombrePropuesta'), "data-content"=>$formulario->getTooltip('nombrePropuesta'))) ?>
 						<?php echo $form->error($formulario, 'nombrePropuesta') ?>
 					</div>
 				</div>	
@@ -49,7 +49,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'representante')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "representante", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->textField($formulario, "representante") ?>
+						<?php echo $form->textField($formulario, "representante", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('representante'), "data-content"=>$formulario->getTooltip('representante'))) ?>
 						<?php echo $form->error($formulario, 'representante') ?>
 					</div>
 				</div>
@@ -58,7 +58,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">   
-							<?php echo $form->textField($formulario, "cedula") ?>           
+							<?php echo $form->textField($formulario, "cedula", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('cedula'), "data-content"=>$formulario->getTooltip('cedula'))) ?>           
 						</div>
 						<?php echo $form->error($formulario, 'cedula') ?>						
 					</div>
@@ -68,7 +68,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">              
-							<?php echo $form->textField($formulario, "telefono") ?>
+							<?php echo $form->textField($formulario, "telefono", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('telefono'), "data-content"=>$formulario->getTooltip('telefono'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'telefono') ?>						
 					</div>
@@ -78,7 +78,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">              
-							<?php echo $form->textField($formulario, "celular") ?>
+							<?php echo $form->textField($formulario, "celular", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('celular'), "data-content"=>$formulario->getTooltip('celular'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'celular') ?>						
 					</div>
@@ -88,7 +88,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">              
-							<?php echo $form->emailField($formulario, "email") ?>
+							<?php echo $form->emailField($formulario, "email", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('email'), "data-content"=>$formulario->getTooltip('email'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'email') ?>						
 					</div>
@@ -98,7 +98,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-append">   
-							<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xlarge")) ?>           
+							<?php echo $form->textField($formulario, "direccion", array("class"=>"input-xlarge","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('direccion'), "data-content"=>$formulario->getTooltip('direccion'))) ?>           
 						</div>
 						<?php echo $form->error($formulario, 'direccion') ?>						
 					</div>
@@ -193,14 +193,14 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div class="control-group <?php if($form->error($formulario, 'numeroIntegrantes')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "numeroIntegrantes", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"1")) ?>
+						<?php echo $form->numberField($formulario, "numeroIntegrantes", array("class"=>"input-mini","min"=>"1","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('numeroIntegrantes'), "data-content"=>$formulario->getTooltip('numeroIntegrantes'))) ?>
 						<?php echo $form->error($formulario, 'numeroIntegrantes') ?>
 					</div>
 				</div>
 				<div class="control-group <?php if($form->error($formulario, 'resena')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "resena", array("class"=>"control-label")) ?>
 					<div class="controls">
-						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"10")) ?>
+						<?php echo $form->textArea($formulario, "resena", array("class"=>"input-xlarge","rows"=>"10","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('resena'), "data-content"=>$formulario->getTooltip('resena'))) ?>
 						<?php echo $form->error($formulario, 'resena') ?>
 						<p class="help">Máximo 950 Caracteres</p>
 					</div>
@@ -274,7 +274,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<div class="input-prepend">              
 							<span class="add-on">http://</span>
-							<?php echo $form->textField($formulario, "video", array("class"=>"input-xlarge")) ?>    
+							<?php echo $form->textField($formulario, "video", array("class"=>"input-xlarge","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('video'), "data-content"=>$formulario->getTooltip('video'))) ?>    
 						</div>
 						<?php echo $form->error($formulario, 'video') ?>
 					</div>
@@ -284,7 +284,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<div class="input-prepend">              
 							<span class="twitter"></span>
-							<?php echo $form->textField($formulario, "twitter", array("class"=>"input-xlarge")) ?>
+							<?php echo $form->textField($formulario, "twitter", array("class"=>"input-xlarge","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('twitter'), "data-content"=>$formulario->getTooltip('twitter'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'twitter') ?>
 					</div>
@@ -294,7 +294,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<div class="input-prepend">              
 							<span class="facebook"></span>
-							<?php echo $form->textField($formulario, "fb", array("class"=>"input-xlarge")) ?>
+							<?php echo $form->textField($formulario, "fb", array("class"=>"input-xlarge","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('fb'), "data-content"=>$formulario->getTooltip('fb'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'fb') ?>
 					</div>
@@ -304,7 +304,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<div class="input-prepend">              
 							<span class="add-on">http://</span>
-							<?php echo $form->textField($formulario, "web", array('class'=>'input-xlarge')) ?>
+							<?php echo $form->textField($formulario, "web", array('class'=>'input-xlarge',"rel"=>"popover", "data-original-title"=>$formulario->getAttribute('web'), "data-content"=>$formulario->getTooltip('web'))) ?>
 						</div>
 					</div>
 				</div>
@@ -313,7 +313,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-prepend">              
-							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large')) ?>
+							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large',"rel"=>"popover", "data-original-title"=>$formulario->getAttribute('valor'), "data-content"=>$formulario->getTooltip('valor'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'valor') ?>
 					</div>
