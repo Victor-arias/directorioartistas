@@ -103,4 +103,8 @@ class Usuarios extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function validatePassword($password){
+		return $password === $this->password;
+	}
 }

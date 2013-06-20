@@ -2,7 +2,8 @@
 
 class SiteController extends Controller
 {
-	public $layout = 'home';
+	public $layout = 'bootstrap';
+	public $user;
 	/**
 	 * Declares class-based actions.
 	 */
@@ -28,6 +29,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->layout = 'home';
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
@@ -45,6 +47,48 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+
+	public function actionLogin(){
+		$formLogin = new LoginForm();
+		
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'login-form')
+        {
+        	var_dump($_POST); die();
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+
+		if(isset($_POST['LoginForm'])){
+			$formLogin->attributes = $_POST['LoginForm'];		
+			if($formLogin->validate() && $formLogin->login()){
+				$idSesion = Yii::app()->user->id;
+				$objusuario = new Usuarios();
+				$usuario = $objusuario->findByPk($idSesion);	
+				switch ($usuario->roles_id) {
+					case '1':
+						# Redirecciona al perfil del Usuario registrado
+						break;
+					case '2': 
+						$this->redirect(array('propuestas/listar'));
+						break;
+					default:
+						$this->redirect(array('propuestas/asignadas'));
+						break;
+				}			
+				
+			}	
+		}				
+		$this->render('login',array(
+					  'model'=>$formLogin,
+					  ));
+	}
+
+	public function actionLogout(){
+		Yii::app()->user->logout();
+		Yii::app()->session->clear();
+		Yii::app()->session->destroy();
+		$this->redirect('login');		
 	}
 
 }
