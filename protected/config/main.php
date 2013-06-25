@@ -7,7 +7,8 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Feria de las flores Medellín 2013',
+	'name'=>'Directorio de artistas',
+	'defaultController' => 'directorio',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -57,8 +58,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=directorioartistas',
 			'emulatePrepare' => true,
-			'username' => 'userdirectorio',
-			'password' => 'CNBDGFAA880519$',
+			'username' => /*'userdirectorio'*/'root',
+			'password' => /*'CNBDGFAA880519$'*/'',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

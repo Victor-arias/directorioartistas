@@ -116,4 +116,25 @@ class Perfiles extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function findRandom($page = 1)
+	{
+		$max 	= $this->count();
+		$offset = rand(0, $max-1);
+
+		//SELECT * FROM myTable WHERE RAND()<( SELECT (( 12/COUNT(*) )*10) FROM myTable) ORDER BY RAND() LIMIT 12;
+
+		$n 						= 12;
+		$offset 				= $n * $page;
+		$pcriteria 				= new CDbCriteria;
+		$pcriteria->addCondition('RAND()<(SELECT (('.$n.'/COUNT(*) )*10) FROM '.$this->tableName().')');
+		$pcriteria->order 		= 'RAND()';
+		//$pcriteria->offset 		= $offset;
+		$pcriteria->limit 		= $n;
+	
+		$perfiles = $this->findAll($pcriteria);
+
+		return $perfiles;
+	}
+
 }
