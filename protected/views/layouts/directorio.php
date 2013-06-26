@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=1024">
     <meta name="description" content="">
     <meta name="author" content="telemedellín">
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
-    <!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/base.css" />-->  
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css" />  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <!--[if LTE IE 8]>
       <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" />
@@ -45,7 +45,34 @@
       ?><!-- breadcrumbs -->
     <?php endif; ?>
     <div id="buscador">
-      <p>Buscador</p>
+      <?php $form = $this->beginWidget('CActiveForm', array(
+          'id'=>'search-form',
+          'enableAjaxValidation'=>true,
+          'enableClientValidation'=>true,
+          'action' => Yii::app()->homeUrl.'directorio/search'
+      )); ?>
+      <div class="row">
+          <?php
+          $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+              'name' => 'artista',
+              'model' => new Perfiles, 
+              //'source'=> array('Los trasnocha perros','cash','El tropicombo'),
+              'sourceUrl' => 'directorio/search', 
+              // additional javascript options for the autocomplete plugin
+              'options'=>array(
+                  'minLength'=>'2',
+              ),
+              'htmlOptions'=>array(
+                  //'style'=>'height:20px;',
+              ),
+          ));
+          ?>
+      </div>
+      <div class="row">
+        <?php echo CHtml::submitButton('Buscar', array("class"=>"btn")) ?>
+      </div>
+
+      <?php $this->endWidget(); ?>
     </div>
     <div class="container">
       <?php echo $content ?>

@@ -1,0 +1,65 @@
+#perfiles .perfil
+{
+	float: left;
+	font-size: 11px;
+	margin: 0 8px 20px;
+	min-height: 220px;
+	width: 140px;
+}
+#perfiles .perfil h3
+{
+	font-size: 12px;
+	line-height: 1;
+	margin: 0;
+	text-align: center;
+	
+}
+#perfiles .perfil img
+{
+	display: block;
+	margin: -15px auto 5px;
+	text-align: center;
+}
+#perfiles .perfil span
+{
+	background: #ccc;
+	display: inline-block;
+	height: 23px;
+	padding: 2px 5px 0;
+}
+#perfiles .perfil span:first-child
+{
+	background: url(../images/areas_thumb.png) no-repeat;
+	text-indent: -9999px;
+	width: 14px;
+}
+#perfiles .perfil span.Teatro{
+	background-position: -60px 0;
+}
+
+#perfiles .perfil span.Danza{
+	background-position: -30px 0;
+}
+
+#perfiles .perfil span.Música{
+	background-position: 0 0;
+}
+
+#perfiles .perfil span.Otro{
+	background-position: -90px 0;
+}
+#perfiles .perfil .categoria
+{
+	padding: 0 5px;
+	position: relative;
+	z-index: 2;
+}
+#perfiles .perfil .nombre
+{
+	background: #ccc;
+	display: table-cell;
+	height: 60px;
+	padding: 10px;
+	vertical-align: middle;
+	width: 120px;
+}

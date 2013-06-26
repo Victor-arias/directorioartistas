@@ -90,6 +90,8 @@ class Perfiles extends CActiveRecord
 			'web' => 'Web',
 			'usuarios_id' => 'Usuarios',
 			'areas_id' => 'Areas',
+			'value' => 'Value',
+			'label' => 'Label',
 		);
 	}
 
@@ -115,6 +117,26 @@ class Perfiles extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function buscar($term)
+	{
+		$criteria = new CDbCriteria;
+		$criteria->select = 'id, nombre';
+		$criteria->compare('nombre', $term, true);
+
+		$artistas = $this->findAll($criteria);
+		$resultado = array();
+
+		foreach($artistas as $value)
+		{
+			$resultado[] = array('value' => $value->id,
+								 'label' => $value->nombre);
+		}
+		/*print_r($resultado);
+		Yii::app()->end();*/
+
+		return $resultado;
 	}
 
 	public function findRandom($page = 1)
