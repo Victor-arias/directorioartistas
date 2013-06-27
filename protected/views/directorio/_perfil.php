@@ -4,7 +4,7 @@
 			<span class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></span> 
 		<?php endif; ?>
 		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otro') ): ?>
-			<?php $subg = ( strlen($perfil->propuestases[0]->subgenero) > 19) ? substr($perfil->propuestases[0]->subgenero, 0, 16) . '...':$perfil->propuestases[0]->subgenero ?>
+			<?php $subg = ( strlen($perfil->propuestases[0]->subgenero) > 18) ? substr($perfil->propuestases[0]->subgenero, 0, 15) . '...':$perfil->propuestases[0]->subgenero ?>
 			<span><?php echo $subg; ?></span>
 		<?php endif; ?>
 	</div>
@@ -22,8 +22,12 @@
 	<?php endif; ?>
 	<div class="nombre">
 		<h3><?php 
-			$subslug = (isset($perfil->propuestases[0]->subgenero))?$this->createSlug($perfil->propuestases[0]->subgenero).'/':'';
-			echo CHtml::link( $perfil->nombre, CHtml::normalizeUrl(Yii::app()->homeUrl . $this->createSlug($perfil->areas->nombre) .'/' . $subslug . $perfil->slug ) ); ?> 
+			/*$subslug = (isset($perfil->propuestases[0]->subgenero))?$this->createSlug($perfil->propuestases[0]->subgenero).'/':'';
+			echo CHtml::link( $perfil->nombre, CHtml::normalizeUrl(Yii::app()->homeUrl . $this->createSlug($perfil->areas->nombre) .'/' . $subslug . $perfil->slug ) ); 
+			*/
+			$subslug = (isset($perfil->propuestases[0]->subgenero))? Utility::createSlug($perfil->propuestases[0]->subgenero).'/':'';
+			echo CHtml::link( $perfil->nombre, CHtml::normalizeUrl(Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . $subslug . $perfil->slug ) );
+			?> 
 			<?php  $perfil->nombre ?></h3>
 	</div>
 </div>

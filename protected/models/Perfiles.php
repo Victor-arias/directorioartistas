@@ -132,8 +132,19 @@ class Perfiles extends CActiveRecord
 		{
 			/*$resultado[] = array('value'  => $value->id,
 								 'label' 	=> $value->nombre);*/
-			$resultado[] = array('category' => $value->areas->nombre,
-								 'label' 	=> $value->nombre);
+			$area = Utility::createSlug($value->areas->nombre);
+			//if( isset($value->propuestases[0]) ) CVarDumper::dump($value->propuestases[0]->subgenero);
+			$genero = '';
+			if( isset($value->propuestases[0]) ) 
+				if($value->propuestases[0]->subgenero != null) 
+					$genero = Utility::createSlug($value->propuestases[0]->subgenero) .'/';
+					
+			
+			$slug = $area . '/' . $genero . $value->slug;
+			
+			$resultado[] = array('value' 	=> $value->nombre,
+								 'label' 	=> $value->nombre,
+								 'slug' 	=> $slug);
 			//$resultado[] = $value->nombre;
 		}
 		/*print_r($resultado);

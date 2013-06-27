@@ -1,7 +1,7 @@
 <?php
 /* @var $this DirectorioController */
 $bc = array();
-array_push($bc, ucfirst($categoria));
+$bc[ucfirst($categoria)] = array('/'.$categoria);
 if($subgenero) array_push($bc, ucfirst($subgenero));
 $this->breadcrumbs = $bc;
 ?>
