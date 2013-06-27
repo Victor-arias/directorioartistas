@@ -122,7 +122,7 @@ class Perfiles extends CActiveRecord
 	public function buscar($term)
 	{
 		$criteria = new CDbCriteria;
-		$criteria->select = 'id, nombre';
+		//$criteria->select = 't.id, t.nombre, areas.nombre';
 		$criteria->compare('nombre', $term, true);
 
 		$artistas = $this->findAll($criteria);
@@ -130,8 +130,11 @@ class Perfiles extends CActiveRecord
 
 		foreach($artistas as $value)
 		{
-			$resultado[] = array('value' => $value->id,
-								 'label' => $value->nombre);
+			/*$resultado[] = array('value'  => $value->id,
+								 'label' 	=> $value->nombre);*/
+			$resultado[] = array('category' => $value->areas->nombre,
+								 'label' 	=> $value->nombre);
+			//$resultado[] = $value->nombre;
 		}
 		/*print_r($resultado);
 		Yii::app()->end();*/

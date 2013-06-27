@@ -24,10 +24,31 @@
         $this->widget( 'zii.widgets.CMenu', 
           array(
             'items'=>array(
-              array( 'label' => 'Música' , 'url' => array('/musica') ),
+              array( 'label' => 'Música' , 'url' => array('/musica'), 
+                'items' => array(
+                  array('label' => 'Tropical'           , 'url' => array('/musica/tropical')),
+                  array('label' => 'Popular tradicional', 'url' => array('/musica/popular-tradicional')),
+                  array('label' => 'Popular urbana'     , 'url' => array('/musica/urbana')),
+                  array('label' => 'Clásica'            , 'url' => array('/musica/clasica')),
+                  array('label' => 'Folclor'            , 'url' => array('/musica/folclor')),
+                  array('label' => 'Jazz y músicas del mundo', 'url' => array('/musica/jazz-y-musicas-del-mundo')),
+                  array('label' => 'Fusión'             , 'url' => array('/musica/fusion')),
+                  array('label' => 'Experimental'       , 'url' => array('/musica/experimental')),
+                  array('label' => 'Infantil'           , 'url' => array('/musica/infantil')),
+                ),
+              ),
               array( 'label' => 'Danza'  , 'url' => array('/danza') ),
               array( 'label' => 'Teatro' , 'url' => array('/teatro') ),
-              array( 'label' => 'Otros'  , 'url' => array('/otros') ),
+              array( 'label' => 'Otros'  , 'url' => array('/otros'), 
+                'items' => array(
+                  array('label' => 'Magia'      , 'url' => array('/otros/magia')),
+                  array('label' => 'Clown'      , 'url' => array('/otros/clown')),
+                  array('label' => 'Malabarismo', 'url' => array('/otros/malabarismo')),
+                  array('label' => 'Mimos'      , 'url' => array('/otros/mimos')),
+                  array('label' => 'Cuentería'  , 'url' => array('/otros/cuenteria')),
+                  array('label' => 'Humor'      , 'url' => array('/otros/humor')),
+                ),
+              ),
             ),
           )
         );
@@ -46,26 +67,27 @@
     <?php endif; ?>
     <div id="buscador">
       <?php $form = $this->beginWidget('CActiveForm', array(
-          'id'=>'search-form',
-          'enableAjaxValidation'=>true,
+          'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'busqueda'),
+          'enableAjaxValidation'  =>true,
           'enableClientValidation'=>true,
-          'action' => Yii::app()->homeUrl.'directorio/search'
+          'id'                    =>'search-form',
+          'method'                => 'get',          
       )); ?>
       <div class="row">
           <?php
           $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
-              'name' => 'artista',
-              'model' => new Perfiles, 
-              //'source'=> array('Los trasnocha perros','cash','El tropicombo'),
-              'sourceUrl' => 'directorio/search', 
-              // additional javascript options for the autocomplete plugin
-              'options'=>array(
-                  'minLength'=>'2',
+              'name'         => 'artista',
+              'model'        => new Perfiles, 
+              'sourceUrl'    => CHtml::normalizeUrl(Yii::app()->homeUrl.'directorio/autocompletar'), 
+              'options'      =>array(// additional javascript options for the autocomplete plugin
+                  'minLength'=> '2',
               ),
-              'htmlOptions'=>array(
+              'htmlOptions'  =>array(
                   //'style'=>'height:20px;',
               ),
           ));
+          Yii::app()->clientScript->registerScript('autocompleteselect', '$( "#artista" ).on( "autocompleteselect", function( event, ui ) {$( "#artista" ).val(ui.item.label); $( "#search-form" ).submit()} );', CClientScript::POS_END);
+          
           ?>
       </div>
       <div class="row">

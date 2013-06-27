@@ -41,12 +41,18 @@ return array(
 
 		'urlManager'=>array(			
 			'urlFormat'=>'path',
-			'showScriptName' => false,			
+			'showScriptName' => false,
+			'useStrictParsing' => false,
 			'rules'=>array(				
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-				'convocatoria'=>'convocatoria',
+				'<cat:(musica|danza|teatro|otros)>'				=> 'directorio/listar',
+				'<cat:(musica|otros)>/<genero:[\w\-]+>'			=> 'directorio/listar',
+				'<cat:(musica|otros)>/<genero:[\w\-]+>/<artista:[\w\d\-]+>'=> 'directorio/ver',
+				'<cat:(danza|teatro)>/<artista:[\w\d\-]+>'		=> 'directorio/ver',
+				'convocatoria'									=> 'convocatoria',
+				'busqueda' 										=> 'directorio/busqueda',
+				'<controller:\w+>/<id:\d+>'						=> '<controller>/view',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'		=> '<controller>/<action>',
+				'<controller:\w+>/<action:\w+>'					=> '<controller>/<action>',
 			),
 		),
 		/*
