@@ -13,19 +13,23 @@ array_push( $bc, ucfirst($perfil->nombre) );
 $this->breadcrumbs = $bc;
 ?>
 <div id="perfil">
+	 <div class="infoPpal">
 	<?php 
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( $foto->es_perfil): ?>
-				<img src="<?php echo $foto->src ?>" width="140" height="130" alt="<?php echo $perfil->nombre ?>" />
+				<img src="<?php echo $foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
 			<?php endif ?>
 	<?php 
 			endforeach; 
 		else:
 	?>
-			<img src="/files/default.jpg" width="140" height="130" alt="<?php echo $perfil->nombre ?>" />
-	<?php endif; ?>
+   
+    
+			<img src="/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+	     <?php endif; ?>
 	<div class="categoria">
+    
 		<?php if( isset($perfil->areas->nombre)): ?>
 			<span class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></span> 
 		<?php endif; ?>
@@ -50,14 +54,21 @@ $this->breadcrumbs = $bc;
 	}
 	?>
 	</p>
-	<p><strong>Twitter:</strong> <?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[0]->url) ?></p>
-	<p><strong>Facebook:</strong> <?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[1]->url) ?></p>
-	<p><strong>Sitio Web:</strong> <?php echo Yii::app()->format->formatUrl($perfil->web) ?></p>
-	<h3>Reseña</h3>
+	<div class="twitter"><?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[0]->url) ?></div>
+	<div class="fb"><?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[1]->url) ?></div>
+	<div class="web"><?php echo Yii::app()->format->formatUrl($perfil->web) ?></div>
+    </div>
+    
+    <div class="clear"></div>
+    
+	<h3 class="tituloBackground">Reseña</h3>
     <p><?php echo $perfil->propuestases[0]->resena ?></p>
     <p>PLUGINS SOCIALES AQUÍ</p>
-    <h3>Conozca la propuesta (O una frase bonita paa no poner "Multimedia" a secas)</h3>
+    <h3 class="tituloBackground">Conozca la propuesta</h3>
+    
+    <div class="multimedia">
     <h3>Video</h3>
+	
 	<?php
 		$url = $perfil->propuestases[0]->video;
 		preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $matches);
@@ -65,6 +76,10 @@ $this->breadcrumbs = $bc;
 	?> 
 		<iframe type="text/html" width="350" height="200" src="http://www.youtube.com/embed/<?php echo $matches[1] ?>?rel=0" frameborder="0"></iframe>		
 	<?php endif; ?>
+    
+     </div>
+     
+      <div class="multimedia">     
 	<?php if($perfil->areas_id === "1"): ?>
   		<h3>Audios</h3>
   		<?php foreach($perfil->audioses as $audio): ?>
@@ -76,7 +91,11 @@ $this->breadcrumbs = $bc;
 		</audio>         		
   		<?php endforeach; ?> 		
   	<?php endif; ?>
-  	<h3>Galería de la propuesta</h3>
+     </div>
+    
+    <div class="clear"></div>   
+    
+  	<h3 class="tituloBackground">Galería de la propuesta</h3>
   	<?php 
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
@@ -87,7 +106,7 @@ $this->breadcrumbs = $bc;
 			endforeach;
 		endif; 
 	?>
-	<h3>Contactar propuesta</h3>
+	<h3 class="tituloBackground">Contactar propuesta</h3>
 	<?php $form = $this->beginWidget('CActiveForm', 
 		array(
 			'id'=>'contact-form',
@@ -98,19 +117,19 @@ $this->breadcrumbs = $bc;
 		)
 	);
 	?>
-	<div class="row">
+	<div class="row multimedia">
 		<?php echo $form->label($contacto,'nombre'); ?>
 		<?php echo $form->textField($contacto,'nombre'); ?>
 		<?php echo $form->error($contacto,'nombre'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row multimedia">
 		<?php echo $form->label($contacto,'email'); ?>
 		<?php echo $form->textField($contacto,'email'); ?>
 		<?php echo $form->error($contacto,'email'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row asunto">
 		<?php echo $form->label($contacto,'asunto'); ?>
 		<?php echo $form->textField($contacto,'asunto'); ?>
 		<?php echo $form->error($contacto,'asunto'); ?>
@@ -122,8 +141,8 @@ $this->breadcrumbs = $bc;
 		<?php echo $form->error($contacto,'mensaje'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Enviar mensaje'); ?>
+	<div>
+		<?php echo CHtml::submitButton('Enviar mensaje', array("class"=>"btn btn-large")) ?>
 	</div>
 
 <?php $this->endWidget(); ?>

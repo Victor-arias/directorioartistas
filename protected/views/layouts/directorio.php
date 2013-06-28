@@ -77,7 +77,7 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
     </nav>
    
    
-    <div class="container">
+    <div class="container home">
     
 	
 	<?php if(isset($this->breadcrumbs)): ?>
