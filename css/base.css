@@ -22,7 +22,7 @@ footer{
 }
 header{
   background: url(../images/flor_sup.png) no-repeat, url(../images/bg_header.png) no-repeat 420px 19px;
-  height: 230px;
+  height: 330px;
   margin: auto;
   /*margin-bottom: -180px;*/
   position: relative;
@@ -380,7 +380,7 @@ p{
 
 #buscador {
   width: 808px;
-  margin:0 0 0 0px;
+  margin:auto 0;
 }
 
 #buscador .btn {
@@ -391,6 +391,38 @@ p{
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   vertical-align:top;
 }
+
+.home#buscador   {
+	margin:40px auto 20px auto;
+	width:650px;
+	text-align:center;
+}
+
+
+.instruccion {
+	text-align:center;
+	margin-bottom:60px;
+	}
+
+
+.home#buscador h2   {
+	text-align:center;
+}
+
+.home#buscador #artista   {
+	width:600px;
+}
+
+.home#buscador .btn   {
+background:#74A5D6;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  
+  width:300px;
+
+}
+
 
 
 
