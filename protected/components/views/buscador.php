@@ -1,4 +1,4 @@
-<div id="buscador">
+<div <?php if($this->home) echo 'class="home"' ?> id="buscador">
   <?php $form = $this->beginWidget('CActiveForm', array(
       'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'busqueda'),
       'enableAjaxValidation'  =>true,
