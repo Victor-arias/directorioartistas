@@ -25,7 +25,7 @@
 CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') ) ?>
         <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) , CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank', 'class' => 'galleta') ) ?>
       </div>
-      <div class="fechas">
+      <!--<div class="fechas">
         <div>
           4 de Junio al 30 de Junio de 2013
           <strong class="current">Convocatoria</strong>
@@ -38,7 +38,7 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
           15 de Julio de 2013
           <strong class="prev">Publicación de resultados</strong>
         </div>
-      </div>
+      </div>-->
     </header>
     <nav>
       <?php 
@@ -75,7 +75,12 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
         );
       ?>
     </nav>
-    <?php if(isset($this->breadcrumbs)): ?>
+   
+   
+    <div class="container">
+    
+	
+	<?php if(isset($this->breadcrumbs)): ?>
       <?php 
         $this->widget( 'zii.widgets.CBreadcrumbs', 
           array(
@@ -86,8 +91,10 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
         ); 
       ?><!-- breadcrumbs -->
     <?php endif; ?>
-    <?php $this->widget('Buscador'); ?>
-    <div class="container">
+    
+    
+      <?php $this->widget('Buscador'); ?>
+        
       <?php echo $content ?>
     </div> <!-- /container -->  
     <footer></footer>

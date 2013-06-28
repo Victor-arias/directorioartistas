@@ -143,7 +143,7 @@ class Perfiles extends CActiveRecord
 			$slug = $area . '/' . $genero . $value->slug;
 			
 			$resultado[] = array('value' 	=> $value->nombre,
-								 'label' 	=> $value->nombre,
+								 'label' 	=> strtolower($value->nombre),
 								 'slug' 	=> $slug);
 			//$resultado[] = $value->nombre;
 		}

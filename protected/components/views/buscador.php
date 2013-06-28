@@ -16,7 +16,8 @@
               'minLength'=> '2',
           ),
           'htmlOptions'  =>array(
-              //'style'=>'height:20px;',
+              //'style'=>'height:20px;', 
+			  "placeholder"=>"Ingresa el nombre del artista que deseas consultar"
           ),
       ));
       Yii::app()->clientScript->registerScript(
@@ -33,9 +34,11 @@
       );
       
       ?>
+      
+       <?php echo CHtml::submitButton('Buscar', array("class"=>"btn btn-large")) ?>
   </div>
   <div class="row">
-    <?php echo CHtml::submitButton('Buscar', array("class"=>"btn")) ?>
+   
   </div>
 
   <?php $this->endWidget(); ?>

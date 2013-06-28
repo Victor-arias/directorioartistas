@@ -22,7 +22,7 @@ footer{
 }
 header{
   background: url(../images/flor_sup.png) no-repeat, url(../images/bg_header.png) no-repeat 420px 19px;
-  height: 330px;
+  height: 230px;
   margin: auto;
   /*margin-bottom: -180px;*/
   position: relative;
@@ -54,6 +54,117 @@ header .fechas{
   overflow: hidden;
   width: 810px;
 }
+
+
+
+nav {
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: #ccc 1px 1px 5px;
+  clear: both;
+  color: #666;
+  font-size: 13px;
+  margin: auto;
+  overflow: hidden;
+  width: 808px;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav > ul > li {
+    float: left;
+	width:202px;
+	
+}
+
+nav ul li a {
+    min-width: 100px;
+    padding: 10px 0;
+    display: block;
+}
+
+nav ul li > ul {
+    min-width: 202px;
+    padding: 0px 0;
+    display: block;
+	background-color: #c84055;
+	color:#FFF;
+	border-radius: 5px;
+	margin:5px 0 0 0;
+}
+
+
+nav ul li > ul > li a {
+    min-width: 202px;
+    padding: 10px 0;
+	border-bottom:2px dotted #bc2d43;
+    display: block;
+	background-color: #c84055;
+	color:#FFF;
+	border-radius: 5px;
+	
+}
+
+nav ul li a:hover,
+a.flecha-abajo:hover,
+a.flecha-derecha:hover {
+    background-color: #c42d45;
+	color:#FFF;
+	text-decoration:none;
+	border-radius: 5px;
+}
+
+
+
+
+
+
+nav ul li ul {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    min-width: 160px;
+    z-index: 3;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+nav ul li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+nav ul li ul li {
+    position: relative;
+}
+nav ul li ul li ul {
+    right: 0px;
+    top: 0px;
+}
+
 header .fechas div{
   background: url(../images/dot-col.png) no-repeat right center;
   float: left;
@@ -234,6 +345,7 @@ p{
 .bs label.checkbox{
   margin-bottom: 20px;
 }
+
 .bs-docs-example .btn,
 .form-actions .btn{
   background: #c84055;;
@@ -242,6 +354,25 @@ p{
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+
+#buscador {
+  width: 808px;
+  margin:0 0 0 20px;
+}
+
+#buscador .btn {
+  background:#74A5D6;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  vertical-align:top;
+}
+
+#artista {
+	height:35px;
+	width:640px;
+	}
 
 .bs .btn,
 .form-actions .btn{
@@ -274,6 +405,7 @@ p{
   padding: 20px 25px; 
   position: relative;
   width: 760px;
+  margin-top:20px;
 }
 
 
@@ -417,7 +549,7 @@ p{
   font-size: 11px;
   margin: 0 8px 20px;
   min-height: 220px;
-  width: 140px;
+  width: 174px;
 }
 #perfiles .perfil h3
 {
@@ -425,6 +557,7 @@ p{
   line-height: 1;
   margin: 0;
   text-align: center;
+  text-transform:uppercase;
   
 }
 #perfiles .perfil img
@@ -437,8 +570,9 @@ p{
 {
   background: #ccc;
   display: inline-block;
-  height: 23px;
+  height: 20px;
   padding: 2px 5px 0;
+  border-radius:3px;
 }
 #perfiles .perfil span:first-child
 {
@@ -465,16 +599,27 @@ p{
 {
   padding: 0 5px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  text-transform:uppercase !important;
 }
 #perfiles .perfil .nombre
 {
-  background: #ccc;
+  background: #9ec065;
+  color:#FFF;
   display: table-cell;
   height: 60px;
   padding: 10px;
   vertical-align: middle;
-  width: 120px;
+  width: 155px;
+  text-transform:uppercase !important;
+  border-radius:5px;
+}
+
+#perfiles .perfil .nombre a
+{
+  color:#FFF;
+  text-transform:uppercase  !important;
+
 }
 
 .ui-autocomplete {
@@ -482,6 +627,8 @@ p{
     overflow-y: auto;
     /* prevent horizontal scrollbar */
     overflow-x: hidden;
+	text-transform:capitalize;
+	z-index:100;
   }
   /* IE 6 doesn't support max-height
    * we use height instead, but this forces the menu to always be this tall
@@ -489,3 +636,7 @@ p{
   * html .ui-autocomplete {
     height: 100px;
   }
+  
+.ui-autocomplete li {
+	font-size:10px;
+	}
