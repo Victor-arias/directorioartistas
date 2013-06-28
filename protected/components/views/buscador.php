@@ -29,7 +29,7 @@
             //$( "#search-form" ).submit();
           } 
         );', 
-        CClientScript::POS_END
+        CClientScript::POS_READY
       );
       
       ?>

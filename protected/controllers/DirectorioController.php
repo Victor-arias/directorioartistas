@@ -22,9 +22,16 @@ class DirectorioController extends Controller
 		$categoria 	= strtolower( $cat );
 		$subg = false;
 
+		$page 	 = ( isset($_GET['page']) ) ? $_GET['page']:1;
+		$limit 	 = 12;
+
 		if( $genero )
 			$subgenero 	= strtolower( $genero );
 
+		$criteria = new CDbCriteria;
+		$criteria->limit = $limit;
+		$criteria->offset = ($page-1) * $limit;
+		
 		if($subgenero)
 		{
 			switch( $subgenero )
@@ -76,7 +83,6 @@ class DirectorioController extends Controller
 					break;
 			}
 			
-			$criteria = new CDbCriteria;
 			$criteria->join = 'INNER JOIN propuestas ON propuestas.perfiles_id = t.id';
 			$criteria->addCondition('propuestas.subgenero LIKE "' . $subg . '"');
 			$resultado = Perfiles::model()->findAll($criteria);
@@ -100,15 +106,25 @@ class DirectorioController extends Controller
 				default:
 					$area = 4;
 			}
-			$resultado = Perfiles::model()->findAll('areas_id=' . $area);
+
+			$criteria->addCondition('areas_id=' . $area);
+			$resultado = Perfiles::model()->findAll($criteria);
 		}
 
-		$this->render('listar',
-			array('perfiles' => $resultado,
-				'categoria' => $categoria,
-				'subgenero' => $subg,
-				)
+		$vp = array('perfiles'  => $resultado,
+					'categoria' => $categoria,
+					'subgenero' => $subg,
+					'pagina'	=> $page
 		);
+
+		if( Yii::app()->request->isAjaxRequest )
+		{
+			$this->render( 'json', array('contenido' => $vp) );
+		}
+		else
+		{
+			$this->render('listar', $vp );
+		}
 	}
 
 	public function actionVer()

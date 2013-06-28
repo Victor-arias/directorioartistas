@@ -22,9 +22,6 @@
 	<?php endif; ?>
 	<div class="nombre">
 		<h3><?php 
-			/*$subslug = (isset($perfil->propuestases[0]->subgenero))?$this->createSlug($perfil->propuestases[0]->subgenero).'/':'';
-			echo CHtml::link( $perfil->nombre, CHtml::normalizeUrl(Yii::app()->homeUrl . $this->createSlug($perfil->areas->nombre) .'/' . $subslug . $perfil->slug ) ); 
-			*/
 			$subslug = (isset($perfil->propuestases[0]->subgenero))? Utility::createSlug($perfil->propuestases[0]->subgenero).'/':'';
 			echo CHtml::link( $perfil->nombre, CHtml::normalizeUrl(Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . $subslug . $perfil->slug ) );
 			?> 
