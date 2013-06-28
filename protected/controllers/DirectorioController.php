@@ -107,7 +107,12 @@ class DirectorioController extends Controller
 					$area = 4;
 			}
 
+			/*$criteria->select = 't.*, areas.*';
+			$criteria->join   = 'INNER JOIN areas ON areas.id = t.areas_id';
+			$criteria->join   .= ' INNER JOIN fotos ON fotos.perfiles_id = t.id';*/
+			$criteria->with = array('areas', 'fotoses');
 			$criteria->addCondition('areas_id=' . $area);
+			//$criteria->addCondition('fotos.es_perfil=1');
 			$resultado = Perfiles::model()->findAll($criteria);
 		}
 
@@ -119,6 +124,8 @@ class DirectorioController extends Controller
 
 		if( Yii::app()->request->isAjaxRequest )
 		{
+			print_r($vp);
+			Yii::app()->end();
 			$this->render( 'json', array('contenido' => $vp) );
 		}
 		else
