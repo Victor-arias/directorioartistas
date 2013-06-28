@@ -1,4 +1,4 @@
-<div id="buscador">
+<div <?php if($this->home) echo 'class="home"' ?> id="buscador">
   <?php $form = $this->beginWidget('CActiveForm', array(
       'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'busqueda'),
       'enableAjaxValidation'  =>true,
@@ -8,6 +8,15 @@
   )); ?>
   <div class="row">
       <?php
+      if($this->home):
+      ?>
+      <h2>Ingresa el nombre del artista que deseas consultar</h2>
+      <?php
+        $placeholder = ""; 
+      else:
+        $placeholder = "Ingresa el nombre del artista que deseas consultar";
+      endif;
+
       $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
           'name'         => 'artista',
           'model'        => new Perfiles, 
@@ -17,7 +26,7 @@
           ),
           'htmlOptions'  =>array(
               //'style'=>'height:20px;', 
-			  "placeholder"=>"Ingresa el nombre del artista que deseas consultar"
+			       "placeholder"=>$placeholder
           ),
       ));
       Yii::app()->clientScript->registerScript(
