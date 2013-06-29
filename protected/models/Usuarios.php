@@ -12,6 +12,7 @@
  * @property integer $roles_id
  *
  * The followings are the available model relations:
+ * @property Jurado[] $jurados
  * @property Perfiles[] $perfiles
  * @property Roles $roles
  */
@@ -61,6 +62,7 @@ class Usuarios extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'jurados' => array(self::HAS_MANY, 'Jurado', 'usuarios_id'),			
 			'perfiles' => array(self::HAS_MANY, 'Perfiles', 'usuarios_id'),
 			'roles' => array(self::BELONGS_TO, 'Roles', 'roles_id'),
 		);

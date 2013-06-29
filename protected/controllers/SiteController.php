@@ -69,11 +69,11 @@ class SiteController extends Controller
 					case '1':
 						# Redirecciona al perfil del Usuario registrado
 						break;
-					case '2': 
+					case ('2' OR '3'): 
 						$this->redirect(array('propuestas/listar'));
 						break;
 					default:
-						$this->redirect(array('propuestas/asignadas'));
+						$this->redirect(array('site/login'));
 						break;
 				}			
 				

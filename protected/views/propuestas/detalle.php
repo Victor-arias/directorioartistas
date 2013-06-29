@@ -1,14 +1,137 @@
 <?php
 /* @var $this AdministradorController */
-
-$this->breadcrumbs=array(
-	'Administrador'=>array('/administrador'),
-	'Detalle',
-);
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="row-fluid">
+        <div class="span4">
+          <img src="http://www.lorempixel.com/250/265" class="img-polaroid">
+        </div><!--/span-->
+        <div class="span6">
+          <h3><?php echo $perfil->propuestases[0]->nombre ?></h3><br/>
+          <strong>Área:</strong> <?php echo $perfil->areas->nombre ?><br/><br/>
+          <strong>Número Integrantes:</strong> <?php echo $perfil->propuestases[0]->numero_integrantes ?><br/><br/>
+          <strong>Trayectoria:</strong> 
+          <?php 
+          switch ($perfil->propuestases[0]->trayectoria ) {
+          	case '1':
+          		echo "De 1 a 5 Años";
+          		break;
+          	case '2':
+          		echo "De 5 a 10 Años";
+          		break;
+          	default:
+          		echo "De 10 Años en adelante";
+          		break;
+          }
+          ?><br/><br/>
+          <strong>Valor Presentación:</strong> <?php echo number_format($perfil->propuestases[0]->valor_presentacion,0) ?>
+        </div><!--/span-->
+      </div><!--/row-->
+      <div class="row-fluid">
+        <div class="span5">
+          <br/>
+          <strong>Representante:</strong> <?php echo $perfil->propuestases[0]->representante ?><br/><br/>
+          <strong>Cédula:</strong> <?php echo $perfil->propuestases[0]->cedula ?><br/><br/>
+          <strong>Email:</strong> <?php echo $perfil->propuestases[0]->email ?><br/><br/>
+          <strong>Celular:</strong> <?php echo $perfil->propuestases[0]->celular ?><br/><br/>
+          <strong>Teléfono:</strong> <?php echo $perfil->propuestases[0]->telefono ?><br/><br/>
+        </div><!--/span-->
+        <div class="span4">
+		  <br/>
+		  <strong>Dirección:</strong> <?php echo $perfil->propuestases[0]->direccion ?><br/><br/>
+		  <strong>Facebook:</strong> <?php echo $perfil->redesHasPerfiles[1]->url ?><br/><br/>
+		  <strong>Twitter:</strong> <?php echo $perfil->redesHasPerfiles[0]->url ?><br/><br/>
+		  <strong>Sitio Web:</strong> <?php echo $perfil->web ?><br/><br/>
+        </div><!--/span-->        
+      </div><!--/row-->
+      <div class="row-fluid">
+      	<div class="span9">
+      		<h5>Reseña</h5>
+      		<?php echo $perfil->propuestases[0]->resena ?>
+      	</div>
+      </div>      
+      <div class="row-fluid">
+      	<div class="span5">
+      		<h5>Video</h5>
+      		<?php
+			$url = $perfil->propuestases[0]->video;
+			preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $matches);
+			if(isset($matches[1])):
+			?> 
+			<iframe type="text/html" width="350" height="200" src="http://www.youtube.com/embed/<?php echo $matches[1] ?>?rel=0" frameborder="0"></iframe>		
+			<?php endif; ?>
+      	</div>
+      	<?php if($perfil->areas_id === "1"): ?>
+      	<div class="span4">
+      		<h5>Audios</h5>
+      		<?php foreach($perfil->audioses as $audio): ?>
+      		<h6><?php echo $audio->nombre ?>.mp3</h6>
+			<audio controls>
+			  <source src="<?php echo Yii::app()->request->baseUrl.$audio->url ?>" type="audio/mpeg">
+			  Su Navegador no soporta reproducción de audio. Actualicelo o descargue el archivo a su computado 
+			  [<a href="<?php echo Yii::app()->request->baseUrl.$audio->url ?>" target="_BLANK">Descargar</a>]
+			</audio>         		
+      		<?php endforeach; ?> 		
+      	</div>
+      	<?php endif; ?>
+      </div>            
+    </div><!--/span-->  	
+    <div class="span4">
+      <div class="well sidebar-nav">
+        <?php if($this->user->roles_id == "2"): ?>
+        <ul class="nav nav-list">
+          <li class="nav-header">Calidad Interpretativa</li>
+          <li><span style="font-size: 11px;">Actuación (Fuerza Interpretativa)</span> <span class="pull-right">10</span></li>
+          <li><span style="font-size: 11px;">Arreglos</span> <span class="pull-right">10</span></li>
+          <li><span style="font-size: 11px;">Ensamble</span> <span class="pull-right">10</span></li>
+          <li class="nav-header">Calidad Creativa</li>
+          <li><span style="font-size: 11px;">Repertorio</span> <span class="pull-right">10</span></li>
+          <li><span style="font-size: 11px;">Lenguaje del Contenido</span> <span class="pull-right">10</span></li>
+          <li><span style="font-size: 11px;">Originalidad</span> <span class="pull-right">10</span></li>
+          <li class="nav-header">Representatividad</li>
+          <li><span style="font-size: 11px;">Reconocimiento Artístico</span> <span class="pull-right">10</span></li>
+          <li><span style="font-size: 11px;">Proyección e Identidad Cultural</span> <span class="pull-right">10</span></li>
+          <li class="nav-header">Viabilidad</li>
+          <li><span style="font-size: 11px;">Viabilidad Económica</span> <span class="pull-right">10</span></li>
+          <li><span style="font-size: 11px;">Viabilidad Escénica</span> <span class="pull-right">10</span></li>          
+        </ul>
+        <?php else: ?>
+        <ul class="nav nav-list calificador">          
+          <?php foreach($criterios as $criterio): ?>    
+          <li class="nav-header"><?php echo $criterio->tipoCriterio->nombre ?></li>      
+          <li>
+            <span class="lista-criterios"><?php echo $criterio->titulo ?></span> 
+            <select class="select-mini">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+          <?php endforeach; ?>   
+          <li><button class="btn btn-info centrar">Calificar</button></li>         
+        </ul>        
+        <?php endif; ?>
+      </div><!--/.well -->
+    </div><!--/span-->
+  </div><!--/row-->
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+  <div class="row-fluid">
+  	<div class="span12">
+  		<h5>Rider Técnico</h5>
+  		<embed src="<?php echo Yii::app()->request->baseUrl.$perfil->propuestases[0]->rider ?>" toolbar="0" width="100%" height="550">
+  	</div>
+  </div>  
+
+  <hr>
+
+</div>

@@ -23,8 +23,12 @@
  * @property string $updated_at
  * @property integer $convocatorias_id
  * @property integer $perfiles_id
+ * @property string $subgenero
+ * @property integer $jurado_id
  *
  * The followings are the available model relations:
+ * @property Criterio[] $criterios
+ * @property Jurado $jurado
  * @property Convocatorias $convocatorias
  * @property Perfiles $perfiles
  */
@@ -57,17 +61,18 @@ class Propuestas extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, representante, cedula, telefono, celular, email, direccion, trayectoria, numero_integrantes, resena, video, valor_presentacion, rider, created_at, convocatorias_id, perfiles_id', 'required'),
-			array('trayectoria, numero_integrantes, estado, convocatorias_id, perfiles_id', 'numerical', 'integerOnly'=>true),
+			array('trayectoria, numero_integrantes, estado, convocatorias_id, perfiles_id, jurado_id', 'numerical', 'integerOnly'=>true),
 			array('valor_presentacion', 'numerical'),
 			array('nombre, cedula', 'length', 'max'=>100),
 			array('representante', 'length', 'max'=>150),
 			array('telefono, celular', 'length', 'max'=>45),
 			array('email', 'length', 'max'=>50),
 			array('direccion, video, rider', 'length', 'max'=>255),
+			array('subgenero', 'length', 'max'=>30),
 			array('updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, representante, cedula, telefono, celular, email, direccion, trayectoria, numero_integrantes, resena, video, estado, valor_presentacion, rider, created_at, updated_at, convocatorias_id, perfiles_id', 'safe', 'on'=>'search'),
+			array('id, nombre, representante, cedula, telefono, celular, email, direccion, trayectoria, numero_integrantes, resena, video, estado, valor_presentacion, rider, created_at, updated_at, convocatorias_id, perfiles_id, subgenero, jurado_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,6 +84,8 @@ class Propuestas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'criterios' => array(self::MANY_MANY, 'Criterio', 'criterio_has_propuestas(propuestas_id, criterio_id)'),
+			'jurado' => array(self::BELONGS_TO, 'Jurado', 'jurado_id'),
 			'convocatorias' => array(self::BELONGS_TO, 'Convocatorias', 'convocatorias_id'),
 			'perfiles' => array(self::BELONGS_TO, 'Perfiles', 'perfiles_id'),
 		);
@@ -104,11 +111,13 @@ class Propuestas extends CActiveRecord
 			'video' => 'Video',
 			'estado' => 'Estado',
 			'valor_presentacion' => 'Valor Presentacion',
-			'rider' => 'Rider técnico: PDF',
+			'rider' => 'Rider',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'convocatorias_id' => 'Convocatorias',
 			'perfiles_id' => 'Perfiles',
+			'subgenero' => 'Subgenero',
+			'jurado_id' => 'Jurado',
 		);
 	}
 
@@ -142,6 +151,8 @@ class Propuestas extends CActiveRecord
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('convocatorias_id',$this->convocatorias_id);
 		$criteria->compare('perfiles_id',$this->perfiles_id);
+		$criteria->compare('subgenero',$this->subgenero,true);
+		$criteria->compare('jurado_id',$this->jurado_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -149,13 +160,13 @@ class Propuestas extends CActiveRecord
 	}
 
 	protected function beforeSave(){
-		if($this->isNewRecord){
-			$this->created_at = date("Y-m-d H:i:s");
-		}
-		else{
-			$this->updated_at = date("Y-m-d H:i:s");	
-		}
+			if($this->isNewRecord){
+				$this->created_at = date("Y-m-d H:i:s");
+			}
+			else{
+				$this->updated_at = date("Y-m-d H:i:s");	
+			}
 
-		return parent::beforeSave();
+			return parent::beforeSave();
 	}	
 }

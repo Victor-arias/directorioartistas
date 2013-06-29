@@ -7,7 +7,30 @@ class PropuestasController extends Controller
 	
 	public function actionDetalle()
 	{
-		$this->render('detalle');
+		$idSesion = Yii::app()->user->id;
+
+		if(!is_null($idSesion)){
+			$objUsuario = new Usuarios();
+			$usuario = $objUsuario->findByPk($idSesion);
+			$this->user = $usuario;
+
+			if(isset($_GET['id'])){
+				$objPerfil = new Perfiles();
+				$perfil = $objPerfil->findByPk($_GET['id']);
+
+				$objCriterio = new Criterio();
+				$criterios = $objCriterio->findAll("areas_id=$perfil->areas_id");
+				foreach($criterios as $criterio){
+					
+				}
+			}
+			else{
+				$this->redirect(array('propuestas/listar'));
+			}
+		}		
+		$this->render('detalle', array(
+				'perfil'=>$perfil,
+				'criterios'=>$criterios));
 	}
 
 	public function actionListar()
@@ -19,61 +42,40 @@ class PropuestasController extends Controller
 			$usuario = $objUsuario->findByPk($idSesion);
 			$this->user = $usuario;
 
-			$criteria = new CDbCriteria();
-			$count = Propuestas::model()->count($criteria);
-			$pages = new CPagination($count);
+			$model = new Propuestas("search");
+			$model->unsetAttributes();
+			if(isset($_GET['Propuestas']))
+				$model->attributes = $_GET['Propuestas'];
 
-			$pages->pageSize = 20;
-			$pages->applyLimit($criteria);
-			$models = Propuestas::model()->findAll($criteria);
+			$criteria=new CDbCriteria;
+			$criteria->compare('nombre',$model->nombre,true);
+			$criteria->compare('representante',$model->representante,true);		
+			if($usuario->roles_id=="3"){
+				$criteria->addCondition("jurado_id=".$usuario->jurados[0]->id);	
+			}
+
+			$dataProvider = new CActiveDataProvider($model, array(
+   				'criteria'=>$criteria,
+    			'sort'=>array('defaultOrder'=>'id ASC'), // orden por defecto según el atributo nombre
+    			'pagination'=>array('pageSize'=>20), // personalizamos la paginación
+  			));			
 		}
 		else{
 			$this->redirect(array('site/login'));
 		}
 
 		$this->render('listar',array(
-				'models' => $models,
-				'pages' => $pages,
+				'model' => $model,
+				'dataProvider' => $dataProvider,
 			));
-	}
-
-	public function actionAsignadas()
-	{
-		$idSesion = Yii::app()->user->id;
-
-		if(!is_null($idSesion)){
-			$objUsuario = new Usuarios();
-			$usuario = $objUsuario->findByPk($idSesion);
-			$this->user = $usuario;
-
-			$criteria = new CDbCriteria();
-			$count = Propuestas::model()->count($criteria);
-			$pages = new CPagination($count);
-
-			$pages->pageSize = 20;
-			$pages->applyLimit($criteria);
-			$models = Propuestas::model()->findAll($criteria);
-		}
-		else{
-			$this->redirect(array('site/login'));
-		}
-
-		$this->render('asignadas',array(
-				'models' => $models,
-				'pages' => $pages,
-			));		
 	}
 
 	public function accessRules()
 	{
 		return array(
             array('allow', // allow authenticated users to access all actions
-            	'actions'=>array('listar'),
-                'roles'=>array('2'),                
-            ),
-            array('allow', // allow authenticated users to access all actions
-            	'actions'=>array('asignadas'),
-                'roles'=>array('3'),                
+            	'actions'=>array('listar','detalle'),
+                'roles'=>array('2','3'),                
             ),            
             array('deny',
             	'message'=>"Usted no tiene permiso para acceder a ésta página.",

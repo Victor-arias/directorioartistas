@@ -1,6 +1,4 @@
 <?php /* @var $this Controller */ 
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/bootstrap.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/app.js", CClientScript::POS_END);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +16,19 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
     <![endif]-->
     <style>
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-top: 60px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
       }
     </style>    
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -32,7 +42,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Feria de las Flores</a>
+          <?php echo CHtml::link('Feria de las Flores', array('propuestas/listar'), array("class"=>"brand")) ?>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li class="active"><a href="#"><?php echo $this->user->username ?></a></li>
@@ -43,9 +53,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
         </div>
       </div>
     </div>
-
-    <div class="container">
       <?php echo $content ?>
-    </div> <!-- /container -->
   </body>
 </html>

@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'perfiles':
  * @property integer $id
  * @property string $nombre
+ * @property string $slug
  * @property string $resena
  * @property string $trayectoria
  * @property string $web
@@ -15,8 +16,8 @@
  * The followings are the available model relations:
  * @property Audios[] $audioses
  * @property Fotos[] $fotoses
- * @property Usuarios $usuarios
  * @property Areas $areas
+ * @property Usuarios $usuarios
  * @property Propuestas[] $propuestases
  * @property RedesHasPerfiles[] $redesHasPerfiles
  * @property Videos[] $videoses
@@ -51,11 +52,12 @@ class Perfiles extends CActiveRecord
 		return array(
 			array('nombre, resena, usuarios_id, areas_id', 'required'),
 			array('usuarios_id, areas_id', 'numerical', 'integerOnly'=>true),
-			array('nombre, web', 'length', 'max'=>255),
+			array('nombre, slug', 'length', 'max'=>100),
+			array('web', 'length', 'max'=>255),
 			array('trayectoria', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, resena, trayectoria, web, usuarios_id, areas_id', 'safe', 'on'=>'search'),
+			array('id, nombre, slug, resena, trayectoria, web, usuarios_id, areas_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,8 +71,8 @@ class Perfiles extends CActiveRecord
 		return array(
 			'audioses' => array(self::HAS_MANY, 'Audios', 'perfiles_id'),
 			'fotoses' => array(self::HAS_MANY, 'Fotos', 'perfiles_id'),
-			'usuarios' => array(self::BELONGS_TO, 'Usuarios', 'usuarios_id'),
 			'areas' => array(self::BELONGS_TO, 'Areas', 'areas_id'),
+			'usuarios' => array(self::BELONGS_TO, 'Usuarios', 'usuarios_id'),
 			'propuestases' => array(self::HAS_MANY, 'Propuestas', 'perfiles_id'),
 			'redesHasPerfiles' => array(self::HAS_MANY, 'RedesHasPerfiles', 'perfiles_id'),
 			'videoses' => array(self::HAS_MANY, 'Videos', 'perfiles_id'),
@@ -85,6 +87,7 @@ class Perfiles extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
+			'slug' => 'Slug',
 			'resena' => 'Resena',
 			'trayectoria' => 'Trayectoria',
 			'web' => 'Web',
@@ -106,6 +109,7 @@ class Perfiles extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('slug',$this->slug,true);
 		$criteria->compare('resena',$this->resena,true);
 		$criteria->compare('trayectoria',$this->trayectoria,true);
 		$criteria->compare('web',$this->web,true);
