@@ -331,6 +331,56 @@ class ConvocatoriaController extends Controller
 		$this->render('exito');		
 	}
 
+	public function actionAsignarJuradosMusica()
+	{
+		$perfiles = Perfiles::model()->findAll('areas_id = ' . 1);
+		$jurados = array(3, 4, 5);
+		$jurado_actual = 0;
+		foreach($perfiles as $perfil)
+		{
+			/*CVarDumper::dump($perfil->propuestases);
+			echo '<br /><br />';*/
+			if( isset($perfil->propuestases[0]) )
+			{
+				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
+				$p->jurado_id = $jurados[$jurado_actual];
+				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado ' . $jurados[$jurado_actual];
+				else echo 'Falló ' . $p->nombre;
+
+				if($jurado_actual < 2) $jurado_actual++;
+				else $jurado_actual = 0;
+				//CVarDumper::dump($p);
+				echo '<br /><br />';
+			}
+			
+		}
+	}
+
+	public function actionAsignarJuradosDot()
+	{
+		$perfiles = Perfiles::model()->findAll('areas_id = ' . 2 . ' OR areas_id = ' . 3 . ' OR areas_id = ' . 4);
+		$jurados = array(6, 7);
+		$jurado_actual = 0;
+		foreach($perfiles as $perfil)
+		{
+			/*CVarDumper::dump($perfil->propuestases);
+			echo '<br /><br />';*/
+			if( isset($perfil->propuestases[0]) )
+			{
+				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
+				$p->jurado_id = $jurados[$jurado_actual];
+				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado ' . $jurados[$jurado_actual];
+				else echo 'Falló ' . $p->nombre;
+
+				if($jurado_actual < 1) $jurado_actual++;
+				else $jurado_actual = 0;
+				//CVarDumper::dump($p);
+				echo '<br /><br />';
+			}
+			
+		}
+	}
+
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()
