@@ -100,7 +100,7 @@ $this->breadcrumbs = $bc;
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( !$foto->es_perfil): ?>
-				<a href="<?php echo $foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo $foto->src ?>" width="140" height="130" alt="<?php echo $perfil->nombre ?>" /></a>
+				<a href="<?php echo $foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo $foto->src ?>" width="140" height="117" alt="<?php echo $perfil->nombre ?>" class="img-rounded" /></a>
 			<?php endif ?>
 	<?php 
 			endforeach;

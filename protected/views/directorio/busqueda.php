@@ -59,10 +59,10 @@ Yii::app()->clientScript->registerScript(
 			{
 				$.each(value.fotos, function(i, v){
 					if(v.es_perfil == "1")
-						html += "	<img src=\'"+v.url+"\' width=\'174\' height=\'145\' alt=\'"+value.nombre+"\' />";
+						html += "	<img src=\'"+v.url+"\' width=\'174\' height=\'145\' alt=\'"+value.nombre+"\' class=\'img-rounded\' />";
 				});
 			}
-			else html += "	<img src=\'/files/default.jpg\' width=\'174\' height=\'145\' alt=\'"+value.nombre+"\' />";
+			else html += "	<img src=\'/files/default.jpg\' width=\'174\' height=\'145\' alt=\'"+value.nombre+"\' class=\'img-rounded\' />";
 			html += "	<div class=\'nombre\'>";
 			html += "		<h3>";
 			html += "		<a href=\'"+url+"\'>"+value.nombre+"</a>";
