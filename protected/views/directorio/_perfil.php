@@ -25,6 +25,6 @@
 			$subslug = (isset($perfil->propuestases[0]->subgenero))? Utility::createSlug($perfil->propuestases[0]->subgenero).'/':'';
 			echo CHtml::link( $perfil->nombre, CHtml::normalizeUrl(Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . $subslug . $perfil->slug ) );
 			?> 
-			<?php  $perfil->nombre ?></h3>
+		</h3>
 	</div>
 </div>

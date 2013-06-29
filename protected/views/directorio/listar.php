@@ -9,7 +9,7 @@ Yii::app()->clientScript->registerScript(
 	var	pagina 	 = '.($pagina+1).';
 	var np 		 = ' . $np . '	  ;
 
-	if(np)
+	if(np >= 12)
 	{
 		perfiles.append("<a href=\''.$url.'?page='.($pagina+1).'\' class=\'cargar-mas\'>Cargar más</a>");
 	}	
@@ -23,15 +23,15 @@ Yii::app()->clientScript->registerScript(
 			"'.$url.'", 
 			{page:pagina}, 
 			function(data){
-				//console.log(data.perfiles);
-				if(Object.keys(data.perfiles).length >= 12){
-					pagina = parseInt(data.pagina)+1;
+				var datos = /*$.parseJSON(data)*/data;
+				console.log( datos );
+				if(Object.keys(datos.perfiles).length >= 12){
+					pagina = parseInt(datos.pagina)+1;
 					var link = $(".cargar-mas").attr("href");
 					link = link.trim();
 					link = link.substr(0, link.length-1);
 					link += pagina;
 					$(".cargar-mas").attr("href", link);
-					cargar_perfiles(data);
 					
 					/*
 
@@ -41,7 +41,7 @@ Yii::app()->clientScript->registerScript(
 				}else{
 					$(".cargar-mas").off("click", cargar_mas).remove();
 				}
-					
+				cargar_perfiles(datos);
 			}
 		);
 		
@@ -51,21 +51,30 @@ Yii::app()->clientScript->registerScript(
 	{
 		$.each(data.perfiles, function(index, value){
 			console.log(value);
+			var url = "/"+value.categoria;
+			if(value.propuestas) url += "/"+value.propuestas[0].subgenero;
+			url += "/"+value.slug;
 			var html = "";
 			html += "<div class=\'perfil\'>";
 			html += "	<div class=\'categoria\'>";
-			html += "		<span class=\'\'>"+data.categoria+"</span>";
-			if(data.subgenero) html += "		<span>"+data.subgenero+"</span>";
+			html += "		<span class=\'"+data.categoria+"\'>"+data.categoria+"</span>";
+			if(value.propuestas) html += "		<span>"+value.propuestas[0].subgenero+"</span>";
 			html += "	</div>";
-			html += "	<img src=\'\' width=\'140\' height=\'130\' alt=\'value.nombre\' />";
-			html += "";
-			html += "";
-			html += "";
-			html += "";
-			html += "";
-			html += "";
+			if(value.fotos)
+			{
+				$.each(value.fotos, function(i, v){
+					if(v.es_perfil == "1")
+						html += "	<img src=\'"+v.url+"\' width=\'140\' height=\'130\' alt=\'"+value.nombre+"\' />";
+				});
+			}
+			else html += "	<img src=\'/files/default.jpg\' width=\'140\' height=\'130\' alt=\'"+value.nombre+"\' />";
+			html += "	<div class=\'nombre\'>";
+			html += "		<h3>";
+			html += "		<a href=\'"+url+"\'>"+value.nombre+"</a>";
+			html += "		</h3>";
+			html += "	</div>";
 			html += "</div>";
-			//perfiles.append( cargar_perfil() );
+			perfiles.append( html );
 		});
 		
 	}//cargar-perfiles

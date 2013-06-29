@@ -114,6 +114,7 @@ class DirectorioController extends Controller
 			$criteria->addCondition('areas_id=' . $area);
 			//$criteria->addCondition('fotos.es_perfil=1');
 			$resultado = Perfiles::model()->findAll($criteria);
+
 		}
 
 		$vp = array('perfiles'  => $resultado,
@@ -124,9 +125,7 @@ class DirectorioController extends Controller
 
 		if( Yii::app()->request->isAjaxRequest )
 		{
-			print_r($vp);
-			Yii::app()->end();
-			$this->render( 'json', array('contenido' => $vp) );
+			$this->render( 'json_listar', array('contenido' => $vp) );
 		}
 		else
 		{
