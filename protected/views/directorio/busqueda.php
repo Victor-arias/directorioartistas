@@ -53,7 +53,12 @@ Yii::app()->clientScript->registerScript(
 			html += "<div class=\'perfil\'>";
 			html += "	<div class=\'categoria\'>";
 			html += "		<span class=\'"+data.categoria+"\'>"+data.categoria+"</span>";
-			if(value.propuestas) html += "		<span>"+value.propuestas[0].subgenero+"</span>";
+			if(value.propuestas){
+				if(value.propuestas[0].subgenero.length > 18)
+					html += "		<span>"+value.propuestas[0].subgenero.substring(0, 15)+"...</span>";
+				else
+					html += "		<span>"+value.propuestas[0].subgenero+"</span>";
+			}
 			html += "	</div>";
 			if(value.fotos)
 			{
