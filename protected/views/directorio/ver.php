@@ -56,7 +56,7 @@ $this->breadcrumbs = $bc;
 	</p>
 	<div class="twitter"><?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[0]->url) ?></div>
 	<div class="fb"><?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[1]->url) ?></div>
-	<div class="web"><?php echo Yii::app()->format->formatUrl($perfil->web) ?></div>
+	<?php if( !empty($perfil->web) ):?><div class="web"><?php echo Yii::app()->format->formatUrl($perfil->web) ?></div><?php endif; ?>
     </div>
     
     <div class="clear"></div>
