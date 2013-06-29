@@ -11,7 +11,7 @@ Yii::app()->clientScript->registerScript(
 
 	if(np >= 12)
 	{
-		perfiles.append("<a href=\''.$url.'?page='.($pagina+1).'\' class=\'cargar-mas\'>Cargar más</a>");
+		perfiles.append("<a href=\''.$url.'?page='.($pagina+1).'\' class=\'cargar-mas btn btn-large btn-block btn-primary clear\'>Cargar más</a>");
 	}	
 	
 	$(".cargar-mas").on("click", cargar_mas);
@@ -23,7 +23,7 @@ Yii::app()->clientScript->registerScript(
 			"'.$url.'", 
 			{page:pagina}, 
 			function(data){
-				var datos = /*$.parseJSON(data)*/data;
+				var datos = data;
 				console.log( datos );
 				if(Object.keys(datos.perfiles).length >= 12){
 					pagina = parseInt(datos.pagina)+1;
@@ -32,12 +32,6 @@ Yii::app()->clientScript->registerScript(
 					link = link.substr(0, link.length-1);
 					link += pagina;
 					$(".cargar-mas").attr("href", link);
-					
-					/*
-
-					PILAS, ACTUALIZAR LA URL
-
-					*/
 				}else{
 					$(".cargar-mas").off("click", cargar_mas).remove();
 				}
@@ -49,6 +43,7 @@ Yii::app()->clientScript->registerScript(
 
 	function cargar_perfiles(data)
 	{
+		perfiles.append("<div class=\'pagina clear\' id=\'pagina"+parseInt(data.pagina)+"\'>Página "+parseInt(data.pagina)+"</div>");
 		$.each(data.perfiles, function(index, value){
 			console.log(value);
 			var url = "/"+value.categoria;
@@ -74,8 +69,15 @@ Yii::app()->clientScript->registerScript(
 			html += "		</h3>";
 			html += "	</div>";
 			html += "</div>";
+			
 			perfiles.append( html );
 		});
+		if ($(".cargar-mas").length > 0){
+		  $(".cargar-mas").remove().insertAfter( $(".perfil:last") );
+		  $(".cargar-mas").on("click", cargar_mas);
+		}
+		var posicion = $("#pagina"+parseInt(data.pagina)).position();
+		window.scrollTo( posicion.left, posicion.top );
 		
 	}//cargar-perfiles
 	', 

@@ -649,19 +649,23 @@ background:#74A5D6;
   text-indent: -9999px;
   width: 14px;
 }
-#perfiles .perfil span.Teatro{
+#perfiles .perfil span.Teatro,
+#perfiles .perfil span.teatro{
   background-position: -60px 0;
 }
 
-#perfiles .perfil span.Danza{
+#perfiles .perfil span.Danza,
+#perfiles .perfil span.danza{
   background-position: -30px 0;
 }
 
-#perfiles .perfil span.Música{
+#perfiles .perfil span.Música,
+#perfiles .perfil span.musica{
   background-position: 0 0;
 }
 
-#perfiles .perfil span.Otro{
+#perfiles .perfil span.Otro,
+#perfiles .perfil span.otro{
   background-position: -90px 0;
 }
 

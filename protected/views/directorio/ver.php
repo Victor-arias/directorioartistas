@@ -63,7 +63,7 @@ $this->breadcrumbs = $bc;
     
 	<h3 class="tituloBackground">Reseña</h3>
     <p><?php echo $perfil->propuestases[0]->resena ?></p>
-    <p>PLUGINS SOCIALES AQUÍ</p>
+    <?php $this->renderPartial('_redes'); ?>
     <h3 class="tituloBackground">Conozca la propuesta</h3>
     
     <div class="multimedia">
