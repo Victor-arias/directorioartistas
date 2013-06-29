@@ -37,7 +37,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 			</div>
 		</div>
 		<div class="form-actions">
-			<?php echo CHtml::submitButton('Login', array('class'=>"btn btn-large")); ?>				
+			<?php echo CHtml::submitButton('Iniciar sesión', array('class'=>"btn btn-large")); ?>				
 		</div>				
 	</fieldset>
 	<?php $this->endWidget(); ?>
