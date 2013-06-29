@@ -107,12 +107,8 @@ class DirectorioController extends Controller
 					$area = 4;
 			}
 
-			/*$criteria->select = 't.*, areas.*';
-			$criteria->join   = 'INNER JOIN areas ON areas.id = t.areas_id';
-			$criteria->join   .= ' INNER JOIN fotos ON fotos.perfiles_id = t.id';*/
 			$criteria->with = array('areas', 'fotoses');
 			$criteria->addCondition('areas_id=' . $area);
-			//$criteria->addCondition('fotos.es_perfil=1');
 			$resultado = Perfiles::model()->findAll($criteria);
 
 		}
@@ -154,18 +150,12 @@ class DirectorioController extends Controller
 
 	public function actionBusqueda()
 	{
-		//if( !isset($_POST['artista']) ) throw new CHttpException('403', 'Forbidden access.');
 		$page 	 = ( isset($_GET['page']) ) ? $_GET['page']:1;
 		$termino = ( isset($_GET['artista']) ) ? $_GET['artista'] : ''; 
 		$limit 	 = 12;
 
 		$criteria = new CDbCriteria;
 	    $criteria->addSearchCondition('nombre', $termino);
-
-	    /*$total 		= Perfiles::model()->count($criteria);
-		$paginas 	= new CPagination( $total );
-		$paginas->setPageSize($limit);
-		$paginas->applyLimit($criteria);*/
 		
 		$criteria->limit = $limit;
 		$criteria->offset = ($page-1) * $limit;
@@ -194,6 +184,37 @@ class DirectorioController extends Controller
 			$this->render('json', array('contenido' => $artistas));	
 		}else throw new CHttpException('403', 'Forbidden access.');
 	}
+
+	public function actionGenerarSlug()
+	{
+		$perfiles = Perfiles::model()->findAll();
+	    foreach($perfiles as $perfil)
+	    {
+	      CVarDumper::dump($perfil->attributes);
+	      echo '<br /><br />';
+	      $p = $perfil;
+	      $p->slug = $this->createSlug($p->nombre);
+	      if($p->update()) echo 'Guardado ' . $p->id;
+	      else echo 'Falló ' . $p->id;
+	    }
+	}
+
+	public function createSlug($str) {
+	    // convert all spaces to underscores:
+	    $treated = strtr($str, " ", "_");
+	    // convert what's needed to convert to nothing (remove them...)
+	    $treated = preg_replace('/[\!\@\#\$\%\^\&\*\(\)\+\=\~\:\.\,\;\'\"\<\>\/\\\`]/', "", $treated);
+
+	    $no_permitidas= array("á","é","í","ó","ú","Á","É","Í","Ó","Ú","ñ","Ñ","À","Ã","Ì","Ò","Ù","´","Ã™","Ã ","Ã¨","Ã¬","Ã²","Ã¹","ç","Ç","Ã¢","ê","Ã®","Ã´","Ã»","Ã‚","ÃŠ","ÃŽ","Ã”","Ã›","ü","Ã¶","Ã–","Ã¯","Ã¤","«","Ò","Ã","Ã„","Ã‹");
+	    $permitidas=    array("a","e","i","o","u","A","E","I","O","U","n","N","A","A","I","O","U","","a","e","i","o","u","c","C","a","e","i","o","u","A","E","I","O","U","u","o","O","i","a","e","U","I","A","E");
+	    $treated = str_replace($no_permitidas, $permitidas, $treated);
+	    // convert underscores to dashes
+	    $treated = strtr($treated, "_", "-");
+
+	    $treated = mb_strtolower($treated, 'UTF-8');
+	    
+	    return $treated;
+  	}
 
 
 	/**

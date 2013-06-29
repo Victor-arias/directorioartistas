@@ -122,7 +122,6 @@ class Perfiles extends CActiveRecord
 	public function buscar($term)
 	{
 		$criteria = new CDbCriteria;
-		//$criteria->select = 't.id, t.nombre, areas.nombre';
 		$criteria->compare('nombre', $term, true);
 
 		$artistas = $this->findAll($criteria);
@@ -130,10 +129,7 @@ class Perfiles extends CActiveRecord
 
 		foreach($artistas as $value)
 		{
-			/*$resultado[] = array('value'  => $value->id,
-								 'label' 	=> $value->nombre);*/
 			$area = Utility::createSlug($value->areas->nombre);
-			//if( isset($value->propuestases[0]) ) CVarDumper::dump($value->propuestases[0]->subgenero);
 			$genero = '';
 			if( isset($value->propuestases[0]) ) 
 				if($value->propuestases[0]->subgenero != null) 
@@ -145,10 +141,7 @@ class Perfiles extends CActiveRecord
 			$resultado[] = array('value' 	=> $value->nombre,
 								 'label' 	=> strtolower($value->nombre),
 								 'slug' 	=> $slug);
-			//$resultado[] = $value->nombre;
 		}
-		/*print_r($resultado);
-		Yii::app()->end();*/
 
 		return $resultado;
 	}
@@ -157,15 +150,11 @@ class Perfiles extends CActiveRecord
 	{
 		$max 	= $this->count();
 		$offset = rand(0, $max-1);
-
-		//SELECT * FROM myTable WHERE RAND()<( SELECT (( 12/COUNT(*) )*10) FROM myTable) ORDER BY RAND() LIMIT 12;
-
 		$n 						= 12;
 		$offset 				= $n * $page;
 		$pcriteria 				= new CDbCriteria;
 		$pcriteria->addCondition('RAND()<(SELECT (('.$n.'/COUNT(*) )*10) FROM '.$this->tableName().')');
 		$pcriteria->order 		= 'RAND()';
-		//$pcriteria->offset 		= $offset;
 		$pcriteria->limit 		= $n;
 	
 		$perfiles = $this->findAll($pcriteria);
