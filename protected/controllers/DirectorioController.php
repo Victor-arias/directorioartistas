@@ -155,29 +155,34 @@ class DirectorioController extends Controller
 	public function actionBusqueda()
 	{
 		//if( !isset($_POST['artista']) ) throw new CHttpException('403', 'Forbidden access.');
-		$page 	 = ( isset($_GET['page']) ) ? $_GET['page']:0;
+		$page 	 = ( isset($_GET['page']) ) ? $_GET['page']:1;
 		$termino = ( isset($_GET['artista']) ) ? $_GET['artista'] : ''; 
 		$limit 	 = 12;
 
 		$criteria = new CDbCriteria;
 	    $criteria->addSearchCondition('nombre', $termino);
 
-	    $total 		= Perfiles::model()->count($criteria);
+	    /*$total 		= Perfiles::model()->count($criteria);
 		$paginas 	= new CPagination( $total );
 		$paginas->setPageSize($limit);
-		$paginas->applyLimit($criteria);
+		$paginas->applyLimit($criteria);*/
 		
 		$criteria->limit = $limit;
 		$criteria->offset = ($page-1) * $limit;
-		$resultado 	= Perfiles::model()->findAll( $criteria/*'nombre LIKE "%' . $termino. '%"'*/ );
+		$resultado 	= Perfiles::model()->findAll( $criteria );
 		
+		$vp = array('perfiles' => $resultado,
+				  'pagina'	 => $page,
+				  'termino' => $termino);
 
-
-		$this->render('busqueda',
-			array('perfiles' => $resultado,
-				  'paginas'	 => $paginas,
-				  'termino' => $termino)
-		);
+		if( Yii::app()->request->isAjaxRequest )
+		{
+			$this->render( 'json_listar', array('contenido' => $vp) );
+		}
+		else
+		{
+			$this->render('busqueda', $vp);
+		}
 	
 	}
 

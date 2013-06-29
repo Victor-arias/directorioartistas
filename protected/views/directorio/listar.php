@@ -95,7 +95,7 @@ $this->breadcrumbs = $bc;
 <div id="perfiles">
 	<?php if( $np ): ?>
 		<?php foreach($perfiles as $perfil): ?>
-			<?php $this->renderPartial( '_perfil' , array( 'perfil' => $perfil, 'subgenero' => $subgenero ) );?>
+			<?php $this->renderPartial( '_perfil' , array( 'perfil' => $perfil ) );?>
 		<?php endforeach; ?>
 	<?php else: ?>
 		<p>¡Ooops! No hemos encontrado artistas, puedes usar el menú o el buscador para ver otros artístas.</p>

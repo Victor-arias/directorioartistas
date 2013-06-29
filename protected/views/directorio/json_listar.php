@@ -1,16 +1,10 @@
-<?php
-header('Content-Type: application/json; charset="UTF-8"');
-//echo CJSON::encode( $contenido );
-//Yii::app()->end();
-/*
-*/
-?>
+<?php header('Content-Type: application/json; charset="UTF-8"'); ?>
 <?php 
 $json = '';
 $json .= '{';
-	$json .= '"categoria":"'.$contenido['categoria'].'",';
-	$json .= '"subgenero":"'.$contenido['subgenero'].'",';
-	$json .= '"pagina":"'.$contenido['pagina'].'",';
+	if(isset($contenido['categoria']))	$json .= '"categoria":"'.$contenido['categoria'].'",';
+	if(isset($contenido['subgenero'])) $json .= '"subgenero":"'.$contenido['subgenero'].'",';
+	if(isset($contenido['pagina'])) $json .= '"pagina":"'.$contenido['pagina'].'",';
 	$json .= '"perfiles":';
 	$json .= '[';
 		foreach($contenido['perfiles'] as $perfil):
