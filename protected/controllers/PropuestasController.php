@@ -19,10 +19,7 @@ class PropuestasController extends Controller
 				$perfil = $objPerfil->findByPk($_GET['id']);
 
 				$objCriterio = new Criterio();
-				$criterios = $objCriterio->findAll("areas_id=$perfil->areas_id");
-				foreach($criterios as $criterio){
-					
-				}
+				$criterios = $objCriterio->findAll("areas_id=$perfil->areas_id ORDER BY tipo_criterio_id ASC");
 			}
 			else{
 				$this->redirect(array('propuestas/listar'));
@@ -70,11 +67,34 @@ class PropuestasController extends Controller
 			));
 	}
 
+	public function actionCalificar(){
+		$calificaciones = $_POST['calificaciones'];
+		$idPropuesta = $_POST['idPropuesta'];
+
+		$objCriterioHasPropuestas = new CriterioHasPropuestas;
+
+		$transaction = $objCriterioHasPropuestas->dbConnection->beginTransaction();
+		foreach ($calificaciones as $calificacion){
+			$objCriterioHasPropuestas = new CriterioHasPropuestas;
+			$objCriterioHasPropuestas->propuestas_id = $idPropuesta;
+			$objCriterioHasPropuestas->criterio_id = $calificacion["id"];
+			$objCriterioHasPropuestas->puntaje     = $calificacion["cal"];
+			if( ! $objCriterioHasPropuestas->save(false) ){
+				$transaction->rollback();
+				break;
+			}
+		}
+
+		$transaction->commit();
+		
+		Yii::app()->end();
+	}
+
 	public function accessRules()
 	{
 		return array(
             array('allow', // allow authenticated users to access all actions
-            	'actions'=>array('listar','detalle'),
+            	'actions'=>array('listar','detalle','calificar'),
                 'roles'=>array('2','3'),                
             ),            
             array('deny',

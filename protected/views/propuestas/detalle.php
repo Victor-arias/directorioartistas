@@ -41,9 +41,9 @@
         <div class="span4">
 		  <br/>
 		  <strong>Dirección:</strong> <?php echo $perfil->propuestases[0]->direccion ?><br/><br/>
-		  <strong>Facebook:</strong> <?php echo $perfil->redesHasPerfiles[1]->url ?><br/><br/>
-		  <strong>Twitter:</strong> <?php echo $perfil->redesHasPerfiles[0]->url ?><br/><br/>
-		  <strong>Sitio Web:</strong> <?php echo $perfil->web ?><br/><br/>
+		  <strong>Facebook:</strong> <?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[1]->url) ?><br/><br/>
+		  <strong>Twitter:</strong> <?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[0]->url) ?><br/><br/>
+		  <strong>Sitio Web:</strong> <?php if( !empty($perfil->web) ):?><?php echo Yii::app()->format->formatUrl($perfil->web) ?><?php endif; ?><br/><br/>
         </div><!--/span-->        
       </div><!--/row-->
       <div class="row-fluid">
@@ -99,11 +99,17 @@
         </ul>
         <?php else: ?>
         <ul class="nav nav-list calificador">          
+          <?php $idCriterioActual = 0; ?>
           <?php foreach($criterios as $criterio): ?>    
-          <li class="nav-header"><?php echo $criterio->tipoCriterio->nombre ?></li>      
+
+          <?php if($idCriterioActual !== $criterio->tipo_criterio_id): ?>
+            <li class="nav-header"><?php echo $criterio->tipoCriterio->nombre ?></li>      
+          <?php $idCriterioActual = $criterio->tipo_criterio_id ?>
+          <?php endif; ?>
           <li>
             <span class="lista-criterios"><?php echo $criterio->titulo ?></span> 
-            <select class="select-mini">
+            <select class="select-mini" id="criterio_<?php echo $criterio->id ?>">
+              <option></option>
               <option>0</option>
               <option>1</option>
               <option>2</option>
@@ -118,7 +124,7 @@
             </select>
           </li>
           <?php endforeach; ?>   
-          <li><button class="btn btn-info centrar">Calificar</button></li>         
+          <li><button id="btnCalificar" class="btn btn-info centrar">Calificar</button></li>         
         </ul>        
         <?php endif; ?>
       </div><!--/.well -->
@@ -135,3 +141,49 @@
   <hr>
 
 </div>
+<script type="text/javascript">
+$(function(){
+  $("#btnCalificar").click(function(){
+    sinCalificar = 0;
+    <?php foreach($criterios as $criterio): ?>   
+    if(isEmpty($("#criterio_<?php echo $criterio->id ?>").val())){
+      sinCalificar ++;
+    }
+    <?php endforeach; ?>
+
+    if(sinCalificar > 0){
+      bootbox.alert("Debe seleccionar todos los items a calificar.");
+    }
+    else{
+      <?php $quotedUrl = $this->createUrl('propuestas/calificar'); ?>
+      
+      calificaciones = {
+        idPropuesta: <?php echo $perfil->propuestases[0]->id ?>,
+        calificaciones: [
+        <?php foreach($criterios as $criterio): ?>
+          {"id": "<?php echo $criterio->id ?>", "cal": $("#criterio_<?php echo $criterio->id ?>").val() },
+        <?php endforeach ?>        
+        ]
+      };
+
+      $.ajax({
+          type: "POST",
+          url: "<?php echo $quotedUrl ?>",
+          data: calificaciones,
+          success: function(data) {
+            bootbox.alert("Se ha registrado su calificación de manera exitosa.");
+          }
+      });      
+    }
+  });
+});
+
+function isEmpty(valor){
+  var str = valor;
+  str = str.replace(/^\s*|\s*$/g,"");
+  if(str.length < 1) {  
+      return true;  
+  }  
+  return false; 
+}
+</script>
