@@ -4,7 +4,7 @@ body {
     url(../images/bg_flores.png) repeat;
     color: #777;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   height: 100%;
 }
 html{
@@ -54,6 +54,117 @@ header .fechas{
   overflow: hidden;
   width: 810px;
 }
+
+
+
+nav {
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: #ccc 1px 1px 5px;
+  clear: both;
+  color: #666;
+  font-size: 13px;
+  margin: auto;
+  overflow: hidden;
+  width: 808px;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav > ul > li {
+    float: left;
+	width:202px;
+	
+}
+
+nav ul li a {
+    min-width: 100px;
+    padding: 10px 0;
+    display: block;
+}
+
+nav ul li > ul {
+    min-width: 202px;
+    padding: 0px 0;
+    display: block;
+	background-color: #c84055;
+	color:#FFF;
+	border-radius: 5px;
+	margin:5px 0 0 0;
+}
+
+
+nav ul li > ul > li a {
+    min-width: 202px;
+    padding: 10px 0;
+	border-bottom:2px dotted #bc2d43;
+    display: block;
+	background-color: #c84055;
+	color:#FFF;
+	border-radius: 5px;
+	
+}
+
+nav ul li a:hover,
+a.flecha-abajo:hover,
+a.flecha-derecha:hover {
+    background-color: #c42d45;
+	color:#FFF;
+	text-decoration:none;
+	border-radius: 5px;
+}
+
+
+
+
+
+
+nav ul li ul {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    min-width: 160px;
+    z-index: 3;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+nav ul li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+nav ul li ul li {
+    position: relative;
+}
+nav ul li ul li ul {
+    right: 0px;
+    top: 0px;
+}
+
 header .fechas div{
   background: url(../images/dot-col.png) no-repeat right center;
   float: left;
@@ -88,15 +199,29 @@ header .fechas strong.next{
 }
 header .fechas strong.prev{
   background: #c84055;
+  
 }
+
+.breadcrumbs {
+	font-size:12px;
+	margin:0 0 20px 0;
+	}
 h2{
   color: #777;
   font-size: 20px;
   font-weight: bold;
   line-height: 1.2;
-  text-align: center;
+  
   text-transform: uppercase;
+  margin-bottom:20px;
 }
+
+.titulo  {
+  border-bottom:2px dotted #777;
+  padding-bottom:10px;
+}
+
+
 
 i.icon-privado{
   background: url(../images/i_privado.png) no-repeat;
@@ -202,6 +327,7 @@ legend{
 }
 p{
   vertical-align: bottom;
+  line-height:22px;
 }
 .bs-docs-example{
   border-image: url(../images/dot-grid.png) 6 repeat;
@@ -234,6 +360,7 @@ p{
 .bs label.checkbox{
   margin-bottom: 20px;
 }
+
 .bs-docs-example .btn,
 .form-actions .btn{
   background: #c84055;;
@@ -242,6 +369,67 @@ p{
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+
+#perfil .btn {
+  background: #c84055;;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+#buscador {
+  width: 808px;
+  margin:auto 0;
+}
+
+#buscador .btn {
+  background:#74A5D6;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  vertical-align:top;
+}
+
+.home#buscador   {
+	margin:40px auto 20px auto;
+	width:650px;
+	text-align:center;
+}
+
+
+.instruccion {
+	text-align:center;
+	margin-bottom:60px;
+	}
+
+
+.home#buscador h2   {
+	text-align:center;
+}
+
+.home#buscador #artista   {
+	width:600px;
+}
+
+.home#buscador .btn   {
+background:#74A5D6;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  
+  width:300px;
+
+}
+
+
+
+
+#artista {
+	height:35px;
+	width:640px;
+	}
 
 .bs .btn,
 .form-actions .btn{
@@ -274,6 +462,7 @@ p{
   padding: 20px 25px; 
   position: relative;
   width: 760px;
+  margin-top:20px;
 }
 
 
@@ -406,3 +595,276 @@ p{
 		  
 }
 
+
+
+
+
+/*DIRECTORIO*/
+
+.infoPpal img
+{
+  float: left;
+  margin:0 10px 10px 0;
+
+}
+
+
+#perfiles .perfil
+{
+  float: left;
+  font-size: 11px;
+  margin: 0 8px 20px;
+  min-height: 220px;
+  width: 174px;
+}
+#perfiles .perfil h3
+{
+  font-size: 12px;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  text-transform:uppercase;
+  
+}
+#perfiles .perfil img
+{
+  display: block;
+  margin: -15px auto 5px;
+  text-align: center;
+}
+#perfiles .perfil span
+{
+  background: #ccc;
+  display: inline-block;
+  height: 20px;
+  padding: 2px 5px 0;
+  border-radius:3px;
+}
+
+
+
+#perfiles .perfil span:first-child
+{
+  background: url(../images/areas_thumb.png) no-repeat;
+  text-indent: -9999px;
+  width: 14px;
+}
+#perfiles .perfil span.Teatro,
+#perfiles .perfil span.teatro{
+  background-position: -60px 0;
+}
+
+#perfiles .perfil span.Danza,
+#perfiles .perfil span.danza{
+  background-position: -30px 0;
+}
+
+#perfiles .perfil span.Música,
+#perfiles .perfil span.musica{
+  background-position: 0 0;
+}
+
+#perfiles .perfil span.Otro,
+#perfiles .perfil span.otro{
+  background-position: -90px 0;
+}
+
+#perfiles .perfil .categoria
+{
+  padding: 0 5px;
+  position: relative;
+  z-index: 1;
+  text-transform:uppercase !important;
+}
+
+#perfil .infoPpal .categoria span
+{
+	display:inline-block;
+	background-color:#E73F56;
+	color:#FFF;
+	padding:1px 5px 1px 5px;
+	border-radius:3px;
+}
+
+#perfil .infoPpal .categoria span:first-child
+{
+  background: url(../images/areas_thumb.png) no-repeat;
+  text-indent: -9999px;
+  width: 14px;
+}
+
+#perfil .infoPpal .categoria span.Teatro{
+  background-position: -60px 0;
+  border-radius:3px;
+}
+
+#perfil .infoPpal .categoria span.Danza{
+  background-position: -30px 0;
+}
+
+#perfil .infoPpal .categoria span.Música{
+  background-position: 0 0;
+}
+
+#perfil .infoPpal .categoria span.Otro{
+  background-position: -90px 0;
+}
+
+
+
+.infoPpal a {
+	font-size:14px;
+	}
+
+
+
+
+
+#perfiles .perfil .nombre
+{
+  background: #9ec065;
+  color:#FFF;
+  display: table-cell;
+  height: 60px;
+  padding: 10px;
+  vertical-align: middle;
+  width: 155px;
+  text-transform:uppercase !important;
+  border-radius:5px;
+}
+
+#perfiles .perfil .nombre a
+{
+  color:#FFF;
+  text-transform:uppercase  !important;
+
+}
+
+#perfil .twitter {
+  background: url(../images/twitter.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  margin-right: 15px;
+  vertical-align: top;
+  width: 60%;
+  padding-left:25px;
+  margin-bottom:5px;
+}
+
+#perfil .fb {
+  background: url(../images/facebook.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  margin-right: 15px;
+  vertical-align: top;
+   width: 60%;
+  padding-left:25px;
+  margin-bottom:5px;
+}
+
+#perfil .web {
+  background: url(../images/web.jpg) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  margin-right: 15px;
+  vertical-align: top;
+   width: 60%;
+  padding-left:25px;
+}
+
+.clear {
+	clear:both;}
+	
+.multimedia {
+	float:left;
+	margin:0 20px 0 0;
+	width:350px;}
+
+.multimedia h4 {
+	font-size:10px;}
+
+.multimedia h3 {
+	font-size:12px;
+	border-bottom:2px dotted #999999;}
+
+
+.tituloBackground {
+  background-color:#F5F5F5;
+  border-radius: 5px;
+  box-shadow: #ccc 1px 1px 5px;
+  clear: both;
+  color: #666;
+  margin: auto;
+  overflow: hidden;
+  width: 740px;
+  text-transform:uppercase;
+  font-weight:bold;
+  margin:20px 0;
+  font-size:18px;
+  padding:2px 5px 2px 15px;
+}
+	}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+	text-transform:capitalize;
+	z-index:100;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+  
+.ui-autocomplete li {
+	font-size:10px;
+	}
+	
+#contact-form .btn  {
+	 background: #c84055;
+  color: #ffffff;  
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  width:200px;
+	
+	}
+
+#contact-form .btn:hover  {
+background: #a82035;
+	
+	}
+	
+	
+	
+#contact-form .row {
+	margin-bottom:20px;
+	}
+
+#contact-form input {
+	float:left;
+	margin:0 30px 0 0;
+	width:340px;
+	}
+
+#contact-form .asunto input {
+	margin:0 30px 0 0;
+	width:710px;
+	}
+	
+#contact-form textarea {
+	margin:0 30px 0px 0;
+	width:710px;
+	height:200px;
+	}
+#contact-form .errorMessage {
+	color:#c84055;
+	font-size:10px;
+	}

@@ -93,6 +93,8 @@ class Perfiles extends CActiveRecord
 			'web' => 'Web',
 			'usuarios_id' => 'Usuarios',
 			'areas_id' => 'Areas',
+			'value' => 'Value',
+			'label' => 'Label',
 		);
 	}
 
@@ -120,4 +122,48 @@ class Perfiles extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function buscar($term)
+	{
+		$criteria = new CDbCriteria;
+		$criteria->compare('nombre', $term, true);
+
+		$artistas = $this->findAll($criteria);
+		$resultado = array();
+
+		foreach($artistas as $value)
+		{
+			$area = Utility::createSlug($value->areas->nombre);
+			$genero = '';
+			if( isset($value->propuestases[0]) ) 
+				if($value->propuestases[0]->subgenero != null) 
+					$genero = Utility::createSlug($value->propuestases[0]->subgenero) .'/';
+					
+			
+			$slug = $area . '/' . $genero . $value->slug;
+			
+			$resultado[] = array('value' 	=> $value->nombre,
+								 'label' 	=> strtolower($value->nombre),
+								 'slug' 	=> $slug);
+		}
+
+		return $resultado;
+	}
+
+	public function findRandom($page = 1)
+	{
+		$max 	= $this->count();
+		$offset = rand(0, $max-1);
+		$n 						= 12;
+		$offset 				= $n * $page;
+		$pcriteria 				= new CDbCriteria;
+		$pcriteria->addCondition('RAND()<(SELECT (('.$n.'/COUNT(*) )*10) FROM '.$this->tableName().')');
+		$pcriteria->order 		= 'RAND()';
+		$pcriteria->limit 		= $n;
+	
+		$perfiles = $this->findAll($pcriteria);
+
+		return $perfiles;
+	}
+
 }

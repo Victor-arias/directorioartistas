@@ -1,26 +1,11 @@
-<?php /* @var $this Controller */ 
-Yii::app()->clientScript->registerScriptFile("http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/bootstrap.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/vendor/jquery.ui.widget.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/tmpl.min.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/load-image.min.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/canvas-to-blob.min.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/jquery.iframe-transport.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/jquery.fileupload.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/jquery.fileupload-process.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/jquery.fileupload-resize.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/jquery.fileupload-validate.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/jquery.fileupload/jquery.fileupload-ui.js", CClientScript::POS_END);
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/app.js", CClientScript::POS_END);
-?>
+<?php /* @var $this Controller */ ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=1024">
-    <meta name="description" content="Es el momento para presentar tu propuesta artística y hacer parte de la programación cultural de la Feria de las Flores 2013. Este es el formulario para inscribirte como solista, con una agrupación o un colectivo.">
+    <meta name="description" content="">
     <meta name="author" content="telemedellín">
-    
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/base.css" />  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
@@ -55,20 +40,76 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
         </div>
       </div>
     </header>
+    <nav>
+      <?php 
+        $this->widget( 'zii.widgets.CMenu', 
+          array(
+            'items'=>array(
+              array( 'label' => 'Música' , 'url' => array('/musica'), 
+                'items' => array(
+                  array('label' => 'Tropical'           , 'url' => array('/musica/tropical')),
+                  array('label' => 'Popular tradicional', 'url' => array('/musica/popular-tradicional')),
+                  array('label' => 'Popular urbana'     , 'url' => array('/musica/urbana')),
+                  array('label' => 'Clásica'            , 'url' => array('/musica/clasica')),
+                  array('label' => 'Folclor'            , 'url' => array('/musica/folclor')),
+                  array('label' => 'Jazz y músicas del mundo', 'url' => array('/musica/jazz-y-musicas-del-mundo')),
+                  array('label' => 'Fusión'             , 'url' => array('/musica/fusion')),
+                  array('label' => 'Experimental'       , 'url' => array('/musica/experimental')),
+                  array('label' => 'Infantil'           , 'url' => array('/musica/infantil')),
+                ),
+              ),
+              array( 'label' => 'Danza'  , 'url' => array('/danza') ),
+              array( 'label' => 'Teatro' , 'url' => array('/teatro') ),
+              array( 'label' => 'Otros'  , 'url' => array('/otros'), 
+                'items' => array(
+                  array('label' => 'Magia'      , 'url' => array('/otros/magia')),
+                  array('label' => 'Clown'      , 'url' => array('/otros/clown')),
+                  array('label' => 'Malabarismo', 'url' => array('/otros/malabarismo')),
+                  array('label' => 'Mimos'      , 'url' => array('/otros/mimos')),
+                  array('label' => 'Cuentería'  , 'url' => array('/otros/cuenteria')),
+                  array('label' => 'Humor'      , 'url' => array('/otros/humor')),
+                ),
+              ),
+            ),
+          )
+        );
+      ?>
+    </nav>
+   
+   
     <div class="container">
+    
+	
+	<?php if(isset($this->breadcrumbs)): ?>
+      <?php 
+        $this->widget( 'zii.widgets.CBreadcrumbs', 
+          array(
+            'homeLink' => CHtml::link( 'Inicio' , CHtml::normalizeUrl(Yii::app()->homeUrl) ),
+            'separator'=> ' > ',
+            'links'    => $this->breadcrumbs,
+          )
+        ); 
+      ?><!-- breadcrumbs -->
+    <?php endif; ?>
+    
+      
+      <?php 
+        $home = ($this->action->id == 'index') ? $this->action->id : false;
+        $this->widget('Buscador', array('home' => $home) ); 
+      ?>
+      <div class="instruccion">Navega por nuestro menú de categorías para encontrar artistas de tu interés.</div>
+        
       <?php echo $content ?>
+      
     </div> <!-- /container -->  
     <footer></footer>
-    <input type="hidden" value="<?php echo Yii::app()->request->baseUrl ?>" id="PUBLIC_PATH"/>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-41382664-1', 'feriadelasfloresmedellin.gov.co');
       ga('send', 'pageview');
-
     </script>    
   </body>
 </html>
