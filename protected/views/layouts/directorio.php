@@ -44,8 +44,12 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
       <?php 
         $this->widget( 'zii.widgets.CMenu', 
           array(
+            'activeCssClass' => 'active',
+            'activateItems'  => true,
             'items'=>array(
               array( 'label' => 'Música' , 'url' => array('/musica'), 
+                'activeCssClass' => 'active',
+                'activateItems'  => true,
                 'items' => array(
                   array('label' => 'Tropical'           , 'url' => array('/musica/tropical')),
                   array('label' => 'Popular tradicional', 'url' => array('/musica/popular-tradicional')),
@@ -60,7 +64,9 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
               ),
               array( 'label' => 'Danza'  , 'url' => array('/danza') ),
               array( 'label' => 'Teatro' , 'url' => array('/teatro') ),
-              array( 'label' => 'Otros'  , 'url' => array('/otros'), 
+              array( 'label' => 'Otros'  , 'url' => array('/otros'),
+                'activeCssClass' => 'active',
+                'activateItems'  => true, 
                 'items' => array(
                   array('label' => 'Magia'      , 'url' => array('/otros/magia')),
                   array('label' => 'Clown'      , 'url' => array('/otros/clown')),

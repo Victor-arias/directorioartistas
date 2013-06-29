@@ -31,6 +31,7 @@ class DirectorioController extends Controller
 		$criteria = new CDbCriteria;
 		$criteria->limit = $limit;
 		$criteria->offset = ($page-1) * $limit;
+		$criteria->order = 't.nombre ASC';
 		
 		if($subgenero)
 		{

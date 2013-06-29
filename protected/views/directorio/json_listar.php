@@ -25,8 +25,6 @@ $json .= '{';
 				endforeach;
 				$json = substr($json, 0, -1);
 			$json .= '],';
-			}else{
-				$json = substr($json, 0, -1);
 			}
 			if($perfil->propuestases)
 			{
@@ -41,6 +39,8 @@ $json .= '{';
 				$json = substr($json, 0, -1);
 			$json .= ']';
 			}elseif($perfil->fotoses){
+				$json = substr($json, 0, -1);
+			}else{
 				$json = substr($json, 0, -1);
 			}
 		$json .= '},';
