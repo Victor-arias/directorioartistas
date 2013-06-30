@@ -55,4 +55,7 @@
     </div>
       <?php echo $content ?>
   </body>
+  <?php Yii::app()->clientScript->registerScriptFile("http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js", CClientScript::POS_HEAD) ?>    
+  <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/bootstrap.js", CClientScript::POS_END) ?>      
+  <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js/bootbox.js", CClientScript::POS_END) ?>          
 </html>
