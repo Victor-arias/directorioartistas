@@ -4,6 +4,8 @@ $np  = count($perfiles);
 $sub = (isset($subgenero))? $subgenero:'';
 $bu  = Yii::app()->homeUrl;
 $url = CHtml::normalizeUrl( $bu . Utility::createSlug($categoria) .'/' . Utility::createSlug($sub) );
+$this->pageTitle = Yii::app()->name . ' - ' . ucfirst($categoria);
+if($subgenero) $this->pageTitle .= ' ' . $subgenero;
 Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.scrollTo-1.4.3.1-min.js', CClientScript::POS_END);
 Yii::app()->clientScript->registerScript(
 	'cargar-mas', 

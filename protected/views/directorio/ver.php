@@ -11,6 +11,7 @@ if($genero)	$bc[ucfirst($genero)] = array($categoria.'/'.$genero);
 array_push( $bc, ucfirst($perfil->nombre) );
 
 $this->breadcrumbs = $bc;
+$this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 ?>
 <div id="perfil">
 	 <div class="infoPpal">

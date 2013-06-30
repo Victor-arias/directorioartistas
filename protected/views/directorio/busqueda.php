@@ -1,5 +1,6 @@
 <?php
 /* @var $this DirectorioController */
+$this->pageTitle = Yii::app()->name . ' - Resultados de búsqueda';
 $this->breadcrumbs = array('Resultados de búsqueda');
 $np  = count($perfiles);
 $bu  = Yii::app()->homeUrl;
