@@ -34,7 +34,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 		<?php if( isset($perfil->areas->nombre)): ?>
 			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) ); ?>" class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></a> 
 		<?php endif; ?>
-		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otro') ): ?>
+		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otras artes') ): ?>
 			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . Utility::createSlug($perfil->propuestases[0]->subgenero) ); ?>"><?php echo $perfil->propuestases[0]->subgenero; ?></a>
 		<?php endif; ?>
 	</div>

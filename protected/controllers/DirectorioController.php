@@ -232,4 +232,20 @@ class DirectorioController extends Controller
 		}
 	}
 
+	public function isActive($routes = array())
+	{
+	    $routeCurrent = '';
+	    if ($this->module !== null) {
+	        $routeCurrent .= sprintf('%s/', $this->module->id);
+	    }
+	    $routeCurrent .= sprintf('%s/%s', $this->id, $this->action->id);
+	    foreach ($routes as $route) {
+	        $pattern = sprintf('~%s~', preg_quote($route));
+	        if (preg_match($pattern, $routeCurrent)) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
 }

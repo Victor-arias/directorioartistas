@@ -3,7 +3,7 @@
 		<?php if( isset($perfil->areas->nombre)): ?>
 			<span class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></span> 
 		<?php endif; ?>
-		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otro') ): ?>
+		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otras artes') ): ?>
 			<?php $subg = ( strlen($perfil->propuestases[0]->subgenero) > 18) ? substr($perfil->propuestases[0]->subgenero, 0, 15) . '...':$perfil->propuestases[0]->subgenero ?>
 			<span><?php echo $subg; ?></span>
 		<?php endif; ?>

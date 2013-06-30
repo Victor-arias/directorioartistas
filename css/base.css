@@ -111,6 +111,7 @@ nav ul li > ul > li a {
 }
 
 nav ul li a:hover,
+nav ul li.active a,
 a.flecha-abajo:hover,
 a.flecha-derecha:hover {
     background-color: #c42d45;
