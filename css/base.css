@@ -608,7 +608,11 @@ background:#74A5D6;
 
 }
 
-
+#perfiles .pagina
+{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 #perfiles .perfil
 {
   float: left;
@@ -664,8 +668,9 @@ background:#74A5D6;
   background-position: 0 0;
 }
 
-#perfiles .perfil span.Otro,
-#perfiles .perfil span.otro{
+#perfiles .perfil span.otras-artes,
+#perfiles .perfil span.otras,
+#perfiles .perfil span.Otras{
   background-position: -90px 0;
 }
 
@@ -677,7 +682,7 @@ background:#74A5D6;
   text-transform:uppercase !important;
 }
 
-#perfil .infoPpal .categoria span
+#perfil .infoPpal .categoria a
 {
 	display:inline-block;
 	background-color:#E73F56;
@@ -686,27 +691,29 @@ background:#74A5D6;
 	border-radius:3px;
 }
 
-#perfil .infoPpal .categoria span:first-child
+#perfil .infoPpal .categoria a:first-child
 {
   background: url(../images/areas_thumb.png) no-repeat;
   text-indent: -9999px;
   width: 14px;
 }
 
-#perfil .infoPpal .categoria span.Teatro{
+#perfil .infoPpal .categoria a.Teatro{
   background-position: -60px 0;
   border-radius:3px;
 }
 
-#perfil .infoPpal .categoria span.Danza{
+#perfil .infoPpal .categoria a.Danza{
   background-position: -30px 0;
 }
 
-#perfil .infoPpal .categoria span.Música{
+#perfil .infoPpal .categoria a.Música{
   background-position: 0 0;
 }
 
-#perfil .infoPpal .categoria span.Otro{
+#perfil .infoPpal .categoria a.Otras,
+#perfil .infoPpal .categoria a.otras,
+#perfil .infoPpal .categoria a.otras-artes{
   background-position: -90px 0;
 }
 
@@ -736,8 +743,8 @@ background:#74A5D6;
 #perfiles .perfil .nombre a
 {
   color:#FFF;
+  line-height: 1.2;
   text-transform:uppercase  !important;
-
 }
 
 #perfil .twitter {
@@ -825,6 +832,7 @@ background:#74A5D6;
   
 .ui-autocomplete li {
 	font-size:10px;
+  text-transform: capitalize;
 	}
 	
 #contact-form .btn  {

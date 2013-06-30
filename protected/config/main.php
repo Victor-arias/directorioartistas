@@ -46,9 +46,9 @@ return array(
 			'showScriptName' => false,
 			'useStrictParsing' => false,
 			'rules'=>array(				
-				'<cat:(musica|danza|teatro|otros)>'				=> 'directorio/listar',
-				'<cat:(musica|otros)>/<genero:[\w\-]+>'			=> 'directorio/listar',
-				'<cat:(musica|otros)>/<genero:[\w\-]+>/<artista:[\w\d\-]+>'=> 'directorio/ver',
+				'<cat:(musica|danza|teatro|otras-artes)>'		=> 'directorio/listar',
+				'<cat:(musica|otras-artes)>/<genero:[\w\-]+>'	=> 'directorio/listar',
+				'<cat:(musica|otras-artes)>/<genero:[\w\-]+>/<artista:[\w\d\-]+>'=> 'directorio/ver',
 				'<cat:(danza|teatro)>/<artista:[\w\d\-]+>'		=> 'directorio/ver',
 				'convocatoria'									=> 'convocatoria',
 				'busqueda' 										=> 'directorio/busqueda',

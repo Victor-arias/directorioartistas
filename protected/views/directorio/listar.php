@@ -2,7 +2,9 @@
 /* @var $this DirectorioController */
 $np  = count($perfiles);
 $sub = (isset($subgenero))? $subgenero:'';
-$url = CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($categoria) .'/' . Utility::createSlug($sub) );
+$bu  = Yii::app()->homeUrl;
+$url = CHtml::normalizeUrl( $bu . Utility::createSlug($categoria) .'/' . Utility::createSlug($sub) );
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.scrollTo-1.4.3.1-min.js', CClientScript::POS_END);
 Yii::app()->clientScript->registerScript(
 	'cargar-mas', 
 	'	var perfiles = $("#perfiles");
@@ -24,7 +26,7 @@ Yii::app()->clientScript->registerScript(
 			{page:pagina}, 
 			function(data){
 				var datos = data;
-				console.log( datos );
+				//console.log( datos );
 				if(Object.keys(datos.perfiles).length >= 12){
 					pagina = parseInt(datos.pagina)+1;
 					var link = $(".cargar-mas").attr("href");
@@ -45,8 +47,9 @@ Yii::app()->clientScript->registerScript(
 	{
 		perfiles.append("<div class=\'pagina clear\' id=\'pagina"+parseInt(data.pagina)+"\'>Página "+parseInt(data.pagina)+"</div>");
 		$.each(data.perfiles, function(index, value){
-			console.log(value);
-			var url = "/"+value.categoria;
+			//console.log(value);
+			var url = "'.$bu.'"+data.categoria;
+			//console.log(url);
 			if(value.propuestas) url += "/"+value.propuestas[0].subgenero;
 			url += "/"+value.slug;
 			var html = "";
@@ -74,15 +77,15 @@ Yii::app()->clientScript->registerScript(
 			html += "		</h3>";
 			html += "	</div>";
 			html += "</div>";
-			
+			//console.log(url);
 			perfiles.append( html );
+
 		});
 		if ($(".cargar-mas").length > 0){
 		  $(".cargar-mas").remove().insertAfter( $(".perfil:last") );
 		  $(".cargar-mas").on("click", cargar_mas);
 		}
-		var posicion = $("#pagina"+parseInt(data.pagina)).position();
-		window.scrollTo( posicion.left, posicion.top );
+		$.scrollTo("#pagina"+parseInt(data.pagina), {duration:1000});
 		
 	}//cargar-perfiles
 	', 

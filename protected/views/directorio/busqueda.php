@@ -2,7 +2,9 @@
 /* @var $this DirectorioController */
 $this->breadcrumbs = array('Resultados de búsqueda');
 $np  = count($perfiles);
-$url = CHtml::normalizeUrl( Yii::app()->homeUrl . 'busqueda?artista=' . $termino );
+$bu  = Yii::app()->homeUrl;
+$url = CHtml::normalizeUrl( $bu . 'busqueda?artista=' . $termino );
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.scrollTo-1.4.3.1-min.js', CClientScript::POS_END);
 Yii::app()->clientScript->registerScript(
 	'cargar-mas', 
 	'	var perfiles = $("#perfiles");
@@ -45,8 +47,8 @@ Yii::app()->clientScript->registerScript(
 	{
 		perfiles.append("<div class=\'pagina clear\' id=\'pagina"+parseInt(data.pagina)+"\'>Página "+parseInt(data.pagina)+"</div>");
 		$.each(data.perfiles, function(index, value){
-			console.log(value);
-			var url = "/"+value.categoria;
+			//console.log(value);
+			var url = "'.$bu.'"+data.categoria;
 			if(value.propuestas) url += "/"+value.propuestas[0].subgenero;
 			url += "/"+value.slug;
 			var html = "";
@@ -81,8 +83,7 @@ Yii::app()->clientScript->registerScript(
 		  $(".cargar-mas").remove().insertAfter( $(".perfil:last") );
 		  $(".cargar-mas").on("click", cargar_mas);
 		}
-		var posicion = $("#pagina"+parseInt(data.pagina)).position();
-		window.scrollTo( posicion.left, posicion.top );
+		$.scrollTo("#pagina"+parseInt(data.pagina), {duration:1000});
 		
 	}//cargar-perfiles
 	', 

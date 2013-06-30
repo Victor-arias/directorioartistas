@@ -101,7 +101,7 @@ class DirectorioController extends Controller
 				case 'teatro':
 					$area = 3;
 					break;
-				case 'otros':
+				case 'otras-artes':
 					$area = 4;
 					break;
 				default:

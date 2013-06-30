@@ -64,16 +64,16 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
               ),
               array( 'label' => 'Danza'  , 'url' => array('/danza') ),
               array( 'label' => 'Teatro' , 'url' => array('/teatro') ),
-              array( 'label' => 'Otros'  , 'url' => array('/otros'),
+              array( 'label' => 'Otras artes'  , 'url' => array('/otras-artes'),
                 'activeCssClass' => 'active',
                 'activateItems'  => true, 
                 'items' => array(
-                  array('label' => 'Magia'      , 'url' => array('/otros/magia')),
-                  array('label' => 'Clown'      , 'url' => array('/otros/clown')),
-                  array('label' => 'Malabarismo', 'url' => array('/otros/malabarismo')),
-                  array('label' => 'Mimos'      , 'url' => array('/otros/mimos')),
-                  array('label' => 'Cuentería'  , 'url' => array('/otros/cuenteria')),
-                  array('label' => 'Humor'      , 'url' => array('/otros/humor')),
+                  array('label' => 'Magia'      , 'url' => array('/otras-artes/magia')),
+                  array('label' => 'Clown'      , 'url' => array('/otras-artes/clown')),
+                  array('label' => 'Malabarismo', 'url' => array('/otras-artes/malabarismo')),
+                  array('label' => 'Mimos'      , 'url' => array('/otras-artes/mimos')),
+                  array('label' => 'Cuentería'  , 'url' => array('/otras-artes/cuenteria')),
+                  array('label' => 'Humor'      , 'url' => array('/otras-artes/humor')),
                 ),
               ),
             ),
@@ -103,7 +103,7 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
         $home = ($this->action->id == 'index') ? $this->action->id : false;
         $this->widget('Buscador', array('home' => $home) ); 
       ?>
-      <div class="instruccion">Navega por nuestro menú de categorías para encontrar artistas de tu interés.</div>
+      <div class="instruccion">Navega por el menú de categorías para encontrar artistas de su interés.</div>
         
       <?php echo $content ?>
       

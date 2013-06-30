@@ -31,10 +31,10 @@ $this->breadcrumbs = $bc;
 	<div class="categoria">
     
 		<?php if( isset($perfil->areas->nombre)): ?>
-			<span class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></span> 
+			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) ); ?>" class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></a> 
 		<?php endif; ?>
 		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otro') ): ?>
-			<span><?php echo $perfil->propuestases[0]->subgenero; ?></span>
+			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . Utility::createSlug($perfil->propuestases[0]->subgenero) ); ?>"><?php echo $perfil->propuestases[0]->subgenero; ?></a>
 		<?php endif; ?>
 	</div>
 	<h2><?php echo ucfirst($perfil->nombre) ?></h2>
@@ -62,7 +62,7 @@ $this->breadcrumbs = $bc;
     <div class="clear"></div>
     
 	<h3 class="tituloBackground">Reseña</h3>
-    <p><?php echo $perfil->propuestases[0]->resena ?></p>
+    <p><?php echo nl2br($perfil->propuestases[0]->resena) ?></p>
     <?php $this->renderPartial('_redes'); ?>
     <h3 class="tituloBackground">Conozca la propuesta</h3>
     
