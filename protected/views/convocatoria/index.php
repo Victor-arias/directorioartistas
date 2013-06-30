@@ -79,15 +79,15 @@
 <div class="row-fluid">
 
 	<div class="span6 offset3">
-		<?php echo CHtml::beginForm(array("convocatoria/registro"), "POST", array("class"=>"bs-docs-example")) ?>
-	        <label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
-	        <p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>
+		<?php echo CHtml::beginForm('', "POST", array("class"=>"bs-docs-example")) ?>
+	        <label class="checkbox"><input disabled="disabled" type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
+	        <p><input type="submit" name="terminos" disabled="disabled" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>
   		<?php echo CHtml::endForm(); ?>
 	</div>
     
     <div class="bs">
     <div class="img_directorio"></div>
-            <input type="submit" name="terminos" id="directorio" value="Ver el directorio de artistas" class="btn disabled"  disabled="disabled"/>
+            <a href="directorio" id="directorio" class="btn">Ver el directorio de artistas</a>
             </div>
     
 
