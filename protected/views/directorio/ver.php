@@ -29,6 +29,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
     
 			<img src="/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
 	     <?php endif; ?>
+         <h2><?php echo ucfirst($perfil->nombre) ?></h2>
 	<div class="categoria">
     
 		<?php if( isset($perfil->areas->nombre)): ?>
@@ -38,7 +39,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . Utility::createSlug($perfil->propuestases[0]->subgenero) ); ?>"><?php echo $perfil->propuestases[0]->subgenero; ?></a>
 		<?php endif; ?>
 	</div>
-	<h2><?php echo ucfirst($perfil->nombre) ?></h2>
+	
 	<p><strong>Número Integrantes:</strong> <?php echo $perfil->propuestases[0]->numero_integrantes ?></p>
 	<p><strong>Trayectoria:</strong> 
 	<?php 

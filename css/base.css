@@ -371,8 +371,23 @@ p{
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
+.cargar-mas {
+  background:#CCC;
+  color:#666;  
+  font-size: 12px;
+  border:none;
+  width:98%;
+  margin:0 auto;
+  text-shadow:none;
+	}
+
+.cargar-mas:hover {
+  background:#999;
+	}
+	
+	
 #perfil .btn {
-  background: #c84055;;
+  background: #c84055;
   color: #ffffff;  
   font-size: 16px;
   font-weight: bold;
@@ -609,10 +624,19 @@ background:#74A5D6;
 
 }
 
+.infoPpal .categoria {
+	margin-top:-15px;
+	margin-bottom:10px;
+	}
+
 #perfiles .pagina
 {
   font-weight: bold;
   margin-bottom: 10px;
+  border-bottom:1px dotted #999999;
+  margin:20px 0 20px 8px;
+  padding-bottom:8px;
+  display:block;
 }
 #perfiles .perfil
 {
@@ -625,7 +649,7 @@ background:#74A5D6;
 #perfiles .perfil h3
 {
   font-size: 12px;
-  line-height: 1;
+  line-height:16px;
   margin: 0;
   text-align: center;
   text-transform:uppercase;
@@ -686,8 +710,8 @@ background:#74A5D6;
 #perfil .infoPpal .categoria a
 {
 	display:inline-block;
-	background-color:#E73F56;
-	color:#FFF;
+	background-color:#CCC;
+	color:#666;
 	padding:1px 5px 1px 5px;
 	border-radius:3px;
 }
@@ -739,6 +763,7 @@ background:#74A5D6;
   width: 155px;
   text-transform:uppercase !important;
   border-radius:5px;
+  
 }
 
 #perfiles .perfil .nombre a
@@ -796,7 +821,8 @@ background:#74A5D6;
 
 .multimedia h3 {
 	font-size:12px;
-	border-bottom:2px dotted #999999;}
+	border-bottom:2px dotted #999999;
+	}
 
 
 .tituloBackground {

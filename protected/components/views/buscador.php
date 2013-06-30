@@ -10,7 +10,7 @@
       <?php
       if($this->home):
       ?>
-      <h2>Ingresa el nombre del artista que deseas consultar</h2>
+      <h2>Ingrese el nombre del artista que desee consultar</h2>
       <?php
         $placeholder = ""; 
       else:

@@ -15,7 +15,7 @@ Yii::app()->clientScript->registerScript(
 
 	if(np >= 12)
 	{
-		perfiles.append("<a href=\''.$url.'?page='.($pagina+1).'\' class=\'cargar-mas btn btn-large btn-block btn-primary clear\'>Cargar más</a>");
+		perfiles.append("<a href=\''.$url.'?page='.($pagina+1).'\' class=\'cargar-mas btn btn-block btn-primary clear\'>Cargar más</a>");
 	}	
 	
 	$(".cargar-mas").on("click", cargar_mas);
