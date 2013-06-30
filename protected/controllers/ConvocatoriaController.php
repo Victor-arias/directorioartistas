@@ -177,7 +177,7 @@ class ConvocatoriaController extends Controller
 				$objUsuario = new Usuarios();
 				$transaction = $objUsuario->dbConnection->beginTransaction();
 				$objUsuario->username = $objFormularioRegistro->username;
-				$objUsuario->password = /*Bcrypt::hash(*/$objFormularioRegistro->password/*)*/;
+				$objUsuario->password = Bcrypt::hash($objFormularioRegistro->password);
 				$objUsuario->estado   = 1;
 				$objUsuario->roles_id = 1;
 				if( ! $objUsuario->save(false)){
