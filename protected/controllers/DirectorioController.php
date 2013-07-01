@@ -212,8 +212,15 @@ class DirectorioController extends Controller
 	      {
 	      	if($foto->es_perfil)
 	      	{
-	      		echo $foto->src;
-	      		echo '<br /><br />';
+	      		//echo $foto->src;
+	      		$pedazos = explode($foto->src);
+	      		$nn = 't_' . $pedazos[3];
+	      		$nr = $pedazos[0].'/'.$pedazos[1].'/'.$pedazos[2].'/'.$nn;
+	      		echo $nr;
+	      		Yii::import('application.extensions.image.Image');
+				$image = new Image($foto->src);
+				$image->resize(174, 145);
+				$image->render();
 	      	}
 	      }
 	    }
