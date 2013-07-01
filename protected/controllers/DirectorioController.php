@@ -216,6 +216,7 @@ class DirectorioController extends Controller
 	      		$pedazos = explode('/', $foto->src);
 	      		$nn = 't_' . $pedazos[3];
 	      		$nr = $pedazos[0].'/'.$pedazos[1].'/'.$pedazos[2].'/'.$nn;
+	      		print_r($pedazos);
 	      		echo $nr;
 	      		Yii::import('application.extensions.image.Image');
 				$image = new Image($foto->src);
