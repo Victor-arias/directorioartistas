@@ -219,7 +219,7 @@ class DirectorioController extends Controller
 	      		print_r($pedazos);
 	      		echo $nr;
 	      		Yii::import('application.extensions.image.Image');
-				$image = new Image($foto->src);
+				$image = new Image('.'.$foto->src);
 				$image->resize(174, 145);
 				$image->render();
 	      	}
