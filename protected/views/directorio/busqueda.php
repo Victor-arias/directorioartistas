@@ -3,7 +3,7 @@
 $this->pageTitle = Yii::app()->name . ' - Resultados de búsqueda';
 $this->breadcrumbs = array('Resultados de búsqueda');
 $np  = count($perfiles);
-$bu  = Yii::app()->homeUrl;
+$bu  = Yii::app()->homeUrl . 'directorio/';
 $url = CHtml::normalizeUrl( $bu . 'busqueda?artista=' . $termino );
 Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.scrollTo-1.4.3.1-min.js', CClientScript::POS_END);
 Yii::app()->clientScript->registerScript(

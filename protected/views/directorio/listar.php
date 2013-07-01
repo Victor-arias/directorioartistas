@@ -2,7 +2,7 @@
 /* @var $this DirectorioController */
 $np  = count($perfiles);
 $sub = (isset($subgenero))? $subgenero:'';
-$bu  = Yii::app()->homeUrl;
+$bu  = Yii::app()->homeUrl . 'directorio/';
 $url = CHtml::normalizeUrl( $bu . Utility::createSlug($categoria) .'/' . Utility::createSlug($sub) );
 $this->pageTitle = Yii::app()->name . ' - ' . ucfirst($categoria);
 if($subgenero) $this->pageTitle .= ' ' . $subgenero;
