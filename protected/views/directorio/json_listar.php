@@ -19,7 +19,7 @@ $json .= '{';
 				foreach($perfil->fotoses as $foto):
 				//$json .= '"foto":';
 				$json .= '{';
-					$json .= '"url":"'.$foto->src.'",';
+					$json .= '"url":"'.$foto->thumb.'",';
 					$json .= '"es_perfil":"'.$foto->es_perfil.'"';
 				$json .= '},';
 				endforeach;
