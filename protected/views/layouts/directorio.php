@@ -48,7 +48,7 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
         $this->widget( 'zii.widgets.CMenu', 
           array(
             'items'=>array(
-              array( 'label' => 'Música' , 'url' => array('/musica'), 'active' => strpos($ru, 'musica'),
+              array( 'label' => 'Música' , 'url' => array('/directorio/musica'), 'active' => strpos($ru, 'musica'),
                 'items' => array(
                   array('label' => 'Tropical'           , 'url' => array('/directorio/musica/tropical')                      , 'active' => strpos($ru, 'tropical')),
                   array('label' => 'Popular tradicional', 'url' => array('/directorio/musica/popular-tradicional')           , 'active' => strpos($ru, 'popular-tradicional')),
