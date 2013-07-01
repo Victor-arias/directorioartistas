@@ -204,7 +204,7 @@ class DirectorioController extends Controller
 	public function actionGenerarThumbs()
 	{
 		$c = new CDbCriteria;
-		$c->limit = 100;
+		$c->limit = 50;
 		$perfiles = Perfiles::model()->findAll();
 	    foreach($perfiles as $perfil)
 	    {
