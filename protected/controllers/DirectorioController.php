@@ -200,7 +200,7 @@ class DirectorioController extends Controller
 	    }
 	}
 */
-
+/*
 	public function actionGenerarThumbs()
 	{
 		$c = new CDbCriteria;
@@ -225,6 +225,39 @@ class DirectorioController extends Controller
 				$image = new Image('.'.$foto->src);
 				$image->resize(174, 145);
 				if($image->save($nr))
+				{
+					echo 'SI ' . $nr.'<br /><br />';
+				}else{
+					echo 'NO ' . $nr.'<br /><br />';
+				}
+	      	}
+	      }
+	    }
+	}
+*/
+	public function actionGuardarThumbs()
+	{
+		$c = new CDbCriteria;
+		/*$c->limit = 40;
+		$c->offset = 560;*/
+		$perfiles = Perfiles::model()->findAll($c);
+	    foreach($perfiles as $perfil)
+	    {
+	      //CVarDumper::dump($perfil->attributes);
+	      //echo '<br /><br />';
+	      foreach($perfil->fotoses as $foto)
+	      {
+	      	if($foto->es_perfil)
+	      	{
+	      		//echo $foto->src;
+	      		$pedazos = explode('/', $foto->src);
+	      		$nn = 't_' . $pedazos[4];
+	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
+	      		//print_r($pedazos);
+	      		$f = Fotos::model()->findByPk($foto->id);
+	      		$f->thumb = $nr;
+	      		
+				if($f->update())
 				{
 					echo 'SI ' . $nr.'<br /><br />';
 				}else{
