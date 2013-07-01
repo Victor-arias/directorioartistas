@@ -29,15 +29,15 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
       <div class="fechas">
         <div>
           4 de Junio al 30 de Junio de 2013
-          <strong class="current">Convocatoria</strong>
+          <strong class="prev">Convocatoria</strong>
         </div>
         <div>
           1 de Julio al 15 de Julio de 2013
-          <strong class="next">Evaluación</strong>
+          <strong class="current">Evaluación</strong>
         </div>
         <div>
           15 de Julio de 2013
-          <strong class="prev">Publicación de resultados</strong>
+          <strong class="next">Publicación de resultados</strong>
         </div>
       </div>
     </header>
