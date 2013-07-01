@@ -203,7 +203,7 @@ class DirectorioController extends Controller
 
 	public function actionGenerarThumbs()
 	{
-		$perfiles = Perfiles::model()->findAll();
+		$perfiles = Perfiles::model()->findAll('LIMIT 100');
 	    foreach($perfiles as $perfil)
 	    {
 	      //CVarDumper::dump($perfil->attributes);
@@ -221,12 +221,11 @@ class DirectorioController extends Controller
 	      		Yii::import('application.extensions.image.Image');
 				$image = new Image('.'.$foto->src);
 				$image->resize(174, 145);
-				//$image->render();
 				if($image->save($nr))
 				{
-					echo 'SI ' . $nr;
+					echo 'SI ' . $nr.'<br /><br />';
 				}else{
-					echo 'NO ' . $nr;
+					echo 'NO ' . $nr.'<br /><br />';
 				}
 	      	}
 	      }
