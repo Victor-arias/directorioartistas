@@ -205,7 +205,7 @@ class DirectorioController extends Controller
 	{
 		$c = new CDbCriteria;
 		$c->limit = 40;
-		$c->offset = 320;
+		$c->offset = 360;
 		$perfiles = Perfiles::model()->findAll($c);
 	    foreach($perfiles as $perfil)
 	    {
