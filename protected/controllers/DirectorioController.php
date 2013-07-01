@@ -185,7 +185,7 @@ class DirectorioController extends Controller
 			$this->render('json', array('contenido' => $artistas));	
 		}else throw new CHttpException('403', 'Forbidden access.');
 	}
-
+/*
 	public function actionGenerarSlug()
 	{
 		$perfiles = Perfiles::model()->findAll();
@@ -199,7 +199,7 @@ class DirectorioController extends Controller
 	      else echo 'Falló ' . $p->id;
 	    }
 	}
-
+*/
 	public function createSlug($str) {
 	    // convert all spaces to underscores:
 	    $treated = strtr($str, " ", "_");
