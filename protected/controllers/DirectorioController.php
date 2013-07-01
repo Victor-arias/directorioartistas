@@ -252,7 +252,7 @@ class DirectorioController extends Controller
 	      		//echo $foto->src;
 	      		$pedazos = explode('/', $foto->src);
 	      		$nn = 't_' . $pedazos[4];
-	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
+	      		$nr = '/'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
 	      		//print_r($pedazos);
 	      		$f = Fotos::model()->findByPk($foto->id);
 	      		$f->thumb = $nr;
