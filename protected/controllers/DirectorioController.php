@@ -215,11 +215,11 @@ class DirectorioController extends Controller
 	      		//echo $foto->src;
 	      		$pedazos = explode('/', $foto->src);
 	      		$nn = 't_' . $pedazos[4];
-	      		$nr = Yii::app()->homeUrl.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
+	      		$nr = Yii::app()->basePath.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
 	      		print_r($pedazos);
 	      		echo $nr;
 	      		Yii::import('application.extensions.image.Image');
-				$image = new Image(Yii::app()->homeUrl.$foto->src);
+				$image = new Image(Yii::app()->basePath.$foto->src);
 				$image->resize(174, 145);
 				$image->render();
 	      	}
