@@ -200,6 +200,25 @@ class DirectorioController extends Controller
 	    }
 	}
 */
+
+	public function actionGenerarThumbs()
+	{
+		$perfiles = Perfiles::model()->findAll();
+	    foreach($perfiles as $perfil)
+	    {
+	      //CVarDumper::dump($perfil->attributes);
+	      //echo '<br /><br />';
+	      foreach($perfil->fotoses as $foto)
+	      {
+	      	if($foto->es_perfil)
+	      	{
+	      		echo $foto->src;
+	      		echo '<br /><br />';
+	      	}
+	      }
+	    }
+	}
+
 	public function createSlug($str) {
 	    // convert all spaces to underscores:
 	    $treated = strtr($str, " ", "_");
