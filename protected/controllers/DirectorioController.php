@@ -205,11 +205,14 @@ class DirectorioController extends Controller
         	$correo->From 		= $mContacto->email;
         	$correo->FromName 	= $mContacto->nombre;  
         	if($correo->Send())
-        		echo 'enviado';
-        	else
-        		echo 'fallo';
-		}else
-			echo 'no hay propuesta';
+        	{
+        		Yii::app()->user->setFlash('success', "Mensaje enviado.");
+        	}else
+        	{
+        		Yii::app()->user->setFlash('error', "El mensaje no se pudo enviar, por favor intentelo nuevamente.");
+        	}
+		}
+		$this->redirect(Yii::app()->request->urlReferrer);
 	}
 /*
 	public function actionGenerarSlug()
