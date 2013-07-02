@@ -16,7 +16,7 @@ $this->pageTitle=Yii::app()->name;
 			<?php echo CHtml::link( 'English version', CHtml::normalizeUrl('http://www.medellin.gov.co/irj/portal/medellinIngles?NavigationTarget=navurl://cfb1f305bb3c5e4b4f76d9a53b52254b'), array('class'=> 'venglish btn','target' => '_blank', 'lang' => 'en') ); ?>
 		</p>
 		<p>La convocatoria del proceso de selección para la programación cultural y artística de la Feria de las Flores 2013 ha terminado. Si desea ver el perfil público de las propuestas que están siendo evaluadas,
-			<?php echo CHtml::link( 'ingresa a este enlace', array('/convocatoria') ); ?>
+			<?php echo CHtml::link( 'ingrese a este enlace', array('/convocatoria') ); ?>
 		</p>
 		<span id="fucking-flor"></span>
 	</div>
