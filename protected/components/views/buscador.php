@@ -1,6 +1,6 @@
 <div <?php if($this->home) echo 'class="home"' ?> id="buscador">
   <?php $form = $this->beginWidget('CActiveForm', array(
-      'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'busqueda'),
+      'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'directorio/busqueda'),
       'enableAjaxValidation'  =>true,
       'enableClientValidation'=>true,
       'id'                    =>'search-form',
@@ -35,7 +35,7 @@
           "autocompleteselect", 
           function( event, ui ) {
             //console.log(ui.item);
-            window.location = "' . Yii::app()->homeUrl . '" + ui.item.slug;
+            window.location = "' . Yii::app()->homeUrl . 'directorio/" + ui.item.slug;
             //$( "#search-form" ).submit();
           } 
         );', 
