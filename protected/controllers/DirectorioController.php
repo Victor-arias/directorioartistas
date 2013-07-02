@@ -188,7 +188,6 @@ class DirectorioController extends Controller
 
 	public function actionContactar()
 	{
-		echo 'Llegó';
 		if( isset($_POST['ContactForm']['propuesta']) )
 		{
 			$propuesta = Propuestas::model()->findByAttributes( array('perfiles_id' => $_POST['ContactForm']['propuesta']) );
