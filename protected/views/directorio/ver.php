@@ -109,6 +109,13 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 		endif; 
 	?>
 	<h3 class="tituloBackground">Contactar propuesta</h3>
+
+	<?php if( Yii::app()->user->hasFlash('success') ):?>
+	    <div class="info">
+	        <?php echo Yii::app()->user->getFlash('success'); ?>
+	    </div>
+	<?php endif; ?>
+
 	<?php $form = $this->beginWidget('CActiveForm', 
 		array(
 			'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'directorio/contactar'),

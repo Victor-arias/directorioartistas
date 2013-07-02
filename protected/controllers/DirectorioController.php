@@ -208,7 +208,7 @@ class DirectorioController extends Controller
         		Yii::app()->user->setFlash('success', "Mensaje enviado.");
         	}else
         	{
-        		Yii::app()->user->setFlash('error', "El mensaje no se pudo enviar, por favor intentelo nuevamente.");
+        		Yii::app()->user->setFlash('success', "El mensaje no se pudo enviar, por favor intentelo nuevamente.");
         	}
 		}
 		$this->redirect(Yii::app()->request->urlReferrer);
