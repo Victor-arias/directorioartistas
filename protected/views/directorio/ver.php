@@ -112,7 +112,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 
 	<?php if( Yii::app()->user->hasFlash('success') ):?>
 	    <div class="info">
-	        <?php echo Yii::app()->user->getFlash('success'); ?>
+	        <p><?php echo Yii::app()->user->getFlash('success'); ?></p>
 	    </div>
 	<?php endif; ?>
 
