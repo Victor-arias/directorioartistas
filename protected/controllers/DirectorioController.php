@@ -185,6 +185,27 @@ class DirectorioController extends Controller
 			$this->render('json', array('contenido' => $artistas));	
 		}else throw new CHttpException('403', 'Forbidden access.');
 	}
+
+	public function actionContactar()
+	{
+		if( isset($_POST['propuesta']) )
+		{
+			$propuesta = Propuestas::model()->findByAttributes( array('perfiles_id' => $_POST['propuesta']) );
+
+			$mContacto = new ContactForm;
+			$mContacto->attributes = $_POST['ContactForm'];
+
+			$correo            	= new YiiMailer();
+        	$correo->setView('contacto');
+        	$correo->setData( array('datos' => $mContacto) );
+        	$correo->render();
+			$correo->Subject    = $mContacto->asunto;
+        	$correo->AddAddress( /*$propuesta->email*/'victor.arias@telemedellin.tv' );
+        	$correo->From 		= $mContacto->email;
+        	$correo->FromName 	= $mContacto->nombre;  
+        	$correo->Send();
+		}
+	}
 /*
 	public function actionGenerarSlug()
 	{

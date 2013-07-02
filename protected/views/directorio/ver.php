@@ -111,6 +111,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 	<h3 class="tituloBackground">Contactar propuesta</h3>
 	<?php $form = $this->beginWidget('CActiveForm', 
 		array(
+			'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'directorio/contactar'),
 			'id'=>'contact-form',
 			'enableClientValidation'=>true,
 			'clientOptions'=>array(
@@ -144,6 +145,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 	</div>
 
 	<div>
+		<?php echo $form->hiddenField( $contacto, 'propuesta', array('value' => $perfil->id) ); ?>
 		<?php echo CHtml::submitButton('Enviar mensaje', array("class"=>"btn btn-large")) ?>
 	</div>
 

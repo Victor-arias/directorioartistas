@@ -11,6 +11,7 @@ class ContactForm extends CFormModel
 	public $email;
 	public $asunto;
 	public $mensaje;
+	public $propuesta;
 	public $verifyCode;
 
 	/**
@@ -40,6 +41,7 @@ class ContactForm extends CFormModel
 			'email' 	=> 'Correo Electrónico',
 			'asunto' 	=> 'Asunto',
 			'mensaje' 	=> 'Mensaje',
+			'propuesta'	=> 'Propuesta',
 			'verifyCode'=> 'Código de verificación',
 		);
 	}
