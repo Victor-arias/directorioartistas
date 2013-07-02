@@ -228,12 +228,12 @@ class DirectorioController extends Controller
 	    }
 	}
 */
-/*
+
 	public function actionGenerarThumbs()
 	{
 		$c = new CDbCriteria;
-		$c->limit = 40;
-		$c->offset = 560;
+		$c->limit = 50;
+		$c->offset = 0;
 		$perfiles = Perfiles::model()->findAll($c);
 	    foreach($perfiles as $perfil)
 	    {
@@ -251,7 +251,7 @@ class DirectorioController extends Controller
 	      		
 	      		Yii::import('application.extensions.image.Image');
 				$image = new Image('.'.$foto->src);
-				$image->resize(174, 145);
+				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
 				if($image->save($nr))
 				{
 					echo 'SI ' . $nr.'<br /><br />';
@@ -262,6 +262,7 @@ class DirectorioController extends Controller
 	      }
 	    }
 	}
+/*
 	public function actionGuardarThumbs()
 	{
 		$c = new CDbCriteria;
