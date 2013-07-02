@@ -203,8 +203,12 @@ class DirectorioController extends Controller
         	$correo->AddAddress( /*$propuesta->email*/'victor.arias@telemedellin.tv' );
         	$correo->From 		= $mContacto->email;
         	$correo->FromName 	= $mContacto->nombre;  
-        	$correo->Send();
-		}
+        	if($correo->Send())
+        		echo 'enviado';
+        	else
+        		echo 'fallo';
+		}else
+			echo 'no hay propuesta';
 	}
 /*
 	public function actionGenerarSlug()
