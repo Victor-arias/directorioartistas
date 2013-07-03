@@ -308,11 +308,11 @@ class DirectorioController extends Controller
 	      {
 	      		$pedazoss = explode('/', $foto->src);
 	      		$pedazost = explode('/', $foto->thumb);
-	      		print_r($pedazoss);
-	      		/*$nrs = '/'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
+	      		$nrs = '/'.$pedazoss[1].'/'.$pedazoss[3].'/'.$pedazoss[4].'/'.$pedazoss[5].'/'.$pedazoss[6];
+	      		$nrr = '/'.$pedazosr[1].'/'.$pedazosr[3].'/'.$pedazosr[4].'/'.$pedazosr[5].'/'.$pedazosr[6];
 	      		$f = Fotos::model()->findByPk($foto->id);
 	      		$f->thumb = $nrs;
-	      		$f->src = '/directorio'.$f->src;*/
+	      		$f->src = $nrr;
 	      		
 				if($f->update())
 				{
