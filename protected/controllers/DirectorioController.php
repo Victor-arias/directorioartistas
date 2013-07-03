@@ -244,15 +244,15 @@ class DirectorioController extends Controller
 	      	if($foto->es_perfil)
 	      	{
 	      		//echo $foto->src;
-	      		$pedazos = explode('/', $foto->src);
+	      		/*$nombre = explode('/', $foto->thumb);
 	      		$nn = 't_' . $pedazos[4];
-	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
+	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;*/
 	      		//print_r($pedazos);
 	      		
 	      		Yii::import('application.extensions.image.Image');
-				$image = new Image('.'.$foto->src);
+				$image = new Image('.'.$foto->thumb);
 				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
-				if($image->save($nr))
+				if($image->save('.'.$foto->thumb))
 				{
 					echo 'SI ' . $nr.'<br /><br />';
 				}else{
@@ -295,7 +295,7 @@ class DirectorioController extends Controller
 	      }
 	    }
 	}
-*/
+
 	public function actionCambiarRutas()
 	{
 		$c = new CDbCriteria;
@@ -308,8 +308,6 @@ class DirectorioController extends Controller
 	      {
 	      		$pedazoss = explode('/', $foto->src);
 	      		$pedazosr = explode('/', $foto->thumb);
-	      		/*print_r($pedazosr);
-	      		echo '<br /><br />';*/
 	      		$nrs = '/'.$pedazosr[1].'/files/'.$pedazosr[2].'/'.$pedazosr[3].'/'.$pedazosr[4];
 	      		$nrr = '/'.$pedazosr[1].'/files/'.$pedazosr[2].'/'.$pedazosr[3].'/t_'.$pedazosr[4];
 	      		$f = Fotos::model()->findByPk($foto->id);
@@ -325,7 +323,7 @@ class DirectorioController extends Controller
 	      }
 	    }
 	}
-
+*/
 	public function createSlug($str) {
 	    // convert all spaces to underscores:
 	    $treated = strtr($str, " ", "_");
