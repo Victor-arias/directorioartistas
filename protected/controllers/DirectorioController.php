@@ -248,7 +248,7 @@ class DirectorioController extends Controller
 	      		$nn = 't_' . $pedazos[4];
 	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;*/
 	      		//print_r($pedazos);
-	      		chmod('/home/feria/public_html'.$foto->thumb, 777)
+	      		chmod('/home/feria/public_html'.$foto->thumb, 777);
 	      		Yii::import('application.extensions.image.Image');
 				$image = new Image('/home/feria/public_html'.$foto->thumb);
 				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
