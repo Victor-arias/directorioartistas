@@ -249,12 +249,16 @@ class DirectorioController extends Controller
 	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;*/
 	      		//print_r($pedazos);
 	      		Yii::import('application.extensions.image.Image');
+				copy('/home/feria/public_html'.$foto->thumb, '/home/feria/public_html'.$foto->thumb.'.bak');
+	      		unlink('/home/feria/public_html'.$foto->thumb);
 				$image = new Image('/home/feria/public_html'.$foto->thumb);
 				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
 				if($image->save('/home/feria/public_html'.$foto->thumb))
 				{
+					unlink('/home/feria/public_html'.$foto->thumb.'.bak');
 					echo 'SI ' . $nr.'<br /><br />';
 				}else{
+					rename('/home/feria/public_html'.$foto->thumb.'.bak', '/home/feria/public_html'.$foto->thumb);
 					echo 'NO ' . $nr.'<br /><br />';
 				}
 	      	}
