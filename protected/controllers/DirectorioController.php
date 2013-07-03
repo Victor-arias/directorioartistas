@@ -250,9 +250,9 @@ class DirectorioController extends Controller
 	      		//print_r($pedazos);
 	      		
 	      		Yii::import('application.extensions.image.Image');
-				$image = new Image($foto->thumb);
+				$image = new Image('/home/feria/public_html'.$foto->thumb);
 				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
-				if($image->save($foto->thumb))
+				if($image->save('/home/feria/public_html'.$foto->thumb))
 				{
 					echo 'SI ' . $nr.'<br /><br />';
 				}else{
