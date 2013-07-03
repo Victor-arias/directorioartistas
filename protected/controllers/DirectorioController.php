@@ -306,10 +306,13 @@ class DirectorioController extends Controller
 
 	      foreach($perfil->fotoses as $foto)
 	      {
-	      		
+	      		$pedazoss = explode('/', $foto->src);
+	      		$pedazost = explode('/', $foto->thumb);
+	      		print_r($pedazoss);
+	      		/*$nrs = '/'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;
 	      		$f = Fotos::model()->findByPk($foto->id);
-	      		$f->thumb = '/directorio/'.$f->thumb;
-	      		$f->src = '/directorio/'.$f->src;
+	      		$f->thumb = $nrs;
+	      		$f->src = '/directorio'.$f->src;*/
 	      		
 				if($f->update())
 				{
