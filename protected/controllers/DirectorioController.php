@@ -252,7 +252,7 @@ class DirectorioController extends Controller
 	      		copy('/home/feria/public_html'.$foto->thumb, '/home/feria/public_html'.$foto->thumb.'.bak');
 				$image = new Image('/home/feria/public_html'.$foto->thumb);
 				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
-	      		unlink('/home/feria/public_html'.$foto->thumb);
+	      		//unlink('/home/feria/public_html'.$foto->thumb);
 				if($image->save('/home/feria/public_html'.$foto->thumb))
 				{
 					unlink('/home/feria/public_html'.$foto->thumb.'.bak');
