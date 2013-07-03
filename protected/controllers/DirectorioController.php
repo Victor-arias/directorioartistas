@@ -256,10 +256,10 @@ class DirectorioController extends Controller
 				if($image->save('/home/feria/public_html'.$foto->thumb))
 				{
 					unlink('/home/feria/public_html'.$foto->thumb.'.bak');
-					echo 'SI ' . $nr.'<br /><br />';
+					echo 'SI ' . $foto->thumb.'<br /><br />';
 				}else{
 					rename('/home/feria/public_html'.$foto->thumb.'.bak', '/home/feria/public_html'.$foto->thumb);
-					echo 'NO ' . $nr.'<br /><br />';
+					echo 'NO ' . $foto->thumb.'<br /><br />';
 				}
 	      	}
 	      }
