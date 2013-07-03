@@ -296,6 +296,30 @@ class DirectorioController extends Controller
 	    }
 	}
 */
+	public function actionCambiarRutas()
+	{
+		$c = new CDbCriteria;
+
+		$perfiles = Perfiles::model()->findAll($c);
+	    foreach($perfiles as $perfil)
+	    {
+
+	      foreach($perfil->fotoses as $foto)
+	      {
+	      		
+	      		$f = Fotos::model()->findByPk($foto->id);
+	      		$f->thumb = '/directorio/'.$f->thumb;
+	      		$f->src = '/directorio/'.$f->src;
+	      		
+				if($f->update())
+				{
+					echo 'SI ' . $f->src.'<br /><br />';
+				}else{
+					echo 'NO ' . $f->src.'<br /><br />';
+				}
+	      }
+	    }
+	}
 
 	public function createSlug($str) {
 	    // convert all spaces to underscores:
