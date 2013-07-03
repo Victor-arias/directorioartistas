@@ -46,7 +46,9 @@ return array(
 			'urlFormat'=>'path',
 			'showScriptName' => false,
 			'useStrictParsing' => false,
-			'rules'=>array(				
+			'rules'=>array(			
+				'ingresar' => 'site/login',
+				'salir'    => 'site/logout',
 				'directorio/<cat:(musica|danza|teatro|otras-artes)>'		=> 'directorio/listar',
 				'directorio/<cat:(musica|otras-artes)>/<genero:[\w\-]+>'	=> 'directorio/listar',
 				'directorio/<cat:(musica|otras-artes)>/<genero:[\w\-]+>/<artista:[\w\d\-]+>'=> 'directorio/ver',
