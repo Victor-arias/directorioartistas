@@ -87,7 +87,7 @@
     
     <div class="bs">
     <div class="img_directorio"></div>
-            <a href="directorio" id="directorio" class="btn">Ver el directorio de artistas</a>
+            <a href="/directorio" id="directorio" class="btn">Ver el directorio de artistas</a>
             </div>
     
 

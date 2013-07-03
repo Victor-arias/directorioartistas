@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Directorio de artistas',
-	'defaultController' => 'convocatoria',
+	'defaultController' => 'directorio',
 	'language' => 'es',
 
 	// preloading 'log' component
