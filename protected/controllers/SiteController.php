@@ -89,7 +89,7 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		Yii::app()->session->clear();
 		Yii::app()->session->destroy();
-		$this->redirect('login');		
+		$this->redirect('ingresar');		
 	}
 
 }
