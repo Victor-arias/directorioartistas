@@ -6,8 +6,14 @@ class ConvocatoriaController extends Controller
 
 	public function actionIndex()
 	{
-		$this->pageTitle ="Convocatoria Artístas";
+		$this->layout = 'home';
 		$this->render('index');
+	}
+
+	public function actionTerminos()
+	{
+		$this->pageTitle ="Convocatoria Artístas";
+		$this->render('terminos');
 	}
 
 	public function actionFotoPerfil(){	
