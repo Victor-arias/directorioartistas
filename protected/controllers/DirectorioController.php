@@ -308,10 +308,10 @@ class DirectorioController extends Controller
 	      {
 	      		$pedazoss = explode('/', $foto->src);
 	      		$pedazosr = explode('/', $foto->thumb);
-	      		print_r($pedazosr);
-	      		echo '<br /><br />';
-	      		/*$nrs = '/'.$pedazosr[1].'/files/'.$pedazosr[3].'/'.$pedazosr[4].'/'.$pedazosr[5].'/'.$pedazosr[6];
-	      		$nrr = '/'.$pedazosr[1].'/files/'.$pedazosr[3].'/'.$pedazosr[4].'/'.$pedazosr[5].'/'.$pedazosr[6];
+	      		/*print_r($pedazosr);
+	      		echo '<br /><br />';*/
+	      		$nrs = '/'.$pedazosr[1].'/files/'.$pedazosr[2].'/'.$pedazosr[3].'/'.$pedazosr[4];
+	      		$nrr = '/'.$pedazosr[1].'/files/'.$pedazosr[2].'/'.$pedazosr[3].'/t_'.$pedazosr[4];
 	      		$f = Fotos::model()->findByPk($foto->id);
 	      		$f->src = $nrs;
 	      		$f->thumb = $nrr;
@@ -321,7 +321,7 @@ class DirectorioController extends Controller
 					echo 'SI ' . $f->src.'<br /><br />';
 				}else{
 					echo 'NO ' . $f->src.'<br /><br />';
-				}*/
+				}
 	      }
 	    }
 	}
