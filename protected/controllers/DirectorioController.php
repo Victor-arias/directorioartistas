@@ -248,6 +248,7 @@ class DirectorioController extends Controller
 	      		$nn = 't_' . $pedazos[4];
 	      		$nr = './'.$pedazos[1].'/'.$pedazos[2].'/'.$pedazos[3].'/'.$nn;*/
 	      		//print_r($pedazos);
+	      		if($foto->ancho > 5500 || $foto->alto > 5500) continue;
 	      		Yii::import('application.extensions.image.Image');
 	      		copy('/home/feria/public_html'.$foto->thumb, '/home/feria/public_html'.$foto->thumb.'.bak');
 				$image = new Image('/home/feria/public_html'.$foto->thumb);
