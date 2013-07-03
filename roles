@@ -1,1 +1,0 @@
-INSERT INTO `directorioartistas`.`roles` (`id`, `nombre`, `estado`) VALUES ('2', 'Administrador', '1');
