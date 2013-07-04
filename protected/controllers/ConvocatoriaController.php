@@ -340,7 +340,7 @@ class ConvocatoriaController extends Controller
 	public function actionAsignarJuradosMusica()
 	{
 		$perfiles = Perfiles::model()->findAll('areas_id = ' . 1);
-		$jurados = array(3, 4, 5);
+		$jurados = array(1, 2, 3);
 		$jurado_actual = 0;
 		foreach($perfiles as $perfil)
 		{
@@ -362,10 +362,10 @@ class ConvocatoriaController extends Controller
 		}
 	}
 
-	public function actionAsignarJuradosDot()
+	public function actionAsignarJuradosDanza()
 	{
-		$perfiles = Perfiles::model()->findAll('areas_id = ' . 2 . ' OR areas_id = ' . 3 . ' OR areas_id = ' . 4);
-		$jurados = array(6, 7);
+		$perfiles = Perfiles::model()->findAll('areas_id = ' . 2);
+		$jurados = array(4);
 		$jurado_actual = 0;
 		foreach($perfiles as $perfil)
 		{
@@ -374,8 +374,8 @@ class ConvocatoriaController extends Controller
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
-				$p->jurado_id = $jurados[$jurado_actual];
-				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado ' . $jurados[$jurado_actual];
+				$p->jurado_id = 4;
+				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado 4';
 				else echo 'Falló ' . $p->nombre;
 
 				if($jurado_actual < 1) $jurado_actual++;
@@ -385,6 +385,35 @@ class ConvocatoriaController extends Controller
 			}
 			
 		}
+	}
+
+	public function actionAsignarJuradosTeatroOtros()
+	{
+		$perfiles = Perfiles::model()->findAll('areas_id = ' . 3 . ' OR areas_id = ' . 4);
+		$jurados = array(5);
+		$jurado_actual = 0;
+		foreach($perfiles as $perfil)
+		{
+			/*CVarDumper::dump($perfil->propuestases);
+			echo '<br /><br />';*/
+			if( isset($perfil->propuestases[0]) )
+			{
+				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
+				$p->jurado_id = 5;
+				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado 5';
+				else echo 'Falló ' . $p->nombre;
+
+				if($jurado_actual < 1) $jurado_actual++;
+				else $jurado_actual = 0;
+				//CVarDumper::dump($p);
+				echo '<br /><br />';
+			}
+			
+		}
+	}	
+
+	public function actionGenerarPassword(){
+		echo Bcrypt::hash("c4KeQuMx");
 	}
 
 	// Uncomment the following methods and override them if needed
