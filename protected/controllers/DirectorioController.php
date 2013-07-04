@@ -233,7 +233,7 @@ class DirectorioController extends Controller
 	{
 		$c = new CDbCriteria;
 		$c->limit = 100;
-		$c->offset = 600;
+		$c->offset = 0;
 		$perfiles = Perfiles::model()->findAll($c);
 	    foreach($perfiles as $perfil)
 	    {
@@ -251,8 +251,8 @@ class DirectorioController extends Controller
 	      		if($foto->ancho > 5500 || $foto->alto > 5500) continue;
 	      		Yii::import('application.extensions.image.Image');
 	      		copy('/home/feria/public_html'.$foto->thumb, '/home/feria/public_html'.$foto->thumb.'.bak');
-				$image = new Image('/home/feria/public_html'.$foto->thumb);
-				$image->resize(174, 145, Image::HEIGHT)->crop(174, 145, 'top');
+				$image = new Image('/home/feria/public_html'.$foto->src);
+				$image->resize(174, NULL)->crop(174, 145, 'top');
 	      		//unlink('/home/feria/public_html'.$foto->thumb);
 				if($image->save('/home/feria/public_html'.$foto->thumb))
 				{
