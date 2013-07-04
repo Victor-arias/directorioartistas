@@ -250,16 +250,16 @@ class DirectorioController extends Controller
 	      		//print_r($pedazos);
 	      		if($foto->ancho > 5500 || $foto->alto > 5500) continue;
 	      		Yii::import('application.extensions.image.Image');
-	      		copy('/home/feria/public_html'.$foto->thumb, '/home/feria/public_html'.$foto->thumb.'.bak');
+	      		copy('.'.$foto->thumb, '.'.$foto->thumb.'.bak');
 				$image = new Image('/home/feria/public_html'.$foto->src);
 				$image->resize(174, NULL)->crop(174, 145, 'top');
 	      		//unlink('/home/feria/public_html'.$foto->thumb);
-				if($image->save('/home/feria/public_html'.$foto->thumb))
+				if($image->save('.'.$foto->thumb))
 				{
-					unlink('/home/feria/public_html'.$foto->thumb.'.bak');
+					unlink('.'.$foto->thumb.'.bak');
 					echo 'SI ' . $foto->thumb.'<br /><br />';
 				}else{
-					rename('/home/feria/public_html'.$foto->thumb.'.bak', '/home/feria/public_html'.$foto->thumb);
+					rename('.'.$foto->thumb.'.bak', '.'.$foto->thumb);
 					echo 'NO ' . $foto->thumb.'<br /><br />';
 				}
 	      	}
