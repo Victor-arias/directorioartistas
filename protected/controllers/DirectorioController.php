@@ -254,7 +254,7 @@ class DirectorioController extends Controller
 				$image = new Image(''.$foto->src);
 				$image->resize(350, NULL)->crop(174, 145, 'top');
 	      		unlink(''.$foto->thumb);
-				if($image->save('.'.$foto->thumb))
+				if($image->save(''.$foto->thumb))
 				{
 					unlink(''.$foto->thumb.'.bak');
 					echo 'SI ' . $foto->thumb.'<br /><br />';
