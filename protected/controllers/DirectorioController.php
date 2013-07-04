@@ -257,7 +257,7 @@ class DirectorioController extends Controller
 				if($image->save(''.$foto->thumb))
 				{
 					unlink(''.$foto->thumb.'.bak');
-					echo 'SI ' . $foto->thumb. $image->render() '<br /><br />';
+					echo 'SI ' . $foto->thumb. $image->render() . '<br /><br />';
 				}else{
 					rename(''.$foto->thumb.'.bak', ''.$foto->thumb);
 					echo 'NO ' . $foto->thumb.'<br /><br />';
