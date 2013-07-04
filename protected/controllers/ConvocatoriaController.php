@@ -158,7 +158,7 @@ class ConvocatoriaController extends Controller
     			);		
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}	
-
+/*
 	public function actionRegistro()
 	{
 		if(!count($_POST)){
@@ -336,7 +336,7 @@ class ConvocatoriaController extends Controller
 		$this->pageTitle ="Registro Exitoso";
 		$this->render('exito');		
 	}
-
+/*
 	public function actionAsignarJuradosMusica()
 	{
 		$perfiles = Perfiles::model()->findAll('areas_id = ' . 1);
@@ -345,7 +345,7 @@ class ConvocatoriaController extends Controller
 		foreach($perfiles as $perfil)
 		{
 			/*CVarDumper::dump($perfil->propuestases);
-			echo '<br /><br />';*/
+			echo '<br /><br />';*
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
@@ -361,7 +361,7 @@ class ConvocatoriaController extends Controller
 			
 		}
 	}
-
+*
 	public function actionAsignarJuradosDanza()
 	{
 		$perfiles = Perfiles::model()->findAll('areas_id = ' . 2);
@@ -370,7 +370,7 @@ class ConvocatoriaController extends Controller
 		foreach($perfiles as $perfil)
 		{
 			/*CVarDumper::dump($perfil->propuestases);
-			echo '<br /><br />';*/
+			echo '<br /><br />';*
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
@@ -395,7 +395,7 @@ class ConvocatoriaController extends Controller
 		foreach($perfiles as $perfil)
 		{
 			/*CVarDumper::dump($perfil->propuestases);
-			echo '<br /><br />';*/
+			echo '<br /><br />';*
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
@@ -411,7 +411,7 @@ class ConvocatoriaController extends Controller
 			
 		}
 	}	
-
+/*
 	public function actionGenerarPassword(){
 		echo Bcrypt::check("CNBDGFAA");
 	}
