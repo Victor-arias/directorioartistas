@@ -107,6 +107,6 @@ class Usuarios extends CActiveRecord
 	}
 
 	public function validatePassword($password){
-		return $password === $this->password;
+		return Bcrypt::check($password, $this->password);
 	}
 }

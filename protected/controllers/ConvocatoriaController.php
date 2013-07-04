@@ -413,7 +413,7 @@ class ConvocatoriaController extends Controller
 	}	
 
 	public function actionGenerarPassword(){
-		echo Bcrypt::hash("c4KeQuMx");
+		echo Bcrypt::check("CNBDGFAA");
 	}
 
 	// Uncomment the following methods and override them if needed
