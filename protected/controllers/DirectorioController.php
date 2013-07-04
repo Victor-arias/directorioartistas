@@ -252,7 +252,7 @@ class DirectorioController extends Controller
 	      		Yii::import('application.extensions.image.Image');
 	      		copy(''.$foto->thumb, ''.$foto->thumb.'.bak');
 				$image = new Image(''.$foto->src);
-				$image->resize(300, NULL)->crop(174, 145, 'top');
+				$image->resize(350, NULL)->crop(174, 145, 'top');
 	      		unlink(''.$foto->thumb);
 				if($image->save('.'.$foto->thumb))
 				{
