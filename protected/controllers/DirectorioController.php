@@ -252,12 +252,12 @@ class DirectorioController extends Controller
 	      		Yii::import('application.extensions.image.Image');
 	      		copy(''.$foto->thumb, ''.$foto->thumb.'.bak');
 				$image = new Image(''.$foto->src);
-				$image->resize(350, NULL, Image::WIDTH)->crop(174, 145, 'top');
+				$image->resize(350, 350, Image::NONE)->crop(174, 145);
 	      		unlink(''.$foto->thumb);
 				if($image->save(''.$foto->thumb))
 				{
 					unlink(''.$foto->thumb.'.bak');
-					echo 'SI ' . $foto->thumb.'<br /><br />';
+					echo 'SI ' . $foto->thumb. $image->render() '<br /><br />';
 				}else{
 					rename(''.$foto->thumb.'.bak', ''.$foto->thumb);
 					echo 'NO ' . $foto->thumb.'<br /><br />';
