@@ -79,25 +79,49 @@
       </div>            
     </div><!--/span-->  	
     <div class="span4">
-      <div class="well sidebar-nav">
+      <div class="well sidebar-nav" id="calificador">
         <?php if($this->user->roles_id == "2"): ?>
-        <ul class="nav nav-list">
-          <li class="nav-header">Calidad Interpretativa</li>
-          <li><span style="font-size: 11px;">Actuación (Fuerza Interpretativa)</span> <span class="pull-right">10</span></li>
-          <li><span style="font-size: 11px;">Arreglos</span> <span class="pull-right">10</span></li>
-          <li><span style="font-size: 11px;">Ensamble</span> <span class="pull-right">10</span></li>
-          <li class="nav-header">Calidad Creativa</li>
-          <li><span style="font-size: 11px;">Repertorio</span> <span class="pull-right">10</span></li>
-          <li><span style="font-size: 11px;">Lenguaje del Contenido</span> <span class="pull-right">10</span></li>
-          <li><span style="font-size: 11px;">Originalidad</span> <span class="pull-right">10</span></li>
-          <li class="nav-header">Representatividad</li>
-          <li><span style="font-size: 11px;">Reconocimiento Artístico</span> <span class="pull-right">10</span></li>
-          <li><span style="font-size: 11px;">Proyección e Identidad Cultural</span> <span class="pull-right">10</span></li>
-          <li class="nav-header">Viabilidad</li>
-          <li><span style="font-size: 11px;">Viabilidad Económica</span> <span class="pull-right">10</span></li>
-          <li><span style="font-size: 11px;">Viabilidad Escénica</span> <span class="pull-right">10</span></li>          
-        </ul>
+          <?php if ($estaCalificada): ?>
+        <ul class="nav nav-list calificador">          
+          <?php $idCriterioActual = 0; ?>
+          <?php $i=0; foreach($criterios as $criterio): ?>    
+
+          <?php if($idCriterioActual !== $criterio->tipo_criterio_id): ?>
+            <li class="nav-header"><?php echo $criterio->tipoCriterio->nombre ?></li>      
+          <?php $idCriterioActual = $criterio->tipo_criterio_id ?>
+          <?php endif; ?>
+          <li>
+            <span class="lista-criterios"><?php echo $criterio->titulo ?></span> 
+            <h5 class="select-mini"><?php echo $puntajes[$i] ?></h5>
+          </li>
+          <?php $i++; endforeach; ?>   
+          <li><button id="btnCalificar" class="btn btn-info centrar">Calificar</button></li>         
+        </ul> 
+          <?php else: ?>
+        <div class="alert alert-info">
+          <h6>La propuesta aún no ha sido calificada</h6>
+        </div>
+          <?php endif; ?>
         <?php else: ?>
+          <?php if ($estaCalificada): ?>
+          <!-- LA PROPUESTA ESTA CALIFICADA -->
+        <ul class="nav nav-list calificador">          
+          <?php $idCriterioActual = 0; ?>
+          <?php $i=0; foreach($criterios as $criterio): ?>    
+
+          <?php if($idCriterioActual !== $criterio->tipo_criterio_id): ?>
+            <li class="nav-header"><?php echo $criterio->tipoCriterio->nombre ?></li>      
+          <?php $idCriterioActual = $criterio->tipo_criterio_id ?>
+          <?php endif; ?>
+          <li>
+            <span class="lista-criterios"><?php echo $criterio->titulo ?></span> 
+            <h5 class="select-mini"><?php echo $puntajes[$i] ?></h5>
+          </li>
+          <?php $i++; endforeach; ?>   
+          <li><button id="btnCalificar" class="btn btn-info centrar">Calificar</button></li>         
+        </ul>          
+          <?php else: ?>
+          <!-- LA PROPUESTA NO ESTA CALIFICADA -->
         <ul class="nav nav-list calificador">          
           <?php $idCriterioActual = 0; ?>
           <?php foreach($criterios as $criterio): ?>    
@@ -125,7 +149,8 @@
           </li>
           <?php endforeach; ?>   
           <li><button id="btnCalificar" class="btn btn-info centrar">Calificar</button></li>         
-        </ul>        
+        </ul>  
+          <?php endif; ?>      
         <?php endif; ?>
       </div><!--/.well -->
     </div><!--/span-->
@@ -165,15 +190,19 @@ $(function(){
         <?php endforeach ?>        
         ]
       };
-
-      $.ajax({
-          type: "POST",
-          url: "<?php echo $quotedUrl ?>",
-          data: calificaciones,
-          success: function(data) {
-            bootbox.alert("Se ha registrado su calificación de manera exitosa.");
-          }
-      });      
+      bootbox.confirm("¿Está seguro de guardar su calificación? Recuerde que no podrá modificarla", 'No', 'Si', function(result){
+        if(result){
+          $.ajax({
+              type: "POST",
+              url: "<?php echo $quotedUrl ?>",
+              data: calificaciones,
+              success: function(data) {
+                $(".select-mini").attr("disabled","disabled");
+                bootbox.alert("Se ha registrado su calificación de manera exitosa.");
+              }
+          });            
+        }
+      });
     }
   });
 });
