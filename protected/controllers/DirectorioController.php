@@ -250,16 +250,16 @@ class DirectorioController extends Controller
 	      		//print_r($pedazos);
 	      		if($foto->ancho > 5500 || $foto->alto > 5500) continue;
 	      		Yii::import('application.extensions.image.Image');
-	      		copy(''.$foto->thumb, ''.$foto->thumb.'.bak');
-				$image = new Image(''.$foto->src);
+	      		copy($this->basePath.''.$foto->thumb, $this->basePath.''.$foto->thumb.'.bak');
+				$image = new Image($this->basePath.''.$foto->src);
 				$image->resize(350, 350, Image::NONE)->crop(174, 145);
-	      		unlink(''.$foto->thumb);
-				if($image->save(''.$foto->thumb))
+	      		unlink($this->basePath.''.$foto->thumb);
+				if($image->save($this->basePath.''.$foto->thumb))
 				{
-					unlink(''.$foto->thumb.'.bak');
+					unlink($this->basePath.''.$foto->thumb.'.bak');
 					echo 'Convertida ' . $foto->thumb . $image->render() . '<br /><br />';
 				}else{
-					rename(''.$foto->thumb.'.bak', ''.$foto->thumb);
+					rename($this->basePath.''.$foto->thumb.'.bak', $this->basePath.''.$foto->thumb);
 					echo 'Falló ' . $foto->thumb.'<br /><br />';
 				}
 	      	}
