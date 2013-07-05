@@ -6,7 +6,18 @@
     <div class="span8">
       <div class="row-fluid">
         <div class="span4">
-          <img src="http://www.lorempixel.com/250/265" class="img-polaroid">
+          <?php 
+            if( !empty($perfil->fotoses) ):
+              foreach($perfil->fotoses as $foto): ?>
+              <?php if( $foto->es_perfil): ?>
+                <img src="<?php echo $foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+              <?php endif ?>
+          <?php 
+              endforeach; 
+            else:
+          ?>
+              <img src="/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+        <?php endif; ?>
         </div><!--/span-->
         <div class="span6">
           <h3><?php echo $perfil->propuestases[0]->nombre ?></h3><br/>
