@@ -250,16 +250,16 @@ class DirectorioController extends Controller
 	      		//print_r($pedazos);
 	      		if($foto->ancho > 5500 || $foto->alto > 5500) continue;
 	      		Yii::import('application.extensions.image.Image');
-	      		copy(Yii::app()->basePath.''.$foto->thumb, Yii::app()->basePath.''.$foto->thumb.'.bak');
-				$image = new Image(Yii::app()->basePath.''.$foto->src);
+	      		copy('/usr/local/apache/htdocs/'.''.$foto->thumb, '/usr/local/apache/htdocs/'.''.$foto->thumb.'.bak');
+				$image = new Image('/usr/local/apache/htdocs/'.''.$foto->src);
 				$image->resize(350, 350, Image::NONE)->crop(174, 145);
-	      		unlink(Yii::app()->basePath.''.$foto->thumb);
-				if($image->save(Yii::app()->basePath.''.$foto->thumb))
+	      		unlink('/usr/local/apache/htdocs/'.''.$foto->thumb);
+				if($image->save('/usr/local/apache/htdocs/'.''.$foto->thumb))
 				{
-					unlink(Yii::app()->basePath.''.$foto->thumb.'.bak');
+					unlink('/usr/local/apache/htdocs/'.''.$foto->thumb.'.bak');
 					echo 'Convertida ' . $foto->thumb . $image->render() . '<br /><br />';
 				}else{
-					rename(Yii::app()->basePath.''.$foto->thumb.'.bak', Yii::app()->basePath.''.$foto->thumb);
+					rename('/usr/local/apache/htdocs/'.''.$foto->thumb.'.bak', '/usr/local/apache/htdocs/'.''.$foto->thumb);
 					echo 'Falló ' . $foto->thumb.'<br /><br />';
 				}
 	      	}
