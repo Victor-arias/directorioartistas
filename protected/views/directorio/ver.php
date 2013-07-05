@@ -65,7 +65,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
     
 	<h3 class="tituloBackground">Reseña</h3>
     <p><?php echo nl2br($perfil->propuestases[0]->resena) ?></p>
-    <?php $this->renderPartial('_redes', array('perfil', $perfil)); ?>
+    <?php $this->renderPartial('_redes', array('nombre' => $perfil->nombre)); ?>
     <h3 class="tituloBackground">Conozca la propuesta</h3>
     
     <div class="multimedia">
