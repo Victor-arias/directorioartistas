@@ -87,6 +87,21 @@
       		<?php endforeach; ?> 		
       	</div>
       	<?php endif; ?>
+      </div>
+      <div class="row-fluid">
+        <div class="span9">
+          <h3>Galería de la propuesta</h3>
+          <?php 
+          if( !empty($perfil->fotoses) ):
+            foreach($perfil->fotoses as $foto): ?>
+            <?php if( !$foto->es_perfil): ?>
+              <a href="<?php echo $foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo $foto->src ?>" width="140" height="117" alt="<?php echo $perfil->nombre ?>" class="img-rounded" /></a>
+            <?php endif ?>
+        <?php 
+            endforeach;
+          endif; 
+        ?>
+        </div>
       </div>            
     </div><!--/span-->  	
     <div class="span4">
