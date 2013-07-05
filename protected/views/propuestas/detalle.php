@@ -1,5 +1,8 @@
 <?php
 /* @var $this AdministradorController */
+Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jquery.fancybox/jquery.fancybox.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.fancybox/jquery.fancybox.pack.js', CClientScript::POS_END);
+Yii::app()->clientScript->registerScript('fancybox', '$(".fancybox").fancybox();', CClientScript::POS_READY);
 ?>
 <div class="container-fluid">
   <div class="row-fluid">
