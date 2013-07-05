@@ -20,6 +20,22 @@ class PropuestasController extends Controller
 
 				$objCriterio = new Criterio();
 				$criterios = $objCriterio->findAll("areas_id=$perfil->areas_id ORDER BY tipo_criterio_id ASC");
+
+				$objCriterioHasPropuestas = new CriterioHasPropuestas;
+				$calificaciones = $objCriterioHasPropuestas->find("propuestas_id=".$_GET['id']);
+				$calificada = false;
+				$puntajes = false;	
+				if( ! is_null($calificaciones)){
+					$calificada = true;
+					$i = 0;
+					$puntajes = array();					
+					foreach($criterios as $c){
+						$objCriterioHasPropuestas = new CriterioHasPropuestas;
+						$CriterioHasPropuestas = $objCriterioHasPropuestas->find("criterio_id=$c->id AND propuestas_id=".$_GET['id']);
+						$puntajes[$i] = $CriterioHasPropuestas->puntaje;
+						$i++;
+					}
+				}
 			}
 			else{
 				$this->redirect(array('propuestas/listar'));
@@ -27,7 +43,9 @@ class PropuestasController extends Controller
 		}		
 		$this->render('detalle', array(
 				'perfil'=>$perfil,
-				'criterios'=>$criterios));
+				'criterios'=>$criterios,
+				'estaCalificada'=>$calificada,
+				'puntajes'=>$puntajes));
 	}
 
 	public function actionListar()
