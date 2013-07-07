@@ -22,7 +22,7 @@ class PropuestasController extends Controller
 				$criterios = $objCriterio->findAll("areas_id=$perfil->areas_id ORDER BY tipo_criterio_id ASC");
 
 				$objCriterioHasPropuestas = new CriterioHasPropuestas;
-				$calificaciones = $objCriterioHasPropuestas->find("propuestas_id=".$_GET['id']);
+				$calificaciones = $objCriterioHasPropuestas->find("propuestas_id=".$perfil->propuestases[0]->id);
 				$calificada = false;
 				$puntajes = false;	
 				if( ! is_null($calificaciones)){
@@ -31,7 +31,7 @@ class PropuestasController extends Controller
 					$puntajes = array();					
 					foreach($criterios as $c){
 						$objCriterioHasPropuestas = new CriterioHasPropuestas;
-						$CriterioHasPropuestas = $objCriterioHasPropuestas->find("criterio_id=$c->id AND propuestas_id=".$_GET['id']);
+						$CriterioHasPropuestas = $objCriterioHasPropuestas->find("criterio_id=$c->id AND propuestas_id=".$perfil->propuestases[0]->id);
 						$puntajes[$i] = $CriterioHasPropuestas->puntaje;
 						$i++;
 					}
