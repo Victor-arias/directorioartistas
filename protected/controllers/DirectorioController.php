@@ -205,7 +205,7 @@ class DirectorioController extends Controller
         	$correo->FromName 	= $mContacto->nombre;  
         	if($correo->Send())
         	{
-        		Yii::app()->user->setFlash('success', "Mensaje enviado.");
+        		Yii::app()->user->setFlash('success', "El mensaje se ha enviado correctamente.");
         	}else
         	{
         		Yii::app()->user->setFlash('success', "El mensaje no se pudo enviar, por favor intentelo nuevamente.");

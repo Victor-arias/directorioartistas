@@ -16,7 +16,8 @@
 			<td>
 				<center>
 				<table style="display: inline-table; margin:0 auto" border="0" cellpadding="0" cellspacing="0" width="500">
-					<p>Hola, <?php echo $datos['nombre'] ?> te ha enviado el siguiente mensaje a través de <?php echo CHtml::link('El directorio de artistas de la feria de las flores', CHtml::normalizeUrl('http://www.feriadelasfloresmedellin.gov.co/directorio') ); ?>: </p>
+					<p>Has recibido un mensaje a través del perfil de <?php echo $datos['nombre'] ?> en el <?php echo CHtml::link('Directorio Artísticio de la Feria de las Flores', CHtml::normalizeUrl('http://www.feriadelasfloresmedellin.gov.co/directorio') ); ?>. </p>
+					<p>El mensaje es el siguiente:</p>
 					<p><?php echo nl2br($datos['mensaje']); ?></p>
 				</table>
 				</center>
