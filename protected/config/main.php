@@ -68,7 +68,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=feria_directorioartistas',
+			'connectionString' => 'mysql:host=localhost;dbname=directorioartistas',
 			'emulatePrepare' => true,
 			'username' => 'userdirectorio',//'root',
 			'password' => 'CNBDGFAA880519$',//'',
