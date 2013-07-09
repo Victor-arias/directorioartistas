@@ -55,6 +55,7 @@ return array(
 				'<cat:(danza|teatro)>/<artista:[\w\d\-]+>'		=> 'directorio/ver',
 				'convocatoria'									=> 'convocatoria',
 				'busqueda' 										=> 'directorio/busqueda',
+				'contactar'										=> 'directorio/contactar',
 				'<controller:\w+>/<id:\d+>'						=> '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'		=> '<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'					=> '<controller>/<action>',
