@@ -197,7 +197,7 @@ class DirectorioController extends Controller
 
 			$correo            	= new YiiMailer();
         	$correo->setView('contacto');
-        	$correo->setData( array('datos' => $mContacto) );
+        	$correo->setData( array('datos' => $mContacto, 'propuesta' => $propuesta) );
         	$correo->render();
 			$correo->Subject    = $mContacto->asunto;
         	$correo->AddAddress( /*$propuesta->email*/'victor.arias@telemedellin.tv' );
