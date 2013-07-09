@@ -44,7 +44,7 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
     <nav>
       <?php 
         $ru = Yii::app()->request->requestUri;
-        $hu = Yii::app()->homeUrl . 'directorio/';
+        $hu = Yii::app()->homeUrl;
         $this->widget( 'zii.widgets.CMenu', 
           array(
             'items'=>array(
