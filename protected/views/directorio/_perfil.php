@@ -12,7 +12,7 @@
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( $foto->es_perfil): ?>
-				<img src="<?php echo $foto->thumb ?>" width="174" height="145" alt="<?php echo $perfil->nombre ?>" class="img-rounded" />
+				<img src="<?php echo $foto->thumb ?>" width="174" height="145" alt="<?php echo addslashes($perfil->nombre); ?>" class="img-rounded" />
 			<?php endif ?>
 	<?php 
 			endforeach; 
