@@ -70,7 +70,7 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=feria_directorioartistas',
 			'emulatePrepare' => true,
-			'username' => 'feria_userdir',//'root',
+			'username' => 'userdirectorio',//'root',
 			'password' => 'CNBDGFAA880519$',//'',
 			'charset' => 'utf8',
 		),
