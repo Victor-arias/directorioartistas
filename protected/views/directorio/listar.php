@@ -52,7 +52,7 @@ Yii::app()->clientScript->registerScript(
 			//console.log(value);
 			var url = "'.$bu.'"+data.categoria;
 			//console.log(url);
-			if(value.propuestas) url += "/"+value.propuestas[0].subgenero;
+			if(value.propuestas[0].subgenero) url += "/"+value.propuestas[0].subgenero;
 			url += "/"+value.slug;
 			var html = "";
 			html += "<div class=\'perfil\'>";
