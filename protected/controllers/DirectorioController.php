@@ -266,6 +266,35 @@ class DirectorioController extends Controller
 	      }
 	    }
 	}
+
+	public function actionEliminarSubcategoria()
+	{
+		$c = new CDbCriteria;
+		$c->limit = 700;
+		$c->offset = 0;
+		$perfiles = Perfiles::model()->findAll($c);
+	    foreach($perfiles as $perfil)
+	    {
+	      //CVarDumper::dump($perfil->attributes);
+	      //echo '<br /><br />';
+	      foreach($perfil->propuestases as $propuesta)
+	      {
+	      	if($perfil->areas_id == "2" || $perfil->areas_id == "3")
+	      	{
+	      		$objPropuesta = new propuestas;
+	      		$objPropuesta = $objPropuesta->findByPk($propuesta->id);
+	      		$objPropuesta->subgenero = NULL;
+	      		if($objPropuesta->save(false)){
+	      			echo "Actualizada propuesta: " . $propuesta->id . " del perfil " . $perfil->id . "<br/>";
+	      		}
+	      		else{
+	      			echo "Falló propuesta: " . $propuesta->id . " del perfil " . $perfil->id . "<br/>";
+	      		}
+	      	}
+	      }
+	    }
+	}
+
 /*
 	public function actionGuardarThumbs()
 	{
