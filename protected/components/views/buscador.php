@@ -35,7 +35,7 @@
           "autocompleteselect", 
           function( event, ui ) {
             //console.log(ui.item);
-            window.location = "' . Yii::app()->homeUrl . 'directorio/" + ui.item.slug;
+            window.location = "' . Yii::app()->homeUrl . '" + ui.item.slug;
             //$( "#search-form" ).submit();
           } 
         );', 
