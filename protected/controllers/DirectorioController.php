@@ -200,7 +200,7 @@ class DirectorioController extends Controller
         	$correo->setData( array('datos' => $mContacto, 'propuesta' => $propuesta) );
         	$correo->render();
 			$correo->Subject    = $mContacto->asunto;
-        	$correo->AddAddress( /*$propuesta->email*/'victor.arias@telemedellin.tv' );
+        	$correo->AddAddress( $propuesta->email );
         	$correo->From 		= $mContacto->email;
         	$correo->FromName 	= $mContacto->nombre;  
         	if($correo->Send())
