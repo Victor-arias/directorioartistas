@@ -1,5 +1,19 @@
 <?php
-$archivo = 'FaltantesMusica_' .date('Y-m-d_H-i-s') .".xls";
+switch ($area) {
+	case '1':
+		$nArea = "Musica";
+		break;
+	case '2':
+		$nArea = "Danza";
+		break;
+	case '3':
+		$nArea = "Teatro";
+		break;
+	default:
+		$nArea = "Otro";
+		break;
+}
+$archivo = 'Faltantes'.$nArea.'_' .date('Y-m-d_H-i-s') .".xls";
 header('Content-type: application/vnd.ms-excel; charset=UTF-8');
 header("Content-Disposition: attachment; filename=" . $archivo);
 header("Pragma: no-cache");

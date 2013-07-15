@@ -297,11 +297,13 @@ class DirectorioController extends Controller
 
 	public function actionExportarFaltantes()
 	{
+		$area = $_GET['a'];
 		$objPerfil = new Perfiles;
-		$perfiles = $objPerfil->findAll("areas_id=1");
+		$perfiles = $objPerfil->findAll("areas_id=$area");
 
 		$this->renderPartial('exportarFaltantes',array(
-				'perfiles'=>$perfiles
+				'perfiles'=>$perfiles,
+				'area'=>$area
 			));		
 	}	
 
