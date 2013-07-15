@@ -3,15 +3,19 @@ date_default_timezone_set('America/Bogota');
 switch ($area) {
 	case '1':
 		$nArea = "Musica";
+		$criterio = 1;
 		break;
 	case '2':
 		$nArea = "Danza";
+		$criterio = 11;
 		break;
 	case '3':
 		$nArea = "Teatro";
+		$criterio = 21;
 		break;
 	default:
 		$nArea = "Otro";
+		$criterio = 31;
 		break;
 }
 $archivo = 'Faltantes'.$nArea.'_' .date('Y-m-d_H-i-s') .".xls";
