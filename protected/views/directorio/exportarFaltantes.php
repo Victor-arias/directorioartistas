@@ -53,7 +53,7 @@ header("Expires: 0");
 		<td><?php echo utf8_decode($perfil->propuestases[0]->trayectoria) ?></td>
 		<td><?php echo utf8_decode($perfil->propuestases[0]->numero_integrantes) ?></td>
 		<td><?php echo number_format($perfil->propuestases[0]->valor_presentacion) ?></td>
-		<td>M&uacute;sica</td>
+		<td><?php echo $nArea ?></td>
 		<?php $suma = 0; ?>
 		<td><?php echo utf8_decode($perfil->propuestases[0]->jurado->nombre_completo) ?></td>
 	</tr>
