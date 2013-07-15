@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Bogota');
 $archivo = 'Otros_' .date('Y-m-d_H-i-s') .".xls";
 header('Content-type: application/vnd.ms-excel; charset=UTF-8');
 header("Content-Disposition: attachment; filename=" . $archivo);
