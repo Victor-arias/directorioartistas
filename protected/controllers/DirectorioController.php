@@ -295,6 +295,45 @@ class DirectorioController extends Controller
 	    }
 	}
 
+	public function actionExportarMusica()
+	{
+		$objPerfil = new Perfiles;
+		$perfiles = $objPerfil->findAll("areas_id=1");
+
+		$this->renderPartial('exportarMusica',array(
+				'perfiles'=>$perfiles
+			));		
+	}
+
+	public function actionExportarDanza()
+	{
+		$objPerfil = new Perfiles;
+		$perfiles = $objPerfil->findAll("areas_id=2");
+
+		$this->renderPartial('exportarDanza',array(
+				'perfiles'=>$perfiles
+			));		
+	}
+
+	public function actionExportarTeatro()
+	{
+		$objPerfil = new Perfiles;
+		$perfiles = $objPerfil->findAll("areas_id=3");
+
+		$this->renderPartial('exportarTeatro',array(
+				'perfiles'=>$perfiles
+			));		
+	}
+
+	public function actionExportarOtros()
+	{
+		$objPerfil = new Perfiles;
+		$perfiles = $objPerfil->findAll("areas_id=4");
+
+		$this->renderPartial('exportarOtros',array(
+				'perfiles'=>$perfiles
+			));		
+	}	
 /*
 	public function actionGuardarThumbs()
 	{
