@@ -295,6 +295,16 @@ class DirectorioController extends Controller
 	    }
 	}
 
+	public function actionExportarFaltantes()
+	{
+		$objPerfil = new Perfiles;
+		$perfiles = $objPerfil->findAll("areas_id=1");
+
+		$this->renderPartial('exportarFaltantes',array(
+				'perfiles'=>$perfiles
+			));		
+	}	
+
 	public function actionExportarMusica()
 	{
 		$objPerfil = new Perfiles;
