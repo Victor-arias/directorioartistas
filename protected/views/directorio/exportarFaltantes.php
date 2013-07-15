@@ -42,7 +42,7 @@ header("Expires: 0");
 		<td>Jurado</td>
 	</tr>
 	<?php foreach($perfiles as $perfil): ?>
-	<?php $class = new CriterioHasPropuestas; $p = $class::model()->find("criterio_id=1 AND propuestas_id=".$perfil->propuestases[0]->id); ?>		
+	<?php $class = new CriterioHasPropuestas; $p = $class::model()->find("criterio_id=$criterio AND propuestas_id=".$perfil->propuestases[0]->id); ?>		
 	<?php if(is_null($p->puntaje)): ?>	
 	<tr>		
 		<td><?php echo $perfil->id ?></td>
