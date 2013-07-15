@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Bogota');
 switch ($area) {
 	case '1':
 		$nArea = "Musica";
