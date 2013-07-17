@@ -48,5 +48,10 @@ Más  de 6 años vinculada a la radio pública., En la actualidad se desempeña 
 <h3>Resultados</h3>
 
 <p>A continuación podrá consultar la programación artística de la Feria de las Flores 2013 (archivo en PDF), que incluye las propuestas locales escogidas y que se presentarán en los diferentes escenarios, junto a los artistas nacionales e internacionales invitados al evento. También podrá acceder al Directorio Artístico de Medellín y consultar los perfiles de todos los artistas y agrupaciones inscritas para esta selección.</p>
-
-<a class="brn" target="_blank" href="<?php echo Yii::app()->request->baseUrl ?>/files/programacion.pdf">Descargar Programación</a>
+<div class="row"> 
+  	<div class="span12 seleccionados">
+    	<p>
+			<a class="btn btn-large" target="_blank" href="<?php echo Yii::app()->request->baseUrl ?>/files/programacion.pdf">Descargar Programación</a>
+		</p>
+	</div>
+</div>

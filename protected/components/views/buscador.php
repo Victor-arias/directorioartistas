@@ -1,3 +1,10 @@
+<div class="row"> 
+  <div class="span12 seleccionados">
+    <p>
+    <?php echo CHtml::link( 'Ver los Seleccionados para la Feria de las Flores 2013', array('/directorio/resultados'), array('class'=>'btn btn-large') ); ?>
+    </p>    
+</div>
+
 <div <?php if($this->home) echo 'class="home"' ?> id="buscador">
   <?php $form = $this->beginWidget('CActiveForm', array(
       'action' => CHtml::normalizeUrl(Yii::app()->homeUrl.'directorio/busqueda'),
