@@ -47,11 +47,11 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
         </div>
         <div>
           1 de Julio al 15 de Julio de 2013
-          <strong class="current">Evaluación</strong>
+          <strong class="next">Evaluación</strong>
         </div>
         <div>
           15 de Julio de 2013
-          <strong class="next">Publicación de resultados</strong>
+          <strong class="current">Publicación de resultados</strong>
         </div>
       </div>
     </header>

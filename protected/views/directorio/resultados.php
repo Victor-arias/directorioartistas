@@ -33,13 +33,13 @@ Más  de 6 años vinculada a la radio pública., En la actualidad se desempeña 
 	<strong>(Francia) (Cali)</strong>
 </p>
 
-<h4>Rafael Palacio</h4>
+<h4>RAFAEL PALACIO</h4>
 <p>Bailarín colombiano, coreógrafo y director de danza.  Realizó diplomados en gestión cultural de la Universidad Pontificia Bolivariana y Danza Contemporánea Popular de Artes de Medellín. Fundador y director  del grupo  de danza afro contemporánea: SANKOFA
  <strong>(Medellín)</strong></p>
 
 <p></p>
 
-<h4>Beatriz Quintero</h4>
+<h4>BEATRIZ QUINTERO</h4>
 <p>
 	Administradora de Empresas de la Universidad Nacional de Colombia, con  estudios en Gestión Cultural de la Universidad de Barcelona. Con experiencia en la gestión y producción cultural por 26 años, ha desempeñado cargo como Gerente del Festival Internacional de Teatro de Manizales  en los años 1989 a 1992.  Directora Ejecutiva y Representante Legal de REDLAT- Red de Promotores Culturales de Latinomérica y El Caribe de 1992 a la fecha.
 	<strong>(Manizales)</strong>
