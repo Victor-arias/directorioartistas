@@ -4,6 +4,9 @@ class DirectorioController extends Controller
 {
 	public $layout = 'directorio';
 
+	public function actionResultados(){
+		$this->render('resultados');
+	}
 
 	public function actionIndex()
 	{

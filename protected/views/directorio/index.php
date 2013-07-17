@@ -6,6 +6,12 @@ $this->breadcrumbs = null;
 
 <h2>Estos son algunos artistas del directorio</h2>
 
+<div class="row">	
+	<div class="span12">
+		<p>
+			<?php echo CHtml::link( 'Ver los Seleccionados para la Feria de las Flores 2013', array('/directorio/resultados'), array('class'=>'btn') ); ?>
+		</p>		
+</div>
 
 <div id="perfiles">
 	<?php foreach($perfiles as $perfil): ?>
