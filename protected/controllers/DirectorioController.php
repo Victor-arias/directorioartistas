@@ -260,7 +260,7 @@ class DirectorioController extends Controller
 				if($image->save('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb))
 				{
 					unlink('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb.'.bak');
-					echo 'Convertida ' . $foto->thumb . $image->render() . '<br /><br />';
+					echo 'Convertida ' . $foto->thumb . '<br /><br />';
 				}else{
 					rename('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb.'.bak', '/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb);
 					echo 'Falló ' . $foto->thumb.'<br /><br />';
