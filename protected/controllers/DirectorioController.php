@@ -253,7 +253,7 @@ class DirectorioController extends Controller
 	      		//print_r($pedazos);
 	      		if($foto->ancho > 5500 || $foto->alto > 5500) continue;
 	      		Yii::import('application.extensions.image.Image');
-	      		copy('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb, '/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb.'.bak');
+	      		@copy('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb, '/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb.'.bak');
 				$image = new Image('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->src);
 				$image->resize(350, 350, Image::NONE)->crop(174, 145);
 	      		unlink('/var/www/vhosts/feriadelasfloresmedellin.com.co'.$foto->thumb);
