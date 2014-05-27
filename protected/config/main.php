@@ -70,8 +70,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=director_dirarti',
 			'emulatePrepare' => true,
-			'username' => /*'userdirectorio',//*/'director_dirarti',
-			'password' => /*'CNBDGFAA880519$',//*/');ZvAB=yl@Ko',
+			'username' => 'root'/*'director_dirarti'*/,
+			'password' => ''/*');ZvAB=yl@Ko'*/,
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

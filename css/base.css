@@ -53,6 +53,7 @@ header .fechas{
   margin: auto;
   overflow: hidden;
   width: 810px;
+  cursor: default;
 }
 
 

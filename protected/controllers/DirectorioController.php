@@ -1,6 +1,6 @@
 <?php
 
-class DirectorioController extends Controller
+class DirectoriofhdfhgfhnxghmxfjhmxfgjController extends Controller
 {
 	public $layout = 'directorio';
 

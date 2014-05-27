@@ -3,6 +3,7 @@
 class ConvocatoriaController extends Controller
 {
 	public $layout = 'bootstrap';
+	public $defaultAction = 'terminos';
 
 	public function actionIndex()
 	{
@@ -162,7 +163,7 @@ class ConvocatoriaController extends Controller
 	public function actionRegistro()
 	{
 		if(!count($_POST)){
-			$this->redirect('index');
+			$this->redirect('terminos');
 		}
 
 		if(!isset(Yii::app()->session['dir'])){

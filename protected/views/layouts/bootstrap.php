@@ -32,7 +32,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
   </head>
   <body>
     <header>
-      <h1><?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria_medium.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2013', array('width' => 219, 
+      <h1><?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria_medium.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2014', array('width' => 219, 
 'height' => 197)), CHtml::normalizeUrl(Yii::app()->homeUrl) ) ?></h1>
       <div class="logos">
         <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_bureau_medium.png', 'Medellín convention & visitors bureau', array('width' => 100, 'height' => 69)) , CHtml::normalizeUrl('http://www.medellinconventionbureau.com'), array('target' => '_blank') )  ?>
@@ -42,16 +42,16 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
       </div>
       <div class="fechas">
         <div>
-          4 de Junio al 30 de Junio de 2013
-          <strong class="prev">Convocatoria</strong>
+          27 de mayo al 10 de junio de 2014
+          <strong class="prev">Inico de invitaci&oacute;n</strong>
         </div>
         <div>
-          1 de Julio al 15 de Julio de 2013
-          <strong class="next">Evaluación</strong>
+          11 de junio al 6 de julio de 2014
+          <strong class="next">Evaluaci&oacute;n</strong>
         </div>
         <div>
-          15 de Julio de 2013
-          <strong class="current">Publicación de resultados</strong>
+          7 de julio de 2014
+          <strong class="current">Publicaci&oacute;n de resultados</strong>
         </div>
       </div>
     </header>
