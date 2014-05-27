@@ -230,7 +230,7 @@ class DirectorioController extends Controller
 	      else echo 'Falló ' . $p->id;
 	    }
 	}
-*/
+/**/
 
 	public function actionGenerarThumbs()
 	{

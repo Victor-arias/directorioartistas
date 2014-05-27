@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $titulo
  * @property string $src
+ * @property string $thumb
  * @property integer $ancho
  * @property integer $alto
  * @property integer $es_perfil
@@ -44,13 +45,13 @@ class Fotos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('titulo, src, ancho, alto, es_perfil, perfiles_id', 'required'),
+			array('titulo, src, thumb, ancho, alto, es_perfil, perfiles_id', 'required'),
 			array('ancho, alto, es_perfil, estado, perfiles_id', 'numerical', 'integerOnly'=>true),
 			array('titulo', 'length', 'max'=>100),
-			array('src', 'length', 'max'=>255),
+			array('src, thumb', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, titulo, src, ancho, alto, es_perfil, estado, perfiles_id', 'safe', 'on'=>'search'),
+			array('id, titulo, src, thumb, ancho, alto, es_perfil, estado, perfiles_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,6 +76,7 @@ class Fotos extends CActiveRecord
 			'id' => 'ID',
 			'titulo' => 'Titulo',
 			'src' => 'Src',
+			'thumb' => 'Thumb',
 			'ancho' => 'Ancho',
 			'alto' => 'Alto',
 			'es_perfil' => 'Es Perfil',
@@ -97,6 +99,7 @@ class Fotos extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('titulo',$this->titulo,true);
 		$criteria->compare('src',$this->src,true);
+		$criteria->compare('thumb',$this->thumb,true);
 		$criteria->compare('ancho',$this->ancho);
 		$criteria->compare('alto',$this->alto);
 		$criteria->compare('es_perfil',$this->es_perfil);

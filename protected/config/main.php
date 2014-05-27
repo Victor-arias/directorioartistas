@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Directorio de artistas',
-	'defaultController' => 'directorio',
+	'defaultController' => 'convocatoria',
 	'language' => 'es',
 
 	// preloading 'log' component
@@ -68,10 +68,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=directorioartistas',
+			'connectionString' => 'mysql:host=localhost;dbname=director_dirarti',
 			'emulatePrepare' => true,
-			'username' => 'userdirectorio',//'root',
-			'password' => 'CNBDGFAA880519$',//'',
+			'username' => /*'userdirectorio',//*/'director_dirarti',
+			'password' => /*'CNBDGFAA880519$',//*/');ZvAB=yl@Ko',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

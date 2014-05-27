@@ -158,7 +158,7 @@ class ConvocatoriaController extends Controller
     			);		
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}	
-/*
+
 	public function actionRegistro()
 	{
 		if(!count($_POST)){
@@ -193,6 +193,7 @@ class ConvocatoriaController extends Controller
 
 				$objPerfiles = new Perfiles();
 				$objPerfiles->nombre      = $objFormularioRegistro->nombrePropuesta;
+				$objPerfiles->slug        = $this->createSlug($objFormularioRegistro->nombrePropuesta);
 				$objPerfiles->resena      = $objFormularioRegistro->resena;				
 				$objPerfiles->web         = $objFormularioRegistro->web;
 				$objPerfiles->usuarios_id = $idUsuario;
@@ -336,6 +337,23 @@ class ConvocatoriaController extends Controller
 		$this->pageTitle ="Registro Exitoso";
 		$this->render('exito');		
 	}
+
+	private function createSlug($str) {
+	    // convert all spaces to underscores:
+	    $treated = strtr($str, " ", "_");
+	    // convert what's needed to convert to nothing (remove them...)
+	    $treated = preg_replace('/[\!\@\#\$\%\^\&\*\(\)\+\=\~\:\.\,\;\'\"\<\>\/\\\`]/', "", $treated);
+
+	    $no_permitidas= array("á","é","í","ó","ú","Á","É","Í","Ó","Ú","ñ","Ñ","À","Ã","Ì","Ò","Ù","´","Ã™","Ã ","Ã¨","Ã¬","Ã²","Ã¹","ç","Ç","Ã¢","ê","Ã®","Ã´","Ã»","Ã‚","ÃŠ","ÃŽ","Ã”","Ã›","ü","Ã¶","Ã–","Ã¯","Ã¤","«","Ò","Ã","Ã„","Ã‹");
+	    $permitidas=    array("a","e","i","o","u","A","E","I","O","U","n","N","A","A","I","O","U","","a","e","i","o","u","c","C","a","e","i","o","u","A","E","I","O","U","u","o","O","i","a","e","U","I","A","E");
+	    $treated = str_replace($no_permitidas, $permitidas, $treated);
+	    // convert underscores to dashes
+	    $treated = strtr($treated, "_", "-");
+
+	    $treated = mb_strtolower($treated, 'UTF-8');
+	    
+	    return $treated;
+  	}
 /*
 	public function actionAsignarJuradosMusica()
 	{
