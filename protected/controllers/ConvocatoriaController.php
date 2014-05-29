@@ -13,7 +13,7 @@ class ConvocatoriaController extends Controller
 
 	public function actionTerminos()
 	{
-		$this->pageTitle ="Convocatoria Artístas";
+		$this->pageTitle ="Invitación Artístas";
 		$this->render('terminos');
 	}
 

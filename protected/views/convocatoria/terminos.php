@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span12">
-		<p>
+			<p>
 			<stong>La Alcaldía de Medellín, a través de la Secretaría de Cultura Ciudadana, invita a los artistas, entidades y agrupaciones locales a inscribir sus propuestas en el proceso de selección para la programación de la Feria de las Flores 2014.</strong>
 			</p>
 			<p>
@@ -19,10 +19,13 @@
 					Esta inscripción es <strong>exclusiva</strong> para agrupaciones, artistas y organizaciones culturales que tengan sede o desarrollen sus actividades en uno de los municipios del <strong>Área Metropolitana del Valle de Aburrá</strong> Propuestas de otras ciudades o países no serán tenidas en cuenta.
 				</li>
 				<li>
-					Las inscripciones se abrirán el <strong>27 de mayo a las 5 pm y se cerrarán el 10 de junio de 2014 a las 6:00 p.m.</strong> hora legal colombiana <a href="http://horalegal.sic.gov.co" taget="_blank" title="Ver la hora legal Colombiana">(UTC -5)</a>. Solo se recibirán propuestas por este medio.
+					Las inscripciones se abrirán el <strong>28 de mayo a las 12 del medio día y se cerrarán el 10 de junio de 2014 a las 6:00 p.m.</strong> hora legal colombiana <a href="http://horalegal.sic.gov.co" taget="_blank" title="Ver la hora legal Colombiana">(UTC -5)</a>. Solo se recibirán propuestas por este medio.
 				</li>
 				<li>
-					En caso de dudas o inquietudes también puede escribir al correo <a href="mailto:juan.martinez@telemedellin.tv" target="_blank">juan.martinez@telemedellin.tv</a>
+					En caso de tener dudas sobre la metodología, condiciones y mecánica  de participación en la invitación, escribir a  <a href="mailto:info@merlinproducciones.co" target="_blank">info@merlinproducciones.co</a>
+				</li>
+				<li>
+					En caso de tener dudas técnicas sobre el formulario de inscipción o presenta algún problema para inscribirse, puede escribir al correo <a href="mailto:juan.martinez@telemedellin.tv" target="_blank">juan.martinez@telemedellin.tv</a>
 				</li>
 				<li>
 					Las propuestas inscritas serán evaluadas por un jurado, conformado por cinco personas de comprobada trayectoria e idoneidad en las artes y la organización de espectáculos, quienes seleccionarán las que mejor cumplan con los criterios de <strong>calidad interpretativa, creatividad, trayectoria y viabilidad técnica y económica</strong>.
@@ -64,6 +67,9 @@
 
 			<h4>Aspectos Importantes</h4>
 			<p>
+				Los artistas o agrupaciones que se inscribieron en la invitación de artistas para eventos de ciudad de la secretaria de cultura de manera física empezando el presente año no deben volver a inscribir su propuesta.
+			</p>
+			<p>
 				Los interesados podrán acceder a una inscripción en internet sin necesidad de imprimir soportes en papel o quemar CDs. Esto, además de hacer un pequeño aporte al cuidado del planeta, debe significar ahorro de tiempo y dinero para los participantes, con la comodidad de no tener que desplazarse ni hacer filas para cumplir con la entrega.
 			</p>
 			<p>
@@ -76,7 +82,7 @@
 	<div class="span6 offset3">
 		<?php echo CHtml::beginForm('convocatoria/registro', "POST", array("class"=>"bs-docs-example")) ?>
 		<label class="checkbox"><input type="checkbox" name="aceptar" id="aceptar" /> He leído y acepto las anteriores condiciones</label>
-		<p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Convocatoria" class="btn btn-large" /></p>
+		<p><input type="submit" name="terminos" id="terminos" value="Deseo Participar en la Invitación" class="btn btn-large" /></p>
 		<?php echo CHtml::endForm(); ?>
 	</div>
 

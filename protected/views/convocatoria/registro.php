@@ -313,7 +313,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="controls">
 						<i class="icon-privado"></i>
 						<div class="input-prepend">              
-							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large',"rel"=>"popover", "data-original-title"=>$formulario->getAttribute('valor'), "data-content"=>$formulario->getTooltip('valor'))) ?>
+							<?php echo $form->numberField($formulario, "valor", array('class'=>'input-large',"min"=>"0","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('valor'), "data-content"=>$formulario->getTooltip('valor'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'valor') ?>
 					</div>

@@ -95,8 +95,8 @@ $(function() {
 		}		
 	});
 
-    $(".area").click(function(){
-        var area = $(this).val();
+    $(".area").change(function(){
+        var area = $(".area:checked").val();
         switch (area) {
             case "1":
                 $("#otrosMusica").attr("disabled","disabled");
@@ -125,7 +125,7 @@ $(function() {
                 $("#otrosMusica").attr("disabled","disabled")
                 $("#areaOtros").fadeOut("slow");
             break;
-            default:
+            case "4":
                 $("#otrosMusica").attr("disabled","disabled");
                 $("#otrosOtro").attr("disabled","disabled");
 
@@ -134,8 +134,16 @@ $(function() {
                 $("#otrosMusica").attr("disabled","disabled"); 
                 $("#areaOtros").fadeIn("slow");
             break;
+            default:
+                $("#otrosMusica").attr("disabled","disabled");
+                $("#otrosOtro").attr("disabled","disabled");
+                $("#areaMusica").fadeOut("slow");
+                //$("#otrosOtro").removeAttr("disabled");
+                $("#otrosMusica").attr("disabled","disabled"); 
+               // $("#areaOtros").fadeIn("slow");
+            break;
         }
-    });
+    }).change();
     
     // Initialize the jQuery File Upload widget:
     $('#fotoPerfil').fileupload({        

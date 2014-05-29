@@ -37,7 +37,7 @@ class RegistroForm extends CFormModel
 				  area, trayectoria, numeroIntegrantes, resena, video, twitter, fb, valor', 'required','message'=>'El campo {attribute} es obligatorio.'),
 			// email has to be a valid email address
 			array('email', 'email'),			// 
-			array('numeroIntegrantes', 'numerical', 'integerOnly' => true),
+			array('numeroIntegrantes, cedula, telefono, celular', 'numerical', 'integerOnly' => true),
 			array('username', 'unique', 'className'=>'Usuarios', 'message'=>"El {attribute} \"{value}\" Ya se encuentra registrado"),
 			array('email', 'unique', 'className'=>'Propuestas', 'message'=>"El {attribute} \"{value}\" Ya se encuentra registrado"),
 			array('web', 'safe'),			
