@@ -1,5 +1,6 @@
 <?php
 /* @var $this DirectorioController */
+echo Yii::app()->params['baseUrl'];
 $np  = count($perfiles);
 $sub = (isset($subgenero))? $subgenero:'';
 $bu  = Yii::app()->homeUrl;

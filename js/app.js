@@ -153,6 +153,8 @@ $(function() {
         maxNumberOfFiles: 1,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
+        maxFileSize: 20000000,
+        limitMultiFileUploadSize: 20000000,
         imageCrop: true,     
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
         messages: {
@@ -196,6 +198,8 @@ $(function() {
         maxNumberOfFiles: 5,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
+        maxFileSize: 20000000,
+        limitMultiFileUploadSize: 20000000,
         imageCrop: true,   
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,  
         messages: {
@@ -229,23 +233,35 @@ $(function() {
     }).done(function (result) {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
-    });    
+    }); 
 
     $('#audio').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
         url: PUBLIC_PATH + '/convocatoria/audio',
         maxNumberOfFiles: 2,
-        previewMaxWidth: 200,
-        previewMaxHeight: 200,
-        imageCrop: true,
+        loadAudioMaxFileSize: 20000000,
+        maxFileSize: 20000000,
+        minFileSize: 100,
+        limitMultiFileUploadSize: 20000000,
         acceptFileTypes: /(\.|\/)(mp3)$/i,
         messages: {
             maxNumberOfFiles: 'Solo se permiten 2 archivos de audio',
             acceptFileTypes: 'No se acepta este tipo de archivo',
             maxFileSize: 'El archivo es demsiado pesado',
             minFileSize: 'El archivo no tiene peso sofuciente'
-        }          
+        }         
+    }).bind('fileuploaddone', function(e, data){
+
+        if( data.result.files[0].type != "" )
+        {
+            $('#archivoAudio').attr('value', data.result);
+
+        }
+        else
+        {
+            throw "Error file";
+        }
     });
 
     // Enable iframe cross-domain access via redirect option:
@@ -266,12 +282,13 @@ $(function() {
         url: $('#audio').fileupload('option', 'url'),
         dataType: 'json',
         context: $('#audio')[0]
+
     }).always(function (result) {
         $(this).removeClass('fileupload-processing');
     }).done(function (result) {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
-    });    
+    });   
 
 
     $('#rider').fileupload({
@@ -281,6 +298,7 @@ $(function() {
         maxNumberOfFiles: 1,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
+        limitMultiFileUploadSize: 20000000,
         imageCrop: true,   
         acceptFileTypes: /(\.|\/)(pdf)$/i,  
         messages: {

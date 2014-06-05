@@ -1,6 +1,6 @@
 <?php
 
-class DirectoriofhdfhgfhnxghmxfjhmxfgjController extends Controller
+class DirectorioController extends Controller
 {
 	public $layout = 'directorio';
 
@@ -13,13 +13,21 @@ class DirectoriofhdfhgfhnxghmxfjhmxfgjController extends Controller
 		$perfiles = new Perfiles;
 		$resultado = $perfiles->findRandom();
 
+
 		$this->render('index',
 			array('perfiles' => $resultado)
 		);
+
+		// Descomente cuando necesita el enlace para los jurados
+		/*
+		$this->render('index_enlace',
+			array('perfiles' => $resultado)
+		);*/
 	}
 
 	public function actionListar($cat = '', $genero = false)
 	{
+
 		$area 		= 4;
 		$subgenero  = false;
 		$categoria 	= strtolower( $cat );

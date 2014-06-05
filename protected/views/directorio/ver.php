@@ -19,7 +19,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( $foto->es_perfil): ?>
-				<img src="<?php echo $foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+				<img src="<?php echo Yii::app()->baseUrl.$foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
 			<?php endif ?>
 	<?php 
 			endforeach; 
@@ -27,7 +27,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 	?>
    
     
-			<img src="/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+			<img src="<?php echo Yii::app()->baseUrl; ?>/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
 	     <?php endif; ?>
          <h2><?php echo ucfirst($perfil->nombre) ?></h2>
 	<div class="categoria">
@@ -102,7 +102,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( !$foto->es_perfil): ?>
-				<a href="<?php echo $foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo $foto->src ?>" width="140" height="117" alt="<?php echo $perfil->nombre ?>" class="img-rounded" /></a>
+				<a href="<?php echo Yii::app()->baseUrl.$foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo $foto->src ?>" width="140" height="117" alt="<?php echo $perfil->nombre ?>" class="img-rounded" /></a>
 			<?php endif ?>
 	<?php 
 			endforeach;

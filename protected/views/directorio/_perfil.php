@@ -1,4 +1,5 @@
 <div class="perfil">
+
 	<div class="categoria">
 		<?php if( isset($perfil->areas->nombre)): ?>
 			<span class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></span> 
@@ -12,13 +13,13 @@
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( $foto->es_perfil): ?>
-				<img src="<?php echo $foto->thumb ?>" width="174" height="145" alt="<?php echo addslashes($perfil->nombre); ?>" class="img-rounded" />
+				<img src="<?php echo Yii::app()->baseUrl.$foto->thumb ?>" width="174" height="145" alt="<?php echo addslashes($perfil->nombre); ?>" class="img-rounded" />
 			<?php endif ?>
 	<?php 
 			endforeach; 
 		else:
 	?>
-			<img src="/files/default.jpg" width="174" height="145" alt="<?php echo $perfil->nombre ?>" class="img-rounded" />
+			<img src="<?php echo Yii::app()->baseUrl; ?>/files/default.jpg" width="174" height="145" alt="<?php echo $perfil->nombre ?>" class="img-rounded" />
 	<?php endif; ?>
 	<div class="nombre">
 		<h3><?php 

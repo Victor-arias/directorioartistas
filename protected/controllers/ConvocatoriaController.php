@@ -229,7 +229,8 @@ class ConvocatoriaController extends Controller
 							$objFotos = new Fotos();
 							$titulo = explode('.',$archivo);
 							$objFotos->titulo = $titulo[0];
-							$objFotos->src = $fotoPerfil;				
+							$objFotos->src = $fotoPerfil;
+							$objFotos->thumb = Yii::app()->request->baseUrl.'/files/' . $dir . '/foto_perfil/thumbnail/'.$archivo; 
 							$objFotos->ancho = $imgData[0];
 							$objFotos->alto = $imgData[1];
 							$objFotos->es_perfil = 1;
@@ -257,6 +258,7 @@ class ConvocatoriaController extends Controller
 							$imgData = getimagesize(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/fotos/'.$archivo);
 							$objFotos->ancho = $imgData[0];
 							$objFotos->alto = $imgData[1];
+							$objFotos->thumb = Yii::app()->request->baseUrl.'/files/' . $dir . '/fotos/thumbnail/'.$archivo; 
 							$objFotos->es_perfil = 0;
 							$objFotos->estado = 1;
 							$objFotos->perfiles_id = $idPerfil;		
