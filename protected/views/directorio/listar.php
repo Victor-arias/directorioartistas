@@ -1,9 +1,10 @@
 <?php
 /* @var $this DirectorioController */
 echo Yii::app()->params['baseUrl'];
-$np  = count($perfiles);
-$sub = (isset($subgenero))? $subgenero:'';
-$bu  = Yii::app()->homeUrl;
+$np  		= count($perfiles);
+$sub 		= (isset($subgenero))? $subgenero:'';
+$bu  		= Yii::app()->homeUrl;
+$baseUrl	= Yii::app()->baseUrl;
 $url = CHtml::normalizeUrl( $bu . Utility::createSlug($categoria) .'/' . Utility::createSlug($sub) );
 $this->pageTitle = Yii::app()->name . ' - ' . ucfirst($categoria);
 if($subgenero) $this->pageTitle .= ' ' . $subgenero;
@@ -72,6 +73,7 @@ Yii::app()->clientScript->registerScript(
 			{
 				$.each(value.fotos, function(i, v){
 					if(v.es_perfil == "1")
+						//html += "	<img src=\'/directorioartistas"+v.url+"\' width=\'174\' height=\'145\' alt=\'"+value.nombre+"\' class=\'img-rounded\' />";
 						html += "	<img src=\'"+v.url+"\' width=\'174\' height=\'145\' alt=\'"+value.nombre+"\' class=\'img-rounded\' />";
 				});
 			}

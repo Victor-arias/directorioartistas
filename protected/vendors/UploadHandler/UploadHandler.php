@@ -104,8 +104,8 @@ class UploadHandler
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:
                     'crop' => true,
-                    'max_width' => 200,
-                    'max_height' => 200
+                    'max_width' => 175,
+                    'max_height' => 145,
                 )
             )
         );

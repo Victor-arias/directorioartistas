@@ -153,7 +153,7 @@ $(function() {
         maxNumberOfFiles: 1,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
-        maxFileSize: 20000000,
+        maxFileSize: 10000000,
         limitMultiFileUploadSize: 20000000,
         imageCrop: true,     
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
@@ -198,7 +198,7 @@ $(function() {
         maxNumberOfFiles: 5,
         previewMaxWidth: 200,
         previewMaxHeight: 200,
-        maxFileSize: 20000000,
+        maxFileSize: 5000000,
         limitMultiFileUploadSize: 20000000,
         imageCrop: true,   
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,  
@@ -324,7 +324,7 @@ $(function() {
     $.ajax({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: $('#fotos').fileupload('option', 'url'),
+        url: $('#rider').fileupload('option', 'url'),
         dataType: 'json',
         context: $('#rider')[0]
     }).always(function (result) {

@@ -4,18 +4,19 @@ class ConvocatoriaController extends Controller
 {
 	public $layout = 'bootstrap';
 	public $defaultAction = 'terminos';
-
+/*
 	public function actionIndex()
 	{
 		$this->layout = 'home';
 		$this->render('index');
 	}
-
+*/
+	/*
 	public function actionTerminos()
 	{
 		$this->pageTitle ="Invitación Artístas";
 		$this->render('terminos');
-	}
+	}*/
 
 	public function actionFotoPerfil(){	
 		if(isset(Yii::app()->session['dir'])){
@@ -25,7 +26,7 @@ class ConvocatoriaController extends Controller
 		$data = array(
 				'image_versions' => array(
 								'thumbnail' => array(
-											'max_width' => 200,'max_height' => 200
+											'max_width' => 174,'max_height' => 145
 											)
 								),
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/FotoPerfil/',
@@ -63,7 +64,8 @@ class ConvocatoriaController extends Controller
 		$data = array(
 				'image_versions' => array(
 								'thumbnail' => array(
-											'max_width' => 200,'max_height' => 200
+											'max_width' => 174,'max_height' => 145,
+											'min_width' => 170, 'min_height'=> 140,
 											)
 								),
 				'script_url' => Yii::app()->request->baseUrl.'/convocatoria/fotos/',
@@ -159,7 +161,7 @@ class ConvocatoriaController extends Controller
     			);		
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}	
-
+/*
 	public function actionRegistro()
 	{
 		if(!count($_POST)){
@@ -340,7 +342,8 @@ class ConvocatoriaController extends Controller
 		$this->pageTitle ="Registro Exitoso";
 		$this->render('exito');		
 	}
-
+*/
+	/*
 	private function createSlug($str) {
 	    // convert all spaces to underscores:
 	    $treated = strtr($str, " ", "_");
@@ -357,32 +360,37 @@ class ConvocatoriaController extends Controller
 	    
 	    return $treated;
   	}
-/*
+*/
+  	/*
 	public function actionAsignarJuradosMusica()
 	{
 		$perfiles = Perfiles::model()->findAll('areas_id = ' . 1);
-		$jurados = array(1, 2, 3);
+		// Se cambio de 3 jurados a 2 , a peticion explicita del cliente
+		//$jurados = array(1, 2, 3);
+		$jurados = array(1, 2);
 		$jurado_actual = 0;
 		foreach($perfiles as $perfil)
 		{
-			/*CVarDumper::dump($perfil->propuestases);
-			echo '<br /><br />';*
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
 				$p->jurado_id = $jurados[$jurado_actual];
-				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado ' . $jurados[$jurado_actual];
-				else echo 'Falló ' . $p->nombre;
+				$nombre = htmlentities($p->nombre);
+				if($p->update()) echo 'Guardado  <strong>' . $nombre . '</strong> con el jurado ' . $jurados[$jurado_actual];
+				else echo 'Falló ' . $nombre;
 
-				if($jurado_actual < 2) $jurado_actual++;
+				//if($jurado_actual < 2) $jurado_actual++;
+				if($jurado_actual < 1) $jurado_actual++;
 				else $jurado_actual = 0;
-				//CVarDumper::dump($p);
+			
 				echo '<br /><br />';
 			}
 			
 		}
 	}
-*
+*/
+
+	/*
 	public function actionAsignarJuradosDanza()
 	{
 		$perfiles = Perfiles::model()->findAll('areas_id = ' . 2);
@@ -390,24 +398,23 @@ class ConvocatoriaController extends Controller
 		$jurado_actual = 0;
 		foreach($perfiles as $perfil)
 		{
-			/*CVarDumper::dump($perfil->propuestases);
-			echo '<br /><br />';*
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
 				$p->jurado_id = 4;
-				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado 4';
-				else echo 'Falló ' . $p->nombre;
+				$nombre = htmlentities($p->nombre);
+				if($p->update()) echo 'Guardado <strong>' . $nombre . '</strong> con el jurado 4';
+				else echo 'Falló ' . $nombre;
 
 				if($jurado_actual < 1) $jurado_actual++;
 				else $jurado_actual = 0;
-				//CVarDumper::dump($p);
 				echo '<br /><br />';
 			}
 			
 		}
 	}
-
+*/
+	/*
 	public function actionAsignarJuradosTeatroOtros()
 	{
 		$perfiles = Perfiles::model()->findAll('areas_id = ' . 3 . ' OR areas_id = ' . 4);
@@ -415,14 +422,14 @@ class ConvocatoriaController extends Controller
 		$jurado_actual = 0;
 		foreach($perfiles as $perfil)
 		{
-			/*CVarDumper::dump($perfil->propuestases);
-			echo '<br /><br />';*
+
 			if( isset($perfil->propuestases[0]) )
 			{
 				$p = Propuestas::model()->findByPk($perfil->propuestases[0]->id);
 				$p->jurado_id = 5;
-				if($p->update()) echo 'Guardado ' . $p->nombre . ' con el jurado 5';
-				else echo 'Falló ' . $p->nombre;
+				$nombre = htmlentities($p->nombre);
+				if($p->update()) echo 'Guardado <strong>' . $nombre . '</strong> con el jurado 5';
+				else echo 'Falló ' . $nombre;
 
 				if($jurado_actual < 1) $jurado_actual++;
 				else $jurado_actual = 0;
@@ -432,7 +439,7 @@ class ConvocatoriaController extends Controller
 			
 		}
 	}	
-/*
+*/
 	public function actionGenerarPassword(){
 		echo Bcrypt::check("CNBDGFAA");
 	}

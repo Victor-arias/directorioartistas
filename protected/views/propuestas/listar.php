@@ -8,15 +8,15 @@
     <?php
      $this->widget('zii.widgets.grid.CGridView', array(
          'dataProvider'=>$dataProvider,
-         'filter'=>$model,
+         //'filter'=>$model,
          'columns'=>array(
               array(
                 'name' => 'nombre',
-                'filter' => '<input type="text" name="Propuestas[nombre]" maxlength="100" placeholder="Filtar por nombre" style="width: 200px"/>',
+                //'filter' => '<input type="text" name="Propuestas[nombre]" maxlength="100" placeholder="Filtar por nombre" style="width: 200px"/>',
               ),
               array(
                 'name' => 'jurado.nombre_completo',
-                'filter' => false, // para que no se muestre el campo de filtrar para el atributo direccion
+                //'filter' => false, // para que no se muestre el campo de filtrar para el atributo direccion
               ),          
               array(
                   'class' => 'CButtonColumn',

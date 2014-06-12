@@ -240,7 +240,8 @@ class DirectorioController extends Controller
 	}
 /**/
 
-	public function actionGenerarThumbs()
+	/* Metodo Original , se hicieron mejoras sobre el mismo creando la ver2 */
+	public function actionGenerarThumbs1152()
 	{
 		$c = new CDbCriteria;
 		$c->limit = 100;
@@ -274,6 +275,122 @@ class DirectorioController extends Controller
 					echo 'Falló ' . $foto->thumb.'<br /><br />';
 				}
 	      	}
+	      }
+	    }
+	}
+
+	/* para el win2 */
+	public function actionGenerarThumbsw2()
+	{
+		$c = new CDbCriteria;
+		$c->limit = 300;
+		$c->offset = 100;
+		$perfiles = Perfiles::model()->findAll($c);
+	    foreach($perfiles as $perfil)
+	    {
+
+	      foreach($perfil->fotoses as $foto)
+	      {
+
+	      	if($foto->es_perfil)
+	      	{
+	      		if( ! file_exists( 'C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->thumb ))
+	      		{
+	      			echo 'C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->id.' '.Yii::app()->baseUrl.$foto->thumb.'</br>'; 
+
+	      			if($foto->ancho > 5500 || $foto->alto > 5500) continue;
+		      		Yii::import('application.extensions.image.Image');
+		      		@copy('C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->src, 'C:/xampp/htdocs'.Yii::app()->baseUrl
+		      			.$foto->src.'.bak');
+					$image = new Image('C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->src);
+					$image->resize(350, 350, Image::NONE)->crop(174, 145);
+		      		
+					if($image->save('C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->thumb))
+					{
+						unlink('C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->src.'.bak');
+						echo 'Convertida ' . $foto->thumb . '<br /><br />';
+					}else{
+						unlink('C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->src);
+						rename('C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->src.'.bak', 'C:/xampp/htdocs'.Yii::app()->baseUrl.$foto->thumb);
+						echo 'Falló ' . $foto->thumb.'<br /><br />';
+					}
+	      		}
+	      	}
+	      }
+	    }
+	}
+
+	public function actionGenerarThumbs2()
+	{
+		$pa = '/home/director/public_html';
+		$c = new CDbCriteria;
+		$c->limit = 4;
+		$c->offset = 3;
+		$perfiles = Perfiles::model()->findAll($c);
+	    foreach($perfiles as $perfil)
+	    {
+
+	      foreach($perfil->fotoses as $foto)
+	      {
+
+	      	if($foto->es_perfil)
+	      	{
+	      		if( ! file_exists( $pa.Yii::app()->baseUrl.$foto->thumb ))
+	      		{
+	      			if($foto->ancho > 3200 || $foto->alto > 3200)
+	      			{
+	      				echo 'fail :  '.$pa.Yii::app()->baseUrl.$foto->src.'<br>';
+	      				continue;	
+	      			}
+	      			echo $pa.Yii::app()->baseUrl.$foto->thumb.'</br>'; 
+		      		Yii::import('application.extensions.image.Image');
+		      		@copy($pa.Yii::app()->baseUrl.$foto->src, $pa.Yii::app()->baseUrl
+		      			.$foto->src.'.bak');
+					$image = new Image($pa.Yii::app()->baseUrl.$foto->src);
+					$image->resize(350, 350, Image::NONE)->crop(174, 145);
+		      		
+					if($image->save($pa.Yii::app()->baseUrl.$foto->thumb))
+					{
+						unlink($pa.Yii::app()->baseUrl.$foto->src.'.bak');
+						echo 'Convertida ' . $foto->thumb . '<br /><br />';
+					}else{
+						unlink($pa.Yii::app()->baseUrl.$foto->src);
+						rename($pa.Yii::app()->baseUrl.$foto->src.'.bak', $pa.Yii::app()->baseUrl.$foto->thumb);
+						echo 'Falló ' . $foto->thumb.'<br /><br />';
+					}
+	      		}
+	      	}
+	      	else
+	      	{
+	      		if( ! file_exists( $pa.Yii::app()->baseUrl.$foto->src ))
+	      		{
+	      			if($foto->ancho > 3200 || $foto->alto > 3200)
+	      			{
+	      				echo 'fail :  '.$pa.Yii::app()->baseUrl.$foto->src.'<br>';
+	      				continue;	
+	      			}
+	      			echo $pa.Yii::app()->baseUrl.$foto->src.'</br>'; 
+	      			Yii::import('application.extensions.image.Image');
+	      			@copy($pa.Yii::app()->baseUrl.$foto->src, $pa.Yii::app()->baseUrl
+	      				.$foto->src.'.bak');
+	      			$image = new Image($pa.Yii::app()->baseUrl.$foto->src);
+	      			$image->resize(350, 350, Image::NONE)->crop(140, 117);
+
+	      			if($image->save($pa.Yii::app()->baseUrl.$foto->thumb))
+	      			{
+	      				unlink($pa.Yii::app()->baseUrl.$foto->src.'.bak');
+	      				echo 'Convertida ' . $foto->thumb . '<br /><br />';
+	      			}else{
+	      				unlink($pa.Yii::app()->baseUrl.$foto->src);
+	      				rename($pa.Yii::app()->baseUrl.$foto->src.'.bak', $pa.Yii::app()->baseUrl.$foto->thumb);
+	      				echo 'Falló ' . $foto->src.'<br /><br />';
+	      			}
+	      		}
+
+	      	}
+
+
+
 	      }
 	    }
 	}

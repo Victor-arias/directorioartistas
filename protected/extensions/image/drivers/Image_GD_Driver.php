@@ -77,13 +77,7 @@ class Image_GD_Driver extends Image_Driver {
 		$this->tmp_image = $create($image['file']);
 
 		// Get the quality setting from the actions
-		//$quality = CArray::remove('quality', $actions);
-		if (array_key_exists('quality', $actions)) {
-		    $quality = $actions['quality'];
-		    unset($actions['quality']);                 
-		} else {
-		    $quality = null;
-		}
+		$quality = CArray::remove('quality', $actions);
 
 		if ($status = $this->execute($actions))
 		{

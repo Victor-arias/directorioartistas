@@ -14,60 +14,75 @@ $this->breadcrumbs = $bc;
 $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 ?>
 <div id="perfil">
-	 <div class="infoPpal">
-	<?php 
-		if( !empty($perfil->fotoses) ):
-			foreach($perfil->fotoses as $foto): ?>
+	<div class="infoPpal">
+		<div class="infoIzq">
+			<?php 
+			if( !empty($perfil->fotoses) ):
+				foreach($perfil->fotoses as $foto): ?>
 			<?php if( $foto->es_perfil): ?>
-				<img src="<?php echo Yii::app()->baseUrl.$foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+			<img src="<?php echo Yii::app()->baseUrl.$foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
 			<?php endif ?>
-	<?php 
+			<?php 
 			endforeach; 
-		else:
-	?>
-   
-    
+			else:
+			?>
 			<img src="<?php echo Yii::app()->baseUrl; ?>/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
-	     <?php endif; ?>
-         <h2><?php echo ucfirst($perfil->nombre) ?></h2>
-	<div class="categoria">
-    
-		<?php if( isset($perfil->areas->nombre)): ?>
-			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl. Utility::createSlug($perfil->areas->nombre) ); ?>" class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></a> 
-		<?php endif; ?>
-		<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otras artes') ): ?>
-			<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . Utility::createSlug($perfil->propuestases[0]->subgenero) ); ?>"><?php echo $perfil->propuestases[0]->subgenero; ?></a>
-		<?php endif; ?>
+			<?php endif; ?>
+		</div>	
+		<div class="infoDer">
+				<h2><?php echo ucfirst($perfil->nombre) ?></h2>
+				<div class="categoria">
+					<?php if( isset($perfil->areas->nombre)): ?>
+					<a title="<?php echo $perfil->areas->nombre ?>" href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl. Utility::createSlug($perfil->areas->nombre) ); ?>" class="<?php echo $perfil->areas->nombre ?>"><?php echo $perfil->areas->nombre ?></a> 
+					<?php endif; ?>
+					<?php if( isset($perfil->propuestases[0]->subgenero) && ($perfil->areas->nombre == 'Música' || $perfil->areas->nombre == 'Otras artes') ): ?>
+						<a href="<?php echo CHtml::normalizeUrl( Yii::app()->homeUrl . Utility::createSlug($perfil->areas->nombre) .'/' . Utility::createSlug($perfil->propuestases[0]->subgenero) ); ?>"><?php echo $perfil->propuestases[0]->subgenero; ?></a>
+					<?php endif; ?>
+				</div>
+				<p><strong>Número Integrantes:</strong> <?php echo $perfil->propuestases[0]->numero_integrantes ?></p>
+				<p><strong>Trayectoria:</strong> 
+				<?php 
+				switch ($perfil->propuestases[0]->trayectoria ) {
+					case '1':
+					echo "De 1 a 5 Años";
+					break;
+					case '2':
+					echo "De 5 a 10 Años";
+					break;
+					default:
+					echo "De 10 Años en adelante";
+					break;
+				}
+				?>
+			</p>
+			<div class="twitter">
+				<?php
+				$url_twitter = $perfil->redesHasPerfiles[0]->url;
+				$url_twitterA = explode('@', $url_twitter);
+				if(count($url_twitterA) > 1)
+				{
+					$url_twitter = $url_twitterA[1];
+				}
+
+				$url_twitter = ( strrpos($url_twitter, 'twitter.com') ? $url_twitter : 'https://twitter.com/'.$url_twitter );
+
+					 		//echo Yii::app()->format->formatUrl($url_twitter);
+				echo CHtml::link($url_twitter,$url_twitter,array('target'=>'_blank'));
+				?></div>
+				<div class="fb">
+					<?php
+					$url_fb = ( strrpos($perfil->redesHasPerfiles[1]->url, 'facebook.com') ?  $perfil->redesHasPerfiles[1]->url : 'www.facebook.com/'.$perfil->redesHasPerfiles[1]->url );
+					 		//echo Yii::app()->format->formatUrl($url_fb) ;
+					echo CHtml::link($url_fb,$url_fb,array('target'=>'_blank'));
+					?></div>
+					<?php if( !empty($perfil->web) ):?><div class="web"><?php  echo CHtml::link($perfil->web,$perfil->web,array('target'=>'_blank')); ?></div><?php endif; ?>
+		</div>		
 	</div>
-	
-	<p><strong>Número Integrantes:</strong> <?php echo $perfil->propuestases[0]->numero_integrantes ?></p>
-	<p><strong>Trayectoria:</strong> 
-	<?php 
-	switch ($perfil->propuestases[0]->trayectoria ) {
-		case '1':
-			echo "De 1 a 5 Años";
-			break;
-		case '2':
-			echo "De 5 a 10 Años";
-			break;
-		default:
-			echo "De 10 Años en adelante";
-			break;
-	}
-	?>
-	</p>
-	<div class="twitter"><?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[0]->url) ?></div>
-	<div class="fb"><?php echo Yii::app()->format->formatUrl($perfil->redesHasPerfiles[1]->url) ?></div>
-	<?php if( !empty($perfil->web) ):?><div class="web"><?php echo Yii::app()->format->formatUrl($perfil->web) ?></div><?php endif; ?>
-    </div>
-    
     <div class="clear"></div>
-    
 	<h3 class="tituloBackground">Reseña</h3>
     <p><?php echo nl2br($perfil->propuestases[0]->resena) ?></p>
     <?php $this->renderPartial('_redes', array('nombre' => $perfil->nombre)); ?>
     <h3 class="tituloBackground">Conozca la propuesta</h3>
-    
     <div class="multimedia">
     <h3>Video</h3>
 	
@@ -102,7 +117,7 @@ $this->pageTitle = Yii::app()->name . ' - ' .$perfil->nombre;
 		if( !empty($perfil->fotoses) ):
 			foreach($perfil->fotoses as $foto): ?>
 			<?php if( !$foto->es_perfil): ?>
-				<a href="<?php echo Yii::app()->baseUrl.$foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo $foto->src ?>" width="140" height="117" alt="<?php echo $perfil->nombre ?>" class="img-rounded" /></a>
+				<a href="<?php echo Yii::app()->baseUrl.$foto->src ?>" class="fancybox" rel="group" title="<?php echo $perfil->nombre ?>"><img src="<?php echo Yii::app()->baseUrl.$foto->src ?>" width="140" height="117" alt="<?php echo $perfil->nombre ?>" class="img-rounded" /></a>
 			<?php endif ?>
 	<?php 
 			endforeach;

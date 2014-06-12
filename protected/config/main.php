@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Directorio de artistas',
-	'defaultController' => 'convocatoria',
+	'defaultController' => 'directorio',
 	'language' => 'es',
 
 	// preloading 'log' component
@@ -20,7 +20,8 @@ return array(
 		'application.components.*',
 		'ext.YiiMailer.YiiMailer',
 		'application.vendors.bcrypt.*',
-		'application.vendors.UploadHandler.*'
+		'application.vendors.UploadHandler.*',
+		'application.helpers.*',
 	),
 
 	'modules'=>array(
@@ -53,7 +54,7 @@ return array(
 				'<cat:(musica|otras-artes)>/<genero:[\w\-]+>'	=> 'directorio/listar',
 				'<cat:(musica|otras-artes)>/<genero:[\w\-]+>/<artista:[\w\d\-]+>'=> 'directorio/ver',
 				'<cat:(danza|teatro)>/<artista:[\w\d\-]+>'		=> 'directorio/ver',
-				'convocatoria'									=> 'convocatoria',
+				//'convocatoria'									=> 'convocatoria',
 				'busqueda' 										=> 'directorio/busqueda',
 				'contactar'										=> 'directorio/contactar',
 				'<controller:\w+>/<id:\d+>'						=> '<controller>/view',
@@ -93,6 +94,12 @@ return array(
 				*/
 			),
 		),
+
+		'image'=>array(
+          'class'=>'application.extensions.image.CImageComponent',
+            // GD or ImageMagick
+            'driver'=>'GD',
+        ),
 	),
 
 	// application-level parameters that can be accessed

@@ -681,6 +681,7 @@ background:#74A5D6;
 {
   display: block;
   margin: -15px auto 5px;
+  height:  140px !important;
   text-align: center;
 }
 #perfiles .perfil span
@@ -690,6 +691,18 @@ background:#74A5D6;
   height: 20px;
   padding: 2px 5px 0;
   border-radius:3px;
+}
+
+.infoDer {
+    float: right;
+    height: 250px;
+    width: 490px;
+}
+
+.infoIzq {
+    float: left;
+    height: 250px;
+    width: 270px;
 }
 
 
@@ -771,9 +784,6 @@ background:#74A5D6;
 	}
 
 
-
-
-
 #perfiles .perfil .nombre
 {
   background: #9ec065;
@@ -801,6 +811,7 @@ background:#74A5D6;
   display: inline-block;
   height: 20px;
   margin-right: 15px;
+  font-size: 11px;
   vertical-align: top;
   width: 60%;
   padding-left:25px;
@@ -812,9 +823,10 @@ background:#74A5D6;
   background-size: contain;
   display: inline-block;
   height: 20px;
+  font-size: 11px;
   margin-right: 15px;
   vertical-align: top;
-   width: 60%;
+  width: 60%;
   padding-left:25px;
   margin-bottom:5px;
 }
@@ -823,11 +835,16 @@ background:#74A5D6;
   background: url(../images/web.jpg) no-repeat;
   background-size: contain;
   display: inline-block;
+  font-size: 11px;
   height: 20px;
   margin-right: 15px;
   vertical-align: top;
    width: 60%;
   padding-left:25px;
+}
+
+#perfil a {
+  font-size: 11px;
 }
 
 .clear {
