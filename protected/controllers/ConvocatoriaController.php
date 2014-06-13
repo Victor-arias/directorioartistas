@@ -4,19 +4,19 @@ class ConvocatoriaController extends Controller
 {
 	public $layout = 'bootstrap';
 	public $defaultAction = 'terminos';
-/*
+
 	public function actionIndex()
 	{
 		$this->layout = 'home';
 		$this->render('index');
 	}
-*/
-	/*
+
+	
 	public function actionTerminos()
 	{
 		$this->pageTitle ="Invitación Artístas";
 		$this->render('terminos');
-	}*/
+	}
 
 	public function actionFotoPerfil(){	
 		if(isset(Yii::app()->session['dir'])){
@@ -161,7 +161,7 @@ class ConvocatoriaController extends Controller
     			);		
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}	
-/*
+
 	public function actionRegistro()
 	{
 		if(!count($_POST)){
@@ -171,7 +171,8 @@ class ConvocatoriaController extends Controller
 		if(!isset(Yii::app()->session['dir'])){
 			Yii::app()->session['dir'] = md5(time());
 		}
-		
+
+		$subgenero = (isset($_POST["subgenero"])) ? $_POST["subgenero"] : NULL;
 		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)
 		//o en su defecto los datos del formulario para validar
 		$objFormularioRegistro = new RegistroForm();
@@ -305,7 +306,7 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->video              = $objFormularioRegistro->video;
 				$objPropuesta->estado             = 1;
 				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;
-				$objPropuesta->subgenero          = (isset($_POST["subgenero"])) ? $_POST["subgenero"] : NULL;
+				$objPropuesta->subgenero          = $subgenero;
 
 				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/')){
 					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 
@@ -333,6 +334,7 @@ class ConvocatoriaController extends Controller
 		//OJO cuando se guarden los datos exitosamente se debe llevar a otra pantalla.
 		$this->pageTitle ="Registro Artístas";
 		$this->render('registro', array(
+				'subgenero'  => $subgenero,
 				'formulario' => $objFormularioRegistro
 			));
 	}
@@ -342,8 +344,8 @@ class ConvocatoriaController extends Controller
 		$this->pageTitle ="Registro Exitoso";
 		$this->render('exito');		
 	}
-*/
-	/*
+
+
 	private function createSlug($str) {
 	    // convert all spaces to underscores:
 	    $treated = strtr($str, " ", "_");
@@ -360,7 +362,7 @@ class ConvocatoriaController extends Controller
 	    
 	    return $treated;
   	}
-*/
+
   	/*
 	public function actionAsignarJuradosMusica()
 	{

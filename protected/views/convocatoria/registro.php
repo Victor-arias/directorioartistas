@@ -117,18 +117,20 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 				<div id="areaMusica" style="display:none">
 					<div class="control-group">
 						<label for="" class="control-label">Géneros:</label>
-						<div class="controls">							
-							<select id="otrosMusica" name="subgenero" class="input-xxlarge">								
-								<option value="Tropical">Tropical</option>
-								<option value="Popular Tradicional">Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)</option>
-								<option value="Urbana">Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)</option>
-								<option value="Clásica">Clásica</option>
-								<option value="Folclor">Folclor</option>
-								<option value="Jazz y músicas del mundo">Jazz y músicas del mundo</option>
-								<option value="Fusión">Fusión</option>
-								<option value="Experimental">Experimental</option>
-								<option value="Infantil">Infantil</option>
-							</select>
+						<div class="controls">
+							<?php echo CHtml::dropDownList('subgenero', $subgenero, 
+	    				         array(	'Tropical' => 'Tropical',
+	    				         		'Popular Tradicional' => 'Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)',
+	    				         		'Urbana' => 'Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)',
+	    				         		'Clásica' => 'Clásica',
+	    				         		'Folclor' => 'Folclor',
+	    				         		'Jazz y músicas del mundo' => 'Jazz y músicas del mundo',
+	    				         		'Experimental' => 'Experimental',
+	    				         		'Infantil' => 'Infantil'
+	    				         		),
+	             				 	array('empty' => '', 'class' => 'input-xxlarge')
+	             				 	); 
+	             			?>
 						</div>						
 					</div>
 					<div class="control-group">

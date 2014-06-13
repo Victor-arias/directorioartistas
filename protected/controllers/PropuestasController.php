@@ -121,12 +121,12 @@ class PropuestasController extends Controller
         );
 	}
 	// Uncomment the following methods and override them if needed
-	public function filters()
+	/*public function filters()
 	{
 		return array(
 		    'accessControl', // perform access control for CRUD operations
 		);
-	}
+	}*/
 /*
 	public function actions()
 	{

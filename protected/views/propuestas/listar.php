@@ -7,8 +7,8 @@
     <div class="span12">
     <?php
      $this->widget('zii.widgets.grid.CGridView', array(
-         'dataProvider'=>$dataProvider,
-         //'filter'=>$model,
+         'dataProvider'=>$model->search(),
+         'filter'=>$model,
          'columns'=>array(
               array(
                 'name' => 'nombre',
