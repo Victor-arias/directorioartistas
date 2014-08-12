@@ -108,6 +108,7 @@ class PropuestasController extends Controller
 		Yii::app()->end();
 	}
 
+
 	public function accessRules()
 	{
 		return array(

@@ -94,7 +94,16 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
       ?><!-- breadcrumbs -->
     <?php endif; ?>
     
-      
+    <div class="seleccionados">
+      <p>
+        <?php
+        if( Yii::app()->controller->getAction()->getId() != 'resultados' )
+        {
+           echo CHtml::link( 'Ingresa acá para conocer los Seleccionados para la Feria de las Flores 2014', array('/directorio/resultados'), array('class'=>'btn btn-large') );     
+        } 
+        ?>
+      </p>    
+    </div>
       <?php 
         $home = ($this->action->id == 'index') ? $this->action->id : false;
         $this->widget('Buscador', array('home' => $home) ); 

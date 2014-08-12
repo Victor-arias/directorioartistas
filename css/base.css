@@ -447,6 +447,7 @@ background:#74A5D6;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  
   width:680px;
   margin:0 0 20px 0;
+  padding: 25px;
 
 }
 
@@ -458,6 +459,7 @@ background:#74A5D6;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  
   width:680px;
   margin:0 0 20px 0;
+   padding: 25px;
 
 }
 
@@ -503,6 +505,10 @@ background:#74A5D6;
   margin-top:20px;
 }
 
+#resena
+{
+  text-align: justify;
+}
 
 #fotos,
 #fotoPerfil,

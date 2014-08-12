@@ -13,16 +13,16 @@ class DirectorioController extends Controller
 		$perfiles = new Perfiles;
 		$resultado = $perfiles->findRandom();
 
-
+/*
 		$this->render('index',
 			array('perfiles' => $resultado)
 		);
-
+*/
 		// Descomente cuando necesita el enlace para los jurados
-		/*
+		
 		$this->render('index_enlace',
 			array('perfiles' => $resultado)
-		);*/
+		);
 	}
 
 	public function actionListar($cat = '', $genero = false)

@@ -8,40 +8,40 @@ Yii::app()->clientScript->registerScript('fancybox', '$(".fancybox").fancybox();
   <div class="row-fluid">
     <div class="span8">
       <div class="row-fluid">
-        <div class="span4">
+        <div class="span5">
           <?php 
             if( !empty($perfil->fotoses) ):
               foreach($perfil->fotoses as $foto): ?>
-              <?php if( $foto->es_perfil): ?>
-                <img src="<?php echo $foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
-              <?php endif ?>
-          <?php 
-              endforeach; 
+            <?php if( $foto->es_perfil): ?>
+            <img src="<?php echo $foto->src ?>" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+            <?php endif ?>
+            <?php 
+            endforeach; 
             else:
           ?>
-              <img src="/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
-        <?php endif; ?>
+          <img src="/files/default.jpg" width="210" height="210" alt="<?php echo $perfil->nombre ?>" />
+          <?php endif; ?>
         </div><!--/span-->
-        <div class="span6">
-          <h3><?php echo $perfil->propuestases[0]->nombre ?></h3><br/>
-          <strong>Área:</strong> <?php echo $perfil->areas->nombre ?><br/><br/>
-          <strong>Número Integrantes:</strong> <?php echo $perfil->propuestases[0]->numero_integrantes ?><br/><br/>
-          <strong>Trayectoria:</strong> 
-          <?php 
-          switch ($perfil->propuestases[0]->trayectoria ) {
-          	case '1':
-          		echo "De 1 a 5 Años";
-          		break;
-          	case '2':
-          		echo "De 5 a 10 Años";
-          		break;
-          	default:
-          		echo "De 10 Años en adelante";
-          		break;
-          }
-          ?><br/><br/>
-          <strong>Valor Presentación:</strong> <?php echo number_format($perfil->propuestases[0]->valor_presentacion,0) ?>
-        </div><!--/span-->
+          <div class="span6">
+              <h3><?php echo $perfil->propuestases[0]->nombre ?></h3><br/>
+              <strong>Área:</strong> <?php echo $perfil->areas->nombre ?><br/><br/>
+              <strong>Número Integrantes:</strong> <?php echo $perfil->propuestases[0]->numero_integrantes ?><br/><br/>
+              <strong>Trayectoria:</strong> 
+              <?php 
+              switch ($perfil->propuestases[0]->trayectoria ) {
+              	case '1':
+              		echo "De 1 a 5 Años";
+              		break;
+              	case '2':
+              		echo "De 5 a 10 Años";
+              		break;
+              	default:
+              		echo "De 10 Años en adelante";
+              		break;
+              }
+              ?><br/><br/>
+              <strong>Valor Presentación:</strong> <?php echo number_format($perfil->propuestases[0]->valor_presentacion,0) ?>
+         </div><!--/span-->
       </div><!--/row-->
       <div class="row-fluid">
         <div class="span5">
@@ -61,9 +61,11 @@ Yii::app()->clientScript->registerScript('fancybox', '$(".fancybox").fancybox();
         </div><!--/span-->        
       </div><!--/row-->
       <div class="row-fluid">
-      	<div class="span9">
+      	<div id="resena" class="span11">
       		<h5>Reseña</h5>
-      		<?php echo $perfil->propuestases[0]->resena ?>
+          <p>
+            <?php echo $perfil->propuestases[0]->resena ?>
+          </p>	
       	</div>
       </div>      
       <div class="row-fluid">

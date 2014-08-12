@@ -319,6 +319,12 @@ $(function() {
         )
     );
 
+    if( $('#resultados').length )
+    {
+        alert('soizas');
+        $('.seleccionados').css('display','none');
+    }    
+
     // Load existing files:
     $('#rider').addClass('fileupload-processing');
     $.ajax({
@@ -332,6 +338,8 @@ $(function() {
     }).done(function (result) {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
-    });       
+    }); 
+
+
  	
 });

@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <?php echo CHtml::link('Feria de las Flores', array('propuestas/listar'), array("class"=>"brand")) ?>
+          <?php echo CHtml::link('Volver', array('propuestas/listar'), array("class"=>"brand")) ?>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
               <li class="active"><a href="#"><?php echo $this->user->username ?></a></li>

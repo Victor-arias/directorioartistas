@@ -24,7 +24,7 @@
                   'buttons'=>array(
                     'detalle' => array( //botón para la acción nueva
                       'label'=>'Ver detalles de la postulación', // titulo del enlace del botón nuevo
-                      'imageUrl'=>Yii::app()->request->baseUrl.'/assets/a8dbea7d/gridview/view.png', //ruta icono para el botón
+                      'imageUrl'=>Yii::app()->request->baseUrl.'/images/view.png', //ruta icono para el botón
                       'url'=>'Yii::app()->createUrl("/propuestas/detalle?id=$data->perfiles_id" )', //url de la acción nueva
                     ),
                   ),
